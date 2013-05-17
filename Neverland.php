@@ -46,7 +46,7 @@ class SkinNeverland extends SkinTemplate {
     $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
-    $out->addMeta( "viewport", "width=device-width, initial-scale=1.0" )
+    $out->addMeta( "viewport", "width=device-width, initial-scale=1.0" );
   }
 }
 

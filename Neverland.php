@@ -43,8 +43,8 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
-    $out->addStyle( $this->stylename.'/css/bootstrap.css', 'screen' );
-    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.css', 'stylesheet' );
+    $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
   }
 }
@@ -307,9 +307,42 @@ class NeverlandTemplate extends BaseTemplate {
 
     <?php $this->printTrail(); ?>
   
-    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/neverland/js/bootstrap.js"></script>
-    <script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
-    <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>
+    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/neverland/js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
+    <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
+    <!--<script type="text/javascript">
+      $(document).ready(function(){
+        $('span.mailme').mailme();
+        $("[rel='tipsy-north']").tipsy({'gravity':'n'});
+        $("[rel='tipsy-east']").tipsy({'gravity':'e'});
+        $("[rel='tipsy-west']").tipsy({'gravity':'w'});
+        $("[rel='tipsy-south']").tipsy({'gravity':'s'});
+        $("#ca-nstab-main img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        $("#ca-talk img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        $("#ca-special img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        $("#ca-history img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        $("#ca-latex img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        $("#ca-viewsource img").click(function(event){
+          $(this).toggleClass("down");
+        });
+        setSidebar();
+        maxEntries=25;
+        hideLongToc();
+      });
+      $(window).resize(function(){
+        fixLayout();
+      });
+    </script>-->
   </body>
 </html>
 
@@ -523,7 +556,7 @@ class NeverlandTemplate extends BaseTemplate {
         ?>
             <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="navbar-search pull-right">
               <input id="searchInput" name="search" type="search" placeholder="<?php $this->msg( 'search' ) ?>"
-                   class="search-query" autocomplete="off"
+                   class="search" autocomplete="off"
               <?php if( isset( $this->data['search'] ) ): ?>
                 value="<?php $this->text( 'search' ) ?>"
               <?php endif; ?> />

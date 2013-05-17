@@ -283,14 +283,9 @@ class NeverlandTemplate extends BaseTemplate {
       <?php
         foreach( $this->getFooterLinks() as $category => $links ):
           if ( $category == 'info' ):
-            ?>
-              <br />
-              <div class="page-info">
-                <?php foreach( $links as $link ): ?>
-                  <?php $this->html( $link ) ?>
-                <?php endforeach; ?>
-              </div>
-            <?php
+           foreach( $links as $link ): ?>
+            <p><?php $this->html( $link ) ?></p>
+          <?php endforeach; 
           endif;
         endforeach;
       ?>

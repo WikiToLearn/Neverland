@@ -43,9 +43,9 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
-    $out->addStyle( '//cdn.kde.org/css/bootstrap.css', 'screen' );
-    $out->addStyle( '//cdn.kde.org/css/bootstrap-responsive.css', 'screen' );
-    $out->addStyle( '//cdn.kde.org/css/bootstrap-mediawiki.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
   }
 }
 
@@ -119,17 +119,28 @@ class NeverlandTemplate extends BaseTemplate {
   ?>
 
   <!-- header -->
-  <div id="top-small" class="navbar navbar-static-top Neverland noprint">
+  <div id="top-small" class="navbar navbar-inverse navbar-static-top Neverland noprint">
     <div class="navbar-inner">
       <div class="container">
-        <div class="pull-right">
+
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <!-- Be sure to leave the brand out there if you want it shown -->
+        <a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="brand">
+          <?php echo $wgSitename; ?>
+        </a>
+         
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
           <?php $this->renderNavigation( 'SEARCH' ); ?>
         </div>
 
-        <a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="brand">
-          <img src="//cdn.kde.org/img/logo.plain.small.png" alt="" />
-          <?php echo $wgSitename; ?>
-        </a>
       </div>
     </div>
   </div>
@@ -138,7 +149,26 @@ class NeverlandTemplate extends BaseTemplate {
   <div id="top" class="container">
     <!-- content -->
     <div class="row">
-      <div class="span9">
+        <!-- panel -->
+        <div class="span3 sidebar noprint">
+          <div>
+            <ul class="wikimenu">
+              <!-- logo -->
+                <a href="./">
+                  <img src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="" />
+                </a>
+              <!-- /logo -->
+
+              <?php
+                $this->renderNavigation( 'VARIANTS' );
+                $this->renderPortals( $this->data['sidebar'] );
+                $this->renderNavigation( 'PERSONAL' );
+              ?>
+            </ul>
+          </div>
+        </div>
+
+        <div class="span9 pull-right">
         <section>
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
@@ -244,84 +274,53 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- /pagestats -->
           </article>
           <!-- /bodyContent -->
+          <div class="minchiatina">
+            <div class="a"></div>
+            <div class="b"></div>
+            <div class="c"></div>
+            <div class="d"></div>
+            <div class="e"></div>
+          </div>
         </section>
         </div>
 
-        <!-- panel -->
-        <div class="span3 sidebar noprint" valign="top">
-          <div class="well">
-            <ul class="unstyled">
-              <!-- logo -->
-                <img src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="" />
-              <!-- /logo -->
-
-              <?php
-                $this->renderNavigation( 'VARIANTS' );
-                $this->renderPortals( $this->data['sidebar'] );
-                $this->renderNavigation( 'PERSONAL' );
-              ?>
-            </ul>
-          </div>
-        </div>
         <!-- /panel -->
       </div>
 
+
+
     <!-- /content -->
+  </div>
 
-    <!-- footer -->
-    <div id="footerRow">
-      <div class="navbar navbar-bottom Neverland" <?php $this->html( 'userlangattributes' ) ?>>
-        <div class="navbar-inner">
-          <div class="container">
-            <?php
-              foreach( $this->getFooterLinks() as $category => $links ):
-                if ( $category == 'places' ):
-                  ?>
-                    <ul id="footer-<?php echo $category ?>" class="nav">
-                      <?php foreach( $links as $link ): ?>
-                        <li>
-                          <i class="icon-<?php echo $link ?> icon-white"></i>
-                          <?php $this->html( $link ) ?>
-                        </li>
-                      <?php endforeach; ?>
-                    </ul>
-                  <?php
-                endif;
-              endforeach;
-            ?>
-
-            <ul class="nav pull-right">
-              <li id="global-nav-links" class="dropdown dropdown-hover">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#global-nav-links">
-                  <i class="icon-list icon-white"></i>
-                  KDE Links
-                  <b class="caret-up"></b>
-                </a>
-
-                <ul id="global-nav" class="dropdown-menu bottom-up"></ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <footer class="Neverland">
-        <?php
-          foreach( $this->getFooterLinks() as $category => $links ) {
-            if ( $category == 'legals' ) {
-              foreach( $links as $link ) {
-                $this->html( $link );
-              }
+  <!-- footer -->
+  <div id="footer">
+    <footer class="footer">
+      <!--<p>Contenuti soggetti a licenza d'uso <a href="./index.php/Project:Copyright">Creative Commons Attribution Share Alike 3.0 &amp; GNU FDL</a>.</p>
+      <ul class="footer-links">
+        <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+        <li class="muted">·</li>
+        <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
+        <li class="muted">·</li>
+        <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
+      </ul>-->
+      <?php
+        foreach( $this->getFooterLinks() as $category => $links ) {
+          if ( $category == 'legals' ) {
+            foreach( $links as $link ) {
+              $this->html( $link );
             }
           }
-        ?>
-      </footer>
-    </div>
-    <!-- /footer -->
+        }
+      ?>
+    </footer>
   </div>
+  <!-- /footer -->
+
+
+
     <?php $this->printTrail(); ?>
   
-    <script type="text/javascript" src="//cdn.kde.org/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/neverland/js/bootstrap.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>
   </body>
@@ -535,17 +534,15 @@ class NeverlandTemplate extends BaseTemplate {
 
         case 'SEARCH':
         ?>
-          <div id="p-search">
-            <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="form-inline">
+            <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="navbar-search pull-right">
               <input id="searchInput" name="search" type="search" placeholder="<?php $this->msg( 'search' ) ?>"
-                   class="input-large" autocomplete="off"
+                   class="search-query" autocomplete="off"
               <?php if( isset( $this->data['search'] ) ): ?>
                 value="<?php $this->text( 'search' ) ?>"
               <?php endif; ?> />
 
               <input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
             </form>
-          </div>
         <?php
         break;
       }

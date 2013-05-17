@@ -35,6 +35,7 @@ class SkinNeverland extends SkinTemplate {
     // wait for the CSS file to load before fetching the HTC file.
     $min = $this->getRequest()->getFuzzyBool( 'debug' ) ? '' : '.min';
     $out->addModuleScripts( 'skins.neverland' );
+    $out->addMeta( "viewport", "width=device-width, initial-scale=1.0" );
   }
 
   /**
@@ -46,7 +47,6 @@ class SkinNeverland extends SkinTemplate {
     $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
-    $out->addMeta( "viewport", "width=device-width, initial-scale=1.0" );
   }
 }
 

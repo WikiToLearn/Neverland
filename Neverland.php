@@ -44,7 +44,7 @@ class SkinNeverland extends SkinTemplate {
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
     $out->addStyle( $this->stylename.'/css/bootstrap.css', 'screen' );
-    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.css', 'stylesheet' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
   }
 }
@@ -256,22 +256,6 @@ class NeverlandTemplate extends BaseTemplate {
             <?php $this->html( 'debughtml' ); ?>
             <!-- /debughtml -->
 
-            <!-- pagestats -->
-            <?php
-              foreach( $this->getFooterLinks() as $category => $links ):
-                if ( $category == 'info' ):
-                  ?>
-                    <br />
-                    <div class="page-info">
-                      <?php foreach( $links as $link ): ?>
-                        <?php $this->html( $link ) ?>
-                      <?php endforeach; ?>
-                    </div>
-                  <?php
-                endif;
-              endforeach;
-            ?>
-            <!-- /pagestats -->
           </article>
           <!-- /bodyContent -->
           <div class="minchiatina">
@@ -295,14 +279,22 @@ class NeverlandTemplate extends BaseTemplate {
   <!-- footer -->
   <div id="footer">
     <footer class="footer">
-      <!--<p>Contenuti soggetti a licenza d'uso <a href="./index.php/Project:Copyright">Creative Commons Attribution Share Alike 3.0 &amp; GNU FDL</a>.</p>
-      <ul class="footer-links">
-        <li><a href="http://blog.getbootstrap.com">Blog</a></li>
-        <li class="muted">·</li>
-        <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
-        <li class="muted">·</li>
-        <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
-      </ul>-->
+      <!-- pagestats -->
+      <?php
+        foreach( $this->getFooterLinks() as $category => $links ):
+          if ( $category == 'info' ):
+            ?>
+              <br />
+              <div class="page-info">
+                <?php foreach( $links as $link ): ?>
+                  <?php $this->html( $link ) ?>
+                <?php endforeach; ?>
+              </div>
+            <?php
+          endif;
+        endforeach;
+      ?>
+      <!-- /pagestats -->
       <?php
         foreach( $this->getFooterLinks() as $category => $links ) {
           if ( $category == 'legals' ) {

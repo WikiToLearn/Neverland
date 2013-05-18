@@ -144,6 +144,10 @@ label {
   line-height: 1.8em;
   text-align: center;
 }
+h2 .mw-headline {
+  font-size: 25px;
+}
+
 #wpSave.active {
   color: rgba(255, 255, 255, 0.75);
 }

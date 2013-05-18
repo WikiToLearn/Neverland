@@ -699,7 +699,6 @@ ul.wikimenu img {
   background: #00613a;
 }
 
-
 .btn-mini {
   padding: 2px 6px;
   font-size: 12px;
@@ -759,8 +758,6 @@ h5 [class*=" icon-"] {
   background-image: url("../img/glyphicons-halflings-white.png");
 }
 
-
-
 .span9 section ul.nav-tabs li,
 .span9 section .page-actions {
   padding-top: 10px;
@@ -773,8 +770,6 @@ h5 [class*=" icon-"] {
   padding: 30px 0;
   text-align: center;
 }
-
-
 
 input.search {
   padding-right: 14px;
@@ -790,29 +785,10 @@ input.search {
   font-weight: normal;
   line-height: 1;
 }
-/*
-.navbar-inverse .navbar-search .search {
-  color: #ffffff;
-  background-color: #515151;
-  border-color: #111111;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
-  -webkit-transition: none;
-     -moz-transition: none;
-       -o-transition: none;
-          transition: none;
-}
 
-.navbar-inverse .navbar-search .search:focus,
-.navbar-inverse .navbar-search .search.focused {
-  padding: 5px 15px;
-  color: #333333;
-  text-shadow: 0 1px 0 #ffffff;
-  background-color: #ffffff;
-  border: 0;
-  outline: 0;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-}*/
+h2.corsotitolo {
+  font-size: 20px;
+  left: 5px;
+  position: relative;
+  top: -25px;
+}

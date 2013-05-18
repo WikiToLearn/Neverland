@@ -797,3 +797,44 @@ h2.corsotitolo {
   position: relative;
   top: -25px;
 }
+
+/* #006dcc -> #6AB141
+   #0044cc -> #6A8841
+   #0088cc -> #6ACC41
+   #002a80 -> #6A6E00
+   #003bb3 -> #6A7F28
+   #003399 -> #6A770E
+*/
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #6AB141;
+  *background-color: #6A8841;
+  background-image: -moz-linear-gradient(top, #6ACC41, #6A8841);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6ACC41), to(#6A8841));
+  background-image: -webkit-linear-gradient(top, #6ACC41, #6A8841);
+  background-image: -o-linear-gradient(top, #6ACC41, #6A8841);
+  background-image: linear-gradient(to bottom, #6ACC41, #6A8841);
+  border-color: #6A8841 #6A8841 #6A6E00;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #6A8841;
+  *background-color: #6A7F28;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #6A770E \9;
+}
+
+.btn-group.open .btn-primary.dropdown-toggle {
+  background-color: #6A8841;
+}

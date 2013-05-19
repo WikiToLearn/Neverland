@@ -106,11 +106,12 @@ class NeverlandTemplate extends BaseTemplate {
 
                     $c++;
 
-                    if ( $c > 1 ) {
-                        $subpages .= '<span class="divider">/</span>';
-                    }
-
                     $subpages .= $getlink;
+                    
+//                     if ( $c > 1 ) {
+                        $subpages .= '<span class="divider">/</span>';
+//                     }
+
                     $display = '';
                 } else {
 //                         $display .= '/';

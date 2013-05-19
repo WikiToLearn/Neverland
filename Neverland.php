@@ -123,7 +123,7 @@ class NeverlandTemplate extends BaseTemplate {
     }
     
     $subpages .= '<li class="active">';
-    $subpages .= $wgOut->getTitle()->getBaseTitle();
+    $subpages .= $wgOut->getTitle()->getText();
     $subpages .= '</li>';
 
 

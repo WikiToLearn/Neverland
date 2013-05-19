@@ -121,6 +121,10 @@ class NeverlandTemplate extends BaseTemplate {
             }
         }
     }
+    
+    $subpages .= '<li class="active">';
+    $subpages .= $wgOut->getTitle()->getBaseTitle();
+    $subpages .= '</li>';
 
 
     $xmlID = '';
@@ -252,8 +256,8 @@ class NeverlandTemplate extends BaseTemplate {
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
               <?php /*print $this->text('subtitle');*/ print $subpages; ?>
-                <li class="active"><?php $this->html( 'subtitle' ) ?></li>
               </ul>
+              <?php $this->html( 'subtitle' ) ?>
             </div>
             <!-- /subtitle -->
             

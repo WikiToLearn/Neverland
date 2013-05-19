@@ -214,13 +214,22 @@ class NeverlandTemplate extends BaseTemplate {
                 </a>
               <!-- /logo -->
 
-              <ul>
-                <?php
-                  $this->renderNavigation( 'VARIANTS' );
-                  $this->renderPortals( $this->data['sidebar'] );
-                  $this->renderNavigation( 'PERSONAL' );
-                ?>
-              </ul>
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+
+              <div class="nav-collapse collapse">
+                <ul>
+                  <?php
+                    $this->renderNavigation( 'VARIANTS' );
+                    $this->renderPortals( $this->data['sidebar'] );
+                    $this->renderNavigation( 'PERSONAL' );
+                  ?>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

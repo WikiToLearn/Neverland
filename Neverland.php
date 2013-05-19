@@ -78,6 +78,11 @@ class NeverlandTemplate extends BaseTemplate {
       }
     }
     
+//     <ul class="breadcrumb">
+//   <li><a href="#">Home</a> <span class="divider">/</span></li>
+//   <li><a href="#">Library</a> <span class="divider">/</span></li>
+//   <li class="active">Data</li>
+// </ul>
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
@@ -101,9 +106,10 @@ class NeverlandTemplate extends BaseTemplate {
                                 $c++;
 
                                 if ( $c > 1 ) {
-                                        $subpages .= $wgLang->getDirMarkEntity() . $this->msg( 'pipe-separator' )->escaped();
+//                                         $subpages .= $wgLang->getDirMarkEntity() . $this->msg( 'pipe-separator' )->escaped();
+                                        $subpages .= '<span class="divider">/</span>'
                                 } else {
-                                        $subpages .= '&lt; ';
+//                                         $subpages .= '&lt; ';
                                 }
 
                                 $subpages .= $getlink;

@@ -106,14 +106,19 @@ class NeverlandTemplate extends BaseTemplate {
 
                     $c++;
 
-//                     if ( $c > 1 ) {
+                    if ( $c > 1 ) {
                         $subpages .= '<span class="divider">/</span>';
-//                     }
+                    }
 
                     $subpages .= $getlink;
                     $display = '';
                 } else {
-                        $display .= '/';
+//                         $display .= '/';
+                        
+                    $subpages .= '<li class="active">';
+                    $subpages .= $link;
+                    $subpages .= '</li>';
+
                 }
                 $growinglink .= '/';
                 
@@ -122,10 +127,6 @@ class NeverlandTemplate extends BaseTemplate {
         }
     }
     
-    $subpages .= '<li class="active">';
-    $subpages .= $wgOut->getTitle()->getText();
-    $subpages .= '</li>';
-
 
     $xmlID = '';
     

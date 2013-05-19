@@ -205,23 +205,17 @@ class NeverlandTemplate extends BaseTemplate {
     <!-- content -->
     <div class="row">
         <!-- panel -->
-        <div class="span3 sidebar noprint wikimenu">
-          <div class="navbar-inner">
-            <div class="container">
+        <div class="span3 wikimenu">
+
               <!-- logo -->
                 <a href="/">
                   <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
                 </a>
               <!-- /logo -->
 
-              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </a>
+            
 
-              <div class="nav-collapse collapse">
+              <div class="">
                 <ul>
                   <?php
                     $this->renderNavigation( 'VARIANTS' );
@@ -230,8 +224,8 @@ class NeverlandTemplate extends BaseTemplate {
                   ?>
                 </ul>
               </div>
-            </div>
-          </div>
+
+
         </div>
 
         <div class="span9 pull-right">

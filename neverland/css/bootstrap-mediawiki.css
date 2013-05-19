@@ -53,9 +53,9 @@ label {
 }
 .list-header {
   margin-top: 10px;
-  margin-left: -12px !important;
+  margin-left: -16px !important;
   margin-right: -12px;
-  padding: 4px 6px;
+  padding: 2px 8px;
   margin-bottom: 5px;
   font-size: 1.20em;
   color: #fff;
@@ -636,6 +636,7 @@ ul.wikimenu {
 }
 ul.wikimenu li {
   margin-left: 10px;
+  line-height: 1.5em;
 }
 ul.wikimenu img {
   display: block;

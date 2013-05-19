@@ -155,8 +155,8 @@ class NeverlandTemplate extends BaseTemplate {
           <div>
             <ul class="wikimenu">
               <!-- logo -->
-                <a href="./">
-                  <img src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="" />
+                <a href="/">
+                  <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
                 </a>
               <!-- /logo -->
 

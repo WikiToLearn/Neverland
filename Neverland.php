@@ -106,7 +106,7 @@ class NeverlandTemplate extends BaseTemplate {
 
                     $c++;
 
-                    if ( $c < $links.count() ) {
+                    if ( $c < count($links) ) {
                         $subpages .= $getlink;
                         $subpages .= '<span class="divider">/</span>';
                     } else {

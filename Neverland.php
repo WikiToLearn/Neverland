@@ -92,6 +92,8 @@ class NeverlandTemplate extends BaseTemplate {
             $growinglink = '';
             $display = '';
 
+            $subpages .= '<ul class="breadcrumb">';
+
             foreach ( $links as $link ) {
                 $subpages .= "<li>";
                 $growinglink .= $link;
@@ -125,6 +127,7 @@ class NeverlandTemplate extends BaseTemplate {
                 
                 $subpages .= "</li>";
             }
+            subpages .= '</ul>';
         }
     }
     
@@ -259,9 +262,7 @@ class NeverlandTemplate extends BaseTemplate {
           
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
-              <ul class="breadcrumb">
               <?php print $subpages; ?>
-              </ul>
             </div>
             <!-- /subtitle -->  
 

@@ -24,6 +24,10 @@ a {
   display: none;
 }
 
+#flaggedrevs_short {
+  margin-top: -10px;
+}
+
 table td:first-child {
   padding-left: 0;
   min-width: 48px;

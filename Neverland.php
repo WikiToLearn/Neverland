@@ -245,8 +245,9 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-          
-          <?php $this->html( 'subtitle' ) ?>
+          <div class="pull-right">
+            <?php $this->html( 'subtitle' ) ?>
+          </div>
             
           <!-- firstHeading -->
           <header>

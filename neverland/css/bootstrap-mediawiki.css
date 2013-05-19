@@ -672,6 +672,11 @@ ul.wikimenu img {
   background: #00613a;
 }
 
+#wfm-logo {
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
 .btn-mini {
   padding: 2px 6px;
   font-size: 12px;

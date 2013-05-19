@@ -248,7 +248,7 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-          <div class="pull-right revisionbadge">
+          <div class="revisionbadge">
             <?php $this->html( 'subtitle' ) ?>
           </div>
             

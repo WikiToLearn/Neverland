@@ -1052,5 +1052,5 @@ h2.corsotitolo {
 /* ECHO */
 .mw-echo-overlay {
   top: 2.1em !important;
-  left: -3em;
+  left: -3em !important;
 }

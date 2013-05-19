@@ -78,11 +78,8 @@ class NeverlandTemplate extends BaseTemplate {
       }
     }
     
-//     <ul class="breadcrumb">
-//   <li><a href="#">Home</a> <span class="divider">/</span></li>
-//   <li><a href="#">Library</a> <span class="divider">/</span></li>
-//   <li class="active">Data</li>
-// </ul>
+    $bigTitle = "";
+    
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); // ->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
@@ -112,10 +109,10 @@ class NeverlandTemplate extends BaseTemplate {
                         $subpages .= $getlink;
                         $subpages .= '<span class="divider">/</span>';
                     } else {
-                    
                         $subpages .= '<li class="active">';
                         $subpages .= $display;
                         $subpages .= '</li>';
+                        $bigTitle = $display;
                     }
 
                     $display = '';
@@ -129,6 +126,10 @@ class NeverlandTemplate extends BaseTemplate {
             }
             $subpages .= '</ul>';
         }
+    }
+    
+    if ($bigTitle == "") {
+        $bigTitle = $wgOut->getTitle()->getText();
     }
     
 
@@ -252,7 +253,8 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- firstHeading -->
           <header>
             <h1 id="firstHeading">
-              <?php $this->html( 'title' ) ?>
+              <?php print $bigTitle; ?>
+              <?php /*$this->html( 'title' )*/ ?>
             </h1>
           </header>
           

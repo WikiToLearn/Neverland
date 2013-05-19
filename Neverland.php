@@ -202,6 +202,7 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- bodyContent -->
           <article id="bodyContent">
+            <?php if($this->html( 'subtitle' )) { ?>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
@@ -210,6 +211,7 @@ class NeverlandTemplate extends BaseTemplate {
               </ul>
             </div>
             <!-- /subtitle -->
+            <?php } ?>
 
             <?php if ( $this->data['undelete'] ): ?>
               <!-- undelete -->

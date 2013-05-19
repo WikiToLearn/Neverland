@@ -202,16 +202,16 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- bodyContent -->
           <article id="bodyContent">
-            <?php if($this->html( 'subtitle' )) { ?>
+            
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
-                <li><a href="/">Home</a></li>
+                <?php if($this->html( 'subtitle' )) { ?><li><a href="/">Home</a></li><?php } ?>
                 <li class="active"><?php $this->html( 'subtitle' ) ?></li>
               </ul>
             </div>
             <!-- /subtitle -->
-            <?php } ?>
+            
 
             <?php if ( $this->data['undelete'] ): ?>
               <!-- undelete -->

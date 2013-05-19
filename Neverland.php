@@ -85,7 +85,7 @@ class NeverlandTemplate extends BaseTemplate {
 // </ul>
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); // ->getPrefixedText();
-        if ( preg_match( '/\//', $ptext ) ) {
+//         if ( preg_match( '/\//', $ptext ) ) {
             $links = explode( '/', $ptext );
             array_pop( $links );
             $c = 0;
@@ -117,7 +117,7 @@ class NeverlandTemplate extends BaseTemplate {
 //                         $display .= '/';
                         
                     $subpages .= '<li class="active">';
-                    $subpages .= $link;
+                    $subpages .= $linkObj;
                     $subpages .= '</li>';
 
                 }
@@ -125,7 +125,7 @@ class NeverlandTemplate extends BaseTemplate {
                 
                 $subpages .= "</li>";
             }
-        }
+//         }
     }
     
 

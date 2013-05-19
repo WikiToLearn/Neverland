@@ -84,42 +84,38 @@ class NeverlandTemplate extends BaseTemplate {
 //   <li class="active">Data</li>
 // </ul>
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
-        $ptext = $wgOut->getTitle()->getPrefixedText();
+        $ptext = $wgOut->getTitle(); // ->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
             $links = explode( '/', $ptext );
-                array_pop( $links );
-                $c = 0;
-                $growinglink = '';
-                $display = '';
+            array_pop( $links );
+            $c = 0;
+            $growinglink = '';
+            $display = '';
 
-                foreach ( $links as $link ) {
-                        $growinglink .= $link;
-                        $display .= $link;
-                        $linkObj = Title::newFromText( $growinglink );
+            foreach ( $links as $link ) {
+                $growinglink .= $link;
+                $display .= $link;
+                $linkObj = Title::newFromText( $growinglink );
 
-                        if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
-                                $getlink = Linker::linkKnown(
-                                        $linkObj,
-                                        htmlspecialchars( $display )
-                                );
+                if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
+                    $getlink = Linker::linkKnown(
+                            $linkObj,
+                            htmlspecialchars( $display )
+                    );
 
-                                $c++;
+                    $c++;
 
-                                if ( $c > 1 ) {
-//                                         $subpages .= $wgLang->getDirMarkEntity() . $this->msg( 'pipe-separator' )->escaped();
-                                        $subpages .= '<span class="divider">/</span>';
-                                }
-//                                 } else {
-//                                         $subpages .= '&lt; ';
-//                                 }
+                    if ( $c > 1 ) {
+                        $subpages .= '<span class="divider">/</span>';
+                    }
 
-                                $subpages .= $getlink;
-                                $display = '';
-                        } else {
-                                $display .= '/';
-                        }
-                        $growinglink .= '/';
+                    $subpages .= $getlink;
+                    $display = '';
+                } else {
+                        $display .= '/';
                 }
+                $growinglink .= '/';
+            }
         }
     }
 

@@ -106,20 +106,20 @@ class NeverlandTemplate extends BaseTemplate {
 
                     $c++;
 
-                    $subpages .= $getlink;
-                    
-//                     if ( $c > 1 ) {
+                    if ( $c < $links.count() ) {
+                        $subpages .= $getlink;
                         $subpages .= '<span class="divider">/</span>';
-//                     }
+                    } else {
+                    
+                        $subpages .= '<li class="active">';
+                        $subpages .= $linkObj;
+                        $subpages .= '</li>';
+                    }
 
                     $display = '';
                 } else {
                         $display .= '/';
                         
-//                     $subpages .= '<li class="active">';
-//                     $subpages .= $linkObj;
-//                     $subpages .= '</li>';
-
                 }
                 $growinglink .= '/';
                 

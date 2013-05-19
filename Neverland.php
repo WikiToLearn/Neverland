@@ -524,7 +524,7 @@ class NeverlandTemplate extends BaseTemplate {
         case 'VARIANTS':
         if ( count( $this->data['variant_urls'] ) > 0 ) {
           ?>
-            <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header">
+            <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header">
               <?php $this->msg( 'variants' ) ?>
             </div>
             <div class="nav-collapse collapse">
@@ -604,7 +604,7 @@ class NeverlandTemplate extends BaseTemplate {
         case 'PERSONAL':
         if ( count( $this->data['personal_urls'] ) > 0 ) {
           ?>
-            <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header">
+            <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header">
               <?php $this->msg( 'personaltools' ) ?>
             </div>
             <div class="nav-collapse collapse">

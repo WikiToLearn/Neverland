@@ -604,13 +604,16 @@ class NeverlandTemplate extends BaseTemplate {
         case 'PERSONAL':
         if ( count( $this->data['personal_urls'] ) > 0 ) {
           ?>
-            <li class="list-header">
+            <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header">
               <?php $this->msg( 'personaltools' ) ?>
-            </li>
-
-            <?php foreach( $this->getPersonalTools() as $key => $item ) { ?>
-              <?php echo $this->makeListItem( $key, $item ); ?>
-            <?php } ?>
+            </div>
+            <div class="nav-collapse collapse">
+              <ul class="nav nav-list">
+                <?php foreach( $this->getPersonalTools() as $key => $item ) { ?>
+                  <?php echo $this->makeListItem( $key, $item ); ?>
+                <?php } ?>
+              </ul>
+            </div>
           <?php
         }
         break;

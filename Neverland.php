@@ -93,6 +93,7 @@ class NeverlandTemplate extends BaseTemplate {
             $display = '';
 
             foreach ( $links as $link ) {
+                $subpages .= "<li>";
                 $growinglink .= $link;
                 $display .= $link;
                 $linkObj = Title::newFromText( $growinglink );
@@ -115,6 +116,8 @@ class NeverlandTemplate extends BaseTemplate {
                         $display .= '/';
                 }
                 $growinglink .= '/';
+                
+                $subpages .= "</li>";
             }
         }
     }

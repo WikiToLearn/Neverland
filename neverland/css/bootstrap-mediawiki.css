@@ -1048,3 +1048,9 @@ h2.corsotitolo {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
+
+/* ECHO */
+..mw-echo-overlay {
+  top: 2.1em !important;
+  left: -3em;
+}

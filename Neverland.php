@@ -456,7 +456,7 @@ class NeverlandTemplate extends BaseTemplate {
     }
     
     ?>
-      <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
+      <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
         <?php $msgObj = wfMessage( $msg ); echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $msg ); ?>
       </div>
       <div class="nav-collapse collapse">

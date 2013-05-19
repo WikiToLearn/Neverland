@@ -13,9 +13,13 @@ h4, h5, h6 {
   margin-top: 10px;
 }
 a {
-  /*color: #00613A;*/
   color: #52a552;
 }
+
+.wikimenu a {
+  color: #00613A;
+}
+
 table td:first-child {
   padding-left: 0;
   min-width: 48px;

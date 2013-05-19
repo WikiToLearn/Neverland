@@ -207,19 +207,21 @@ class NeverlandTemplate extends BaseTemplate {
         <!-- panel -->
         <div class="span3 sidebar noprint">
           <div>
-            <ul class="wikimenu">
+            <div class="wikimenu">
               <!-- logo -->
                 <a href="/">
                   <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
                 </a>
               <!-- /logo -->
 
-              <?php
-                $this->renderNavigation( 'VARIANTS' );
-                $this->renderPortals( $this->data['sidebar'] );
-                $this->renderNavigation( 'PERSONAL' );
-              ?>
-            </ul>
+              <ul>
+                <?php
+                  $this->renderNavigation( 'VARIANTS' );
+                  $this->renderPortals( $this->data['sidebar'] );
+                  $this->renderNavigation( 'PERSONAL' );
+                ?>
+              </ul>
+            </div>
           </div>
         </div>
 

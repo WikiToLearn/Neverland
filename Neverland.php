@@ -257,9 +257,9 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
-              <?php /*print $this->text('subtitle');*/ print $subpages; ?>
+              <?php print $subpages; ?>
+              <li class="pull-right"> <?php $this->html( 'subtitle' ) ?> </li>
               </ul>
-              <?php $this->html( 'subtitle' ) ?>
             </div>
             <!-- /subtitle -->
             

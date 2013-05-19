@@ -207,37 +207,21 @@ class NeverlandTemplate extends BaseTemplate {
         <!-- panel -->
         <div class="span3 wikimenu">
 
-              <!-- logo -->
-                <a href="/">
-                  <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
-                </a>
-              <!-- /logo -->
+          <!-- logo -->
+            <a href="/">
+              <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
+            </a>
+          <!-- /logo -->
 
-      <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header">
-        pippo
-      </div>
-           <div class="nav-collapse collapse">
-              <ul class="nav nav-list">
-            
-                  <li>
-                    <a href="#">
-                      pluto
-                    </a>
-                  </li>
-          
-              </ul>
-            </div> 
-
-              <div class="">
-                <ul>
-                  <?php
-                    $this->renderNavigation( 'VARIANTS' );
-                    $this->renderPortals( $this->data['sidebar'] );
-                    $this->renderNavigation( 'PERSONAL' );
-                  ?>
-                </ul>
-              </div>
-
+          <div class="">
+            <ul>
+              <?php
+                $this->renderNavigation( 'VARIANTS' );
+                $this->renderPortals( $this->data['sidebar'] );
+                $this->renderNavigation( 'PERSONAL' );
+              ?>
+            </ul>
+          </div>
 
         </div>
 

@@ -770,7 +770,7 @@ h2.corsotitolo {
   left: 5px;
   position: relative;
   top: -25px;
-  border-bottom: 0px;
+  border-bottom-color: rgba(0, 0, 0, 0);
 }
 
 /* BOTTONI MODIFICA ARTICOLO */

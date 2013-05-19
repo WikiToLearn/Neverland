@@ -206,7 +206,6 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
-                <li><a href="/">Home</a></li>
                 <li class="active"><?php $this->html( 'subtitle' ) ?></li>
               </ul>
             </div>

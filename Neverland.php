@@ -85,9 +85,9 @@ class NeverlandTemplate extends BaseTemplate {
 // </ul>
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); // ->getPrefixedText();
-//         if ( preg_match( '/\//', $ptext ) ) {
+        if ( preg_match( '/\//', $ptext ) ) {
             $links = explode( '/', $ptext );
-            array_pop( $links );
+//             array_pop( $links );
             $c = 0;
             $growinglink = '';
             $display = '';
@@ -114,18 +114,18 @@ class NeverlandTemplate extends BaseTemplate {
 
                     $display = '';
                 } else {
-//                         $display .= '/';
+                        $display .= '/';
                         
-                    $subpages .= '<li class="active">';
-                    $subpages .= $linkObj;
-                    $subpages .= '</li>';
+//                     $subpages .= '<li class="active">';
+//                     $subpages .= $linkObj;
+//                     $subpages .= '</li>';
 
                 }
                 $growinglink .= '/';
                 
                 $subpages .= "</li>";
             }
-//         }
+        }
     }
     
 

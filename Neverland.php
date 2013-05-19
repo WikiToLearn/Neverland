@@ -127,7 +127,7 @@ class NeverlandTemplate extends BaseTemplate {
                 
                 $subpages .= "</li>";
             }
-            subpages .= '</ul>';
+            $subpages .= '</ul>';
         }
     }
     

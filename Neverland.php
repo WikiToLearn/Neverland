@@ -112,7 +112,7 @@ class NeverlandTemplate extends BaseTemplate {
                     } else {
                     
                         $subpages .= '<li class="active">';
-                        $subpages .= $linkObj;
+                        $subpages .= $display;
                         $subpages .= '</li>';
                     }
 

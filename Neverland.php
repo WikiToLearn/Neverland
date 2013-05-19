@@ -278,29 +278,27 @@ class NeverlandTemplate extends BaseTemplate {
   </div>
 
   <!-- footer -->
-  <div id="footer">
-    <footer class="footer">
-      <!-- pagestats -->
-      <?php
-        foreach( $this->getFooterLinks() as $category => $links ):
-          if ( $category == 'info' ):
-           foreach( $links as $link ): ?>
-            <p><?php $this->html( $link ) ?></p>
-          <?php endforeach; 
-          endif;
-        endforeach;
-      ?>
-      <!-- /pagestats -->
-      <?php
-        foreach( $this->getFooterLinks() as $category => $links ) {
-          if ( $category == 'legals' ) {
-            foreach( $links as $link ) {
-              $this->html( $link );
-            }
+  <div class="footer noprint">
+    <!-- pagestats -->
+    <?php
+      foreach( $this->getFooterLinks() as $category => $links ):
+        if ( $category == 'info' ):
+         foreach( $links as $link ): ?>
+          <p><?php $this->html( $link ) ?></p>
+        <?php endforeach; 
+        endif;
+      endforeach;
+    ?>
+    <!-- /pagestats -->
+    <?php
+      foreach( $this->getFooterLinks() as $category => $links ) {
+        if ( $category == 'legals' ) {
+          foreach( $links as $link ) {
+            $this->html( $link );
           }
         }
-      ?>
-    </footer>
+      }
+    ?>
   </div>
   <!-- /footer -->
 
@@ -438,7 +436,7 @@ class NeverlandTemplate extends BaseTemplate {
         case 'NAMESPACES':
         if ( count( $this->data['namespace_urls'] ) > 0 ) {
           ?>
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs noprint">
               <?php
                 foreach ( $this->data['namespace_urls'] as $link ):
                   if ( stripos( $link['attributes'], 'selected' ) === false ): ?>
@@ -482,7 +480,7 @@ class NeverlandTemplate extends BaseTemplate {
 
         case 'VIEWS':
         ?>
-          <div class="btn-group pull-right page-actions"> <!-- Is closed later in the 'actions' section -->
+          <div class="btn-group pull-right page-actions noprint"> <!-- Is closed later in the 'actions' section -->
         <?php
         
         if ( count( $this->data['view_urls'] ) > 0 ) {

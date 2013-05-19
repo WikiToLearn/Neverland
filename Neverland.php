@@ -105,12 +105,12 @@ class NeverlandTemplate extends BaseTemplate {
 
                                 $c++;
 
-                                if ( $c > 1 ) {
+//                                 if ( $c > 1 ) {
 //                                         $subpages .= $wgLang->getDirMarkEntity() . $this->msg( 'pipe-separator' )->escaped();
                                         $subpages .= '<span class="divider">/</span>'
-                                } else {
+//                                 } else {
 //                                         $subpages .= '&lt; ';
-                                }
+//                                 }
 
                                 $subpages .= $getlink;
                                 $display = '';

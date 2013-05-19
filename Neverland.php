@@ -243,14 +243,7 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- /top-navigation -->
 
           
-            <!-- subtitle -->
-            <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
-              <ul class="breadcrumb">
-              <?php print $subpages; ?>
-              <li class="pull-right"> <?php $this->html( 'subtitle' ) ?> </li>
-              </ul>
-            </div>
-            <!-- /subtitle -->
+          <?php $this->html( 'subtitle' ) ?>
             
           <!-- firstHeading -->
           <header>
@@ -262,7 +255,15 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- /firstHeading -->
 
           <!-- bodyContent -->
-          <article id="bodyContent">            
+          <article id="bodyContent">
+          
+            <!-- subtitle -->
+            <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
+              <ul class="breadcrumb">
+              <?php print $subpages; ?>
+              </ul>
+            </div>
+            <!-- /subtitle -->  
 
             <?php if ( $this->data['undelete'] ): ?>
               <!-- undelete -->

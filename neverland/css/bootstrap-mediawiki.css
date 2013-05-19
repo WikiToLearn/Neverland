@@ -24,8 +24,8 @@ a {
   display: none;
 }
 
-#flaggedrevs_short {
-  margin-top: -10px;
+.revisionbadge {
+  padding-top: -10px;
 }
 
 table td:first-child {

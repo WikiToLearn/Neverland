@@ -57,7 +57,7 @@ label {
   display: inline;
 }
 .list-header {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: -16px !important;
   margin-right: -12px;
   padding: 2px 8px;
@@ -680,7 +680,7 @@ ul.wikimenu img {
 
 #wfm-logo {
   margin-top:15px;
-  margin-bottom:40px;
+  margin-bottom:30px;
 }
 
 .btn-mini {

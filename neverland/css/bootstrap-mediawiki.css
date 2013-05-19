@@ -25,7 +25,7 @@ a {
 }
 
 .revisionbadge {
-  padding-top: -10px;
+  margin-top: -10px;
 }
 
 table td:first-child {

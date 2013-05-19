@@ -77,6 +77,45 @@ class NeverlandTemplate extends BaseTemplate {
         unset( $nav['actions'][$mode] );
       }
     }
+    
+    if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
+        $ptext = $this->getTitle()->getPrefixedText();
+        if ( preg_match( '/\//', $ptext ) ) {
+            $links = explode( '/', $ptext );
+                array_pop( $links );
+                $c = 0;
+                $growinglink = '';
+                $display = '';
+
+                foreach ( $links as $link ) {
+                        $growinglink .= $link;
+                        $display .= $link;
+                        $linkObj = Title::newFromText( $growinglink );
+
+                        if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
+                                $getlink = Linker::linkKnown(
+                                        $linkObj,
+                                        htmlspecialchars( $display )
+                                );
+
+                                $c++;
+
+                                if ( $c > 1 ) {
+                                        $subpages .= $wgLang->getDirMarkEntity() . $this->msg( 'pipe-separator' )->escaped();
+                                } else {
+                                        $subpages .= '&lt; ';
+                                }
+
+                                $subpages .= $getlink;
+                                $display = '';
+                        } else {
+                                $display .= '/';
+                        }
+                        $growinglink .= '/';
+                }
+        }
+    }
+
 
     $xmlID = '';
     
@@ -206,7 +245,7 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <ul class="breadcrumb">
-              <?php /*print $this->text('subtitle');*/ print $wgOut->getTitle()->getSubpages()->count(); ?>
+              <?php /*print $this->text('subtitle');*/ print $subpages; ?>
                 <li class="active"><?php $this->html( 'subtitle' ) ?></li>
               </ul>
             </div>

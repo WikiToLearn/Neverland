@@ -643,7 +643,7 @@ table.vertical-centered td {
 	word-break: break-word;
 }
 
-.wikimenu {
+.wikimenu div {
   margin: 0 25px;
   font-size: 15px;
 }

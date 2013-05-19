@@ -619,15 +619,14 @@ class NeverlandTemplate extends BaseTemplate {
         case 'SEARCH':
         ?>
             <form action="<?php $this->text( 'wgScript' ) ?>" id="searchform" class="navbar-search pull-right">
-            <div class="input-append">
+<!--             <div class="input-append"> -->
               <input id="searchInput" name="search" type="search" placeholder="<?php $this->msg( 'search' ) ?>"
                    class="search" autocomplete="off"
               <?php if( isset( $this->data['search'] ) ): ?>
                 value="<?php $this->text( 'search' ) ?>"
               <?php endif; ?> />
-              
-              <button class="btn"><i class="icon-search"></i></button>
-            </div>
+<!--               <button class="btn"><i class="icon-search"></i></button> -->
+<!--             </div> -->
 
               <input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
             </form>

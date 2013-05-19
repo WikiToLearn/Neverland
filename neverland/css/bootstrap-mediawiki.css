@@ -643,15 +643,15 @@ table.vertical-centered td {
 	word-break: break-word;
 }
 
-ul.wikimenu {
+.wikimenu {
   margin: 0 25px;
   font-size: 15px;
 }
-ul.wikimenu li {
+.wikimenu li { /************************************************/
   margin-left: 10px;
   line-height: 1.5em;
 }
-ul.wikimenu img {
+.wikimenu img {
   display: block;
   margin: 0 auto 20px;
 }

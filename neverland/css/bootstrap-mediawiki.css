@@ -673,8 +673,8 @@ ul.wikimenu img {
 }
 
 #wfm-logo {
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-top:15px;
+  margin-bottom:45px;
 }
 
 .btn-mini {
@@ -697,7 +697,7 @@ h5 [class*=" icon-"] {
 }
 
 .navbar-static-top {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .navbar-static-top .nav > li > a > [class^="icon-"],

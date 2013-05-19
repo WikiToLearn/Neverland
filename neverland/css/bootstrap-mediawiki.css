@@ -642,7 +642,7 @@ table.vertical-centered td {
 .mw-sp-translate-table > tbody > tr > td:last-child {
 	word-break: break-word;
 }
-/*
+
 .wikimenu {
   margin: 0 25px;
   font-size: 15px;
@@ -650,7 +650,7 @@ table.vertical-centered td {
 .wikimenu li {
   margin-left: 10px;
   line-height: 1.5em;
-}*/
+}
 .wikimenu img {
   display: block;
   margin: 0 auto 20px;

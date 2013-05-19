@@ -207,7 +207,7 @@ class NeverlandTemplate extends BaseTemplate {
         <!-- panel -->
         <div class="span3 sidebar noprint">
           <div>
-            <div class="wikimenu">
+            <ul class="wikimenu">
               <!-- logo -->
                 <a href="/">
                   <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
@@ -219,7 +219,7 @@ class NeverlandTemplate extends BaseTemplate {
                 $this->renderPortals( $this->data['sidebar'] );
                 $this->renderNavigation( 'PERSONAL' );
               ?>
-            </div>
+            </ul>
           </div>
         </div>
 
@@ -456,11 +456,9 @@ class NeverlandTemplate extends BaseTemplate {
     }
     
     ?>
-      <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
+      <li class="list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
         <?php $msgObj = wfMessage( $msg ); echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $msg ); ?>
-      </div>
-      <div class="nav-collapse collapse">
-        <ul class="nav nav-list">
+      </li>
     <?php
     if ( is_array( $content ) ) {
       foreach( $content as $key => $val ) {
@@ -473,10 +471,6 @@ class NeverlandTemplate extends BaseTemplate {
     } else {
       echo $content; /* Allow raw HTML block to be defined by extensions */
     }
-    ?>
-        </ul>
-      </div>
-    <?php
   }
 
   /**
@@ -530,20 +524,17 @@ class NeverlandTemplate extends BaseTemplate {
         case 'VARIANTS':
         if ( count( $this->data['variant_urls'] ) > 0 ) {
           ?>
-            <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header">
+            <li class="list-header">
               <?php $this->msg( 'variants' ) ?>
-            </div>
-            <div class="nav-collapse collapse">
-              <ul class="nav nav-list">
-                <?php foreach ( $this->data['variant_urls'] as $link ): ?>
-                  <li <?php echo $link['attributes'] ?>>
-                    <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
-                      <?php echo htmlspecialchars( $link['text'] ) ?>
-                    </a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
+            </li>
+            
+            <?php foreach ( $this->data['variant_urls'] as $link ): ?>
+              <li <?php echo $link['attributes'] ?>>
+                <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
+                  <?php echo htmlspecialchars( $link['text'] ) ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
           <?php
         }
         break;
@@ -610,16 +601,13 @@ class NeverlandTemplate extends BaseTemplate {
         case 'PERSONAL':
         if ( count( $this->data['personal_urls'] ) > 0 ) {
           ?>
-            <div data-target=".nav-collapse" data-toggle="collapse" class="nav-header list-header">
+            <li class="list-header">
               <?php $this->msg( 'personaltools' ) ?>
-            </div>
-            <div class="nav-collapse collapse">
-              <ul class="nav nav-list">
-                <?php foreach( $this->getPersonalTools() as $key => $item ) { ?>
-                  <?php echo $this->makeListItem( $key, $item ); ?>
-                <?php } ?>
-              </ul>
-            </div>
+            </li>
+
+            <?php foreach( $this->getPersonalTools() as $key => $item ) { ?>
+              <?php echo $this->makeListItem( $key, $item ); ?>
+            <?php } ?>
           <?php
         }
         break;

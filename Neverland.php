@@ -456,9 +456,11 @@ class NeverlandTemplate extends BaseTemplate {
     }
     
     ?>
-      <li class="list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
+      <div data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar nav-header list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
         <?php $msgObj = wfMessage( $msg ); echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $msg ); ?>
-      </li>
+      </div>
+      <div class="nav-collapse collapse">
+        <ul class="nav nav-list">
     <?php
     if ( is_array( $content ) ) {
       foreach( $content as $key => $val ) {
@@ -471,6 +473,10 @@ class NeverlandTemplate extends BaseTemplate {
     } else {
       echo $content; /* Allow raw HTML block to be defined by extensions */
     }
+    ?>
+        </ul>
+      </div>
+    <?php
   }
 
   /**

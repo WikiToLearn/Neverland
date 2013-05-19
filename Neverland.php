@@ -79,7 +79,7 @@ class NeverlandTemplate extends BaseTemplate {
     }
     
     if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
-        $ptext = $this->getTitle()->getPrefixedText();
+        $ptext = $wgOut->getTitle()->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
             $links = explode( '/', $ptext );
                 array_pop( $links );

@@ -80,7 +80,7 @@ class NeverlandTemplate extends BaseTemplate {
     
     $bigTitle = "";
     
-    if ( $wgOut->isArticle() && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
+    if ( $wgOut->isArticle() ) { // && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); // ->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
             $links = explode( '/', $ptext );
@@ -206,7 +206,7 @@ class NeverlandTemplate extends BaseTemplate {
     <!-- content -->
     <div class="row">
         <!-- panel -->
-        <div class="span3 wikimenu">
+        <div class="span3 wikimenu noprint">
 
           <!-- logo -->
             <a href="/">

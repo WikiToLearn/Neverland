@@ -229,8 +229,8 @@ class NeverlandTemplate extends BaseTemplate {
 
         </div>
 
-        <div class="span9 pull-right" id="content">
-        <section>
+        <div class="span9 pull-right">
+        <section id="content">
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
           </div>
@@ -266,7 +266,7 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- /firstHeading -->
 
           <!-- bodyContent -->
-          <div id="bodyContent">
+          <article id="bodyContent">
           
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
@@ -325,7 +325,7 @@ class NeverlandTemplate extends BaseTemplate {
             <?php $this->html( 'debughtml' ); ?>
             <!-- /debughtml -->
 
-          </div>
+          </article>
           <!-- /bodyContent -->
           <div class="minchiatina">
             <div class="a"></div>

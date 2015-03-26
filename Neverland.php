@@ -230,7 +230,8 @@ class NeverlandTemplate extends BaseTemplate {
         </div>
 
         <div class="span9 pull-right">
-        <section id="content">
+        <section>
+        <div id="content">
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
           </div>
@@ -334,6 +335,8 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="d"></div>
             <div class="e"></div>
           </div>
+          
+        </div> <!--content-->
         </section>
         </div>
 

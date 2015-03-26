@@ -268,6 +268,27 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- bodyContent -->
           <article>
+          
+            <?php if ( $this->data['undelete'] ): ?>
+              <!-- undelete -->
+              <div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
+              <!-- /undelete -->
+            <?php endif; ?>
+
+            <?php if( $this->data['newtalk'] ): ?>
+              <!-- newtalk -->
+              <div class="usermessage"><?php $this->html( 'newtalk' )  ?></div>
+              <!-- /newtalk -->
+            <?php endif; ?>
+
+            <?php if ( $this->data['showjumplinks'] ): ?>
+              <!-- jumpto -->
+              <div id="jump-to-nav" class="mw-jump">
+                <?php $this->msg( 'jumpto' ) ?> <a href="#mw-head"><?php $this->msg( 'jumptonavigation' ) ?></a>,
+                <a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
+              </div>
+              <!-- /jumpto -->
+            <?php endif; ?>
             
           <div id="bodyContent">
           

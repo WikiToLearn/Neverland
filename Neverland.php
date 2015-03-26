@@ -252,7 +252,7 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-          <div class="revisionbadge">
+          <div class="revisionbadge" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
             

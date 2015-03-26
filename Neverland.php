@@ -213,7 +213,7 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- logo -->
             <a href="/">
-              <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
+              <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/Neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
             </a>
           <!-- /logo -->
 
@@ -374,7 +374,7 @@ class NeverlandTemplate extends BaseTemplate {
 
     <?php $this->printTrail(); ?>
   
-    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/neverland/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
     <!--<script type="text/javascript">

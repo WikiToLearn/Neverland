@@ -12,6 +12,8 @@ if( !defined( 'MEDIAWIKI' ) ) {
   die( -1 );
 }
 
+$wgValidSkinNames['neverland'] = 'Neverland';
+
 /**
  * SkinTemplate class for Neverland skin
  * @ingroup Skins

@@ -220,9 +220,9 @@ class NeverlandTemplate extends BaseTemplate {
 <!--          <div class="">
             <ul>
               <?php
-                $this->renderNavigation( 'VARIANTS' );
-                $this->renderPortals( $this->data['sidebar'] );
-                $this->renderNavigation( 'PERSONAL' );
+//                 $this->renderNavigation( 'VARIANTS' );
+//                 $this->renderPortals( $this->data['sidebar'] );
+//                 $this->renderNavigation( 'PERSONAL' );
               ?>
             </ul>
           </div>-->

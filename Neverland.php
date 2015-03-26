@@ -217,7 +217,7 @@ class NeverlandTemplate extends BaseTemplate {
             </a>
           <!-- /logo -->
 
-          <div class="">
+<!--          <div class="">
             <ul>
               <?php
                 $this->renderNavigation( 'VARIANTS' );
@@ -225,7 +225,7 @@ class NeverlandTemplate extends BaseTemplate {
                 $this->renderNavigation( 'PERSONAL' );
               ?>
             </ul>
-          </div>
+          </div>-->
 
         </div>
 

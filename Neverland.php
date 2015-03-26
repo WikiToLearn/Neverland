@@ -231,7 +231,6 @@ class NeverlandTemplate extends BaseTemplate {
 
         <div class="span9 pull-right">
         <section>
-        <div id="content">
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
           </div>
@@ -252,6 +251,7 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
+        <div id="content">
           <div class="revisionbadge" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
@@ -268,7 +268,6 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- bodyContent -->
           <article>
-          <div id="bodyContent">
           
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
@@ -297,6 +296,7 @@ class NeverlandTemplate extends BaseTemplate {
               <!-- /jumpto -->
             <?php endif; ?>
 
+          <div id="bodyContent">
             <!-- bodycontent -->
             <?php $this->html( 'bodycontent' ) ?>
             <!-- /bodycontent -->

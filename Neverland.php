@@ -20,7 +20,7 @@ $wgValidSkinNames['neverland'] = 'Neverland';
  */
 class SkinNeverland extends SkinTemplate {
 
-  var $skinname = 'neverland', $stylename = 'neverland',
+  var $skinname = 'Neverland', $stylename = 'Neverland',
     $template = 'NeverlandTemplate', $useHeadElement = true;
 
   /**

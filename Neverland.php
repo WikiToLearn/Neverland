@@ -217,15 +217,15 @@ class NeverlandTemplate extends BaseTemplate {
             </a>
           <!-- /logo -->
 
-<!--          <div class="">
+          <div class="">
             <ul>
               <?php
-//                 $this->renderNavigation( 'VARIANTS' );
-//                 $this->renderPortals( $this->data['sidebar'] );
-//                 $this->renderNavigation( 'PERSONAL' );
+                $this->renderNavigation( 'VARIANTS' );
+                $this->renderPortals( $this->data['sidebar'] );
+                $this->renderNavigation( 'PERSONAL' );
               ?>
             </ul>
-          </div>-->
+          </div>
 
         </div>
 
@@ -332,15 +332,16 @@ class NeverlandTemplate extends BaseTemplate {
           
           </article>
           <!-- /bodyContent -->
-<!--          <div class="minchiatina">
+          
+        </div> <!--content-->
+        
+          <div class="minchiatina">
             <div class="a"></div>
             <div class="b"></div>
             <div class="c"></div>
             <div class="d"></div>
             <div class="e"></div>
-          </div>-->
-          
-        </div> <!--content-->
+          </div>
         </section>
         </div>
 

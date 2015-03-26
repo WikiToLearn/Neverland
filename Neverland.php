@@ -269,12 +269,6 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- bodyContent -->
           <article>
           
-            <!-- subtitle -->
-            <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
-              <?php print $subpages; ?>
-            </div>
-            <!-- /subtitle -->  
-
             <?php if ( $this->data['undelete'] ): ?>
               <!-- undelete -->
               <div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
@@ -295,12 +289,21 @@ class NeverlandTemplate extends BaseTemplate {
               </div>
               <!-- /jumpto -->
             <?php endif; ?>
-
+            
           <div id="bodyContent">
+          
+            <!-- subtitle -->
+            <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
+              <?php print $subpages; ?>
+            </div>
+            <!-- /subtitle -->  
+
             <!-- bodycontent -->
             <?php $this->html( 'bodycontent' ) ?>
             <!-- /bodycontent -->
 
+          </div>
+          
             <?php if ( $this->data['printfooter'] ): ?>
               <!-- printfooter -->
               <div class="printfooter">
@@ -326,8 +329,6 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- debughtml -->
             <?php $this->html( 'debughtml' ); ?>
             <!-- /debughtml -->
-          
-          </div>
           
           </article>
           <!-- /bodyContent -->

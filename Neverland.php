@@ -332,13 +332,13 @@ class NeverlandTemplate extends BaseTemplate {
           
           </article>
           <!-- /bodyContent -->
-          <div class="minchiatina">
+<!--          <div class="minchiatina">
             <div class="a"></div>
             <div class="b"></div>
             <div class="c"></div>
             <div class="d"></div>
             <div class="e"></div>
-          </div>
+          </div>-->
           
         </div> <!--content-->
         </section>

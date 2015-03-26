@@ -4,6 +4,11 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.content {
+    font-size: 13pt;
+    line-height: 1.5em;
+}
+
 #mw-content-text {
    font-size: 13pt;
    line-height: 1.5em;

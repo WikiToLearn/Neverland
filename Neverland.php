@@ -331,10 +331,8 @@ class NeverlandTemplate extends BaseTemplate {
           </div>
           
           </article>
-          <!-- /bodyContent -->
-          
         </div> <!--content-->
-        
+          <!-- /bodyContent -->
           <div class="minchiatina">
             <div class="a"></div>
             <div class="b"></div>
@@ -342,6 +340,7 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="d"></div>
             <div class="e"></div>
           </div>
+          
         </section>
         </div>
 

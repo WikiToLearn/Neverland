@@ -209,24 +209,13 @@ class NeverlandTemplate extends BaseTemplate {
     <!-- content -->
     <div class="row">
         <!-- panel -->
-        <div class="span3 wikimenu noprint">
+        <div id="p-logo" class="span3 wikimenu noprint">
 
           <!-- logo -->
             <a href="/">
               <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/Neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
             </a>
           <!-- /logo -->
-
-          <div class="">
-            <ul>
-              <?php
-                $this->renderNavigation( 'VARIANTS' );
-                $this->renderPortals( $this->data['sidebar'] );
-                $this->renderNavigation( 'PERSONAL' );
-              ?>
-            </ul>
-          </div>
-
         </div>
 
         <div class="span9 pull-right">
@@ -268,27 +257,6 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- bodyContent -->
           <article>
-          
-            <?php if ( $this->data['undelete'] ): ?>
-              <!-- undelete -->
-              <div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
-              <!-- /undelete -->
-            <?php endif; ?>
-
-            <?php if( $this->data['newtalk'] ): ?>
-              <!-- newtalk -->
-              <div class="usermessage"><?php $this->html( 'newtalk' )  ?></div>
-              <!-- /newtalk -->
-            <?php endif; ?>
-
-            <?php if ( $this->data['showjumplinks'] ): ?>
-              <!-- jumpto -->
-              <div id="jump-to-nav" class="mw-jump">
-                <?php $this->msg( 'jumpto' ) ?> <a href="#mw-head"><?php $this->msg( 'jumptonavigation' ) ?></a>,
-                <a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
-              </div>
-              <!-- /jumpto -->
-            <?php endif; ?>
             
           <div id="bodyContent">
           
@@ -304,41 +272,7 @@ class NeverlandTemplate extends BaseTemplate {
 
           </div>
           
-            <?php if ( $this->data['printfooter'] ): ?>
-              <!-- printfooter -->
-              <div class="printfooter">
-                <?php $this->html( 'printfooter' ); ?>
-              </div>
-            <!-- /printfooter -->
-            <?php endif; ?>
-
-            <?php if ( $this->data['catlinks'] ): ?>
-              <!-- catlinks -->
-              <?php $this->html( 'catlinks' ); ?>
-              <!-- /catlinks -->
-            <?php endif; ?>
-
-            <?php if ( $this->data['dataAfterContent'] ): ?>
-              <!-- dataAfterContent -->
-              <?php $this->html( 'dataAfterContent' ); ?>
-              <!-- /dataAfterContent -->
-            <?php endif; ?>
-
-            <div class="visualClear"></div>
-
-            <!-- debughtml -->
-            <?php $this->html( 'debughtml' ); ?>
-            <!-- /debughtml -->
-          
           </article>
-          <!-- /bodyContent -->
-          <div class="minchiatina">
-            <div class="a"></div>
-            <div class="b"></div>
-            <div class="c"></div>
-            <div class="d"></div>
-            <div class="e"></div>
-          </div>
           
         </div> <!--content-->
         </section>

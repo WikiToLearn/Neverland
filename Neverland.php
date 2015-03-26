@@ -266,7 +266,7 @@ class NeverlandTemplate extends BaseTemplate {
           <!-- /firstHeading -->
 
           <!-- bodyContent -->
-          <article id="bodyContent">
+          <div id="bodyContent">
           
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
@@ -325,7 +325,7 @@ class NeverlandTemplate extends BaseTemplate {
             <?php $this->html( 'debughtml' ); ?>
             <!-- /debughtml -->
 
-          </article>
+          </div>
           <!-- /bodyContent -->
           <div class="minchiatina">
             <div class="a"></div>

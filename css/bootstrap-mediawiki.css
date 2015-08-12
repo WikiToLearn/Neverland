@@ -1062,3 +1062,26 @@ h2.corsotitolo {
   top: 2.1em !important;
   left: -3em !important;
 }
+
+/* Gli stili CSS inseriti qui si applicano a tutte le skin */
+ 
+/* Il codice ora ha la stessa grandezza del testo normale */
+div.mw-geshi div,
+div.mw-geshi div pre,
+span.mw-geshi,
+pre.source-css,
+pre.source-javascript {
+   font-family: Monaco,Menlo,Consolas,"Courier New",monospace !important;
+   font-size: 14px;
+}
+ 
+div.ace_editor {
+  line-height: 1em;
+}
+
+textarea {
+	font-family: monospace;
+        font-size: 10pt;
+}
+ 
+/* Vedi anche MediaWiki:Common-unused.css */

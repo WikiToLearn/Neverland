@@ -213,7 +213,7 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- logo -->
             <a href="/">
-              <img id="wfm-logo" src="<?php echo $wgStylePath; ?>/Neverland/images/sidebar-logo.png" alt="WikiFM Logo" />
+              <img id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiFM Logo" />
             </a>
           <!-- /logo -->
 

@@ -212,8 +212,8 @@ class NeverlandTemplate extends BaseTemplate {
         <div id="p-side" class="span3 wikimenu noprint">
 
           <!-- logo -->
-            <a href="/">
-              <img id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiFM Logo" />
+            <a href="//www.wikitolearn.org">
+              <img id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
             </a>
           <!-- /logo -->
 

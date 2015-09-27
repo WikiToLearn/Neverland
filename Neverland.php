@@ -67,6 +67,8 @@ class NeverlandTemplate extends BaseTemplate {
     global $wgRequest, $wgOut, $wgCanonicalNamespace, $wgContLang, $wgSitename,
          $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch;
 
+    $skin = $this->getSkin();
+    $user = $skin->getUser();
     // Build additional attributes for navigation urls
     $nav = $this->data['content_navigation'];
 
@@ -193,11 +195,45 @@ class NeverlandTemplate extends BaseTemplate {
         <a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="brand">
           <?php echo $wgSitename; ?>
         </a>
-         
+
         <!-- Everything you want hidden at 940px or less, place within here -->
         <div class="nav-collapse collapse">
           <!-- .nav, .navbar-search, .navbar-form, etc -->
-          <?php $this->renderNavigation( 'SEARCH' ); ?>
+            <div class="pull-right">
+                <div class="dropdown" style="float:left;" id="user-info">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 100px;">
+                        <?php echo $user->getName(); ?>
+                        <span style="float:right;" class="caret"></span>
+                    </button>
+<!-- 				<a class="header-button fade-trigger"></a> -->
+                    <ul class="header-menu fadable faded dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <?php
+                        // generate user tools (and notifications item in user tools if needed)
+                        $personalToolsCount = 0;
+                        foreach ( $this->getPersonalTools() as $key => $tool ) {
+                            $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
+                            echo $this->makeListItem( $key, $tool );
+                            if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
+                                    ?>
+                                    <li id="pt-notifications-personaltools" class="header-dropdown-item">
+                                    <?php
+                                        echo Linker::link(
+                                            SpecialPage::getTitleFor( 'Notifications' ),
+                                            $this->getMsg( 'notifications' )->plain(),
+                                            Linker::tooltipAndAccesskeyAttribs( 'pt-notifications' )
+                                        )
+                                    ?>
+                                </li>
+                            <?php
+                            }
+                            $personalToolsCount++;
+                        }
+                        ?>
+                    </ul>
+                    <div style="list-style:none;float:right;padding:10px;padding-left:15px;" id="echo"></div>
+                </div>
+                <?php $this->renderNavigation( 'SEARCH' ); ?>
+            </div>
         </div>
 
       </div>
@@ -217,11 +253,10 @@ class NeverlandTemplate extends BaseTemplate {
             </a>
           <!-- /logo -->
 
-          <div class="">
+          <div class="">        
             <ul>
               <?php
                 $this->renderNavigation( 'VARIANTS' );
-                $this->renderNavigation( 'PERSONAL' );
                 $this->renderPortals( $this->data['sidebar'] );
 //                $this->renderNavigation( 'PERSONAL' );
               ?>
@@ -383,6 +418,16 @@ class NeverlandTemplate extends BaseTemplate {
     <?php $this->printTrail(); ?>
   
     <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        /* Fix for Echo in Refreshed */
+        if ( document.getElementById( 'echo' ) ) {
+                $( '#pt-notifications' ).prependTo( '#echo' );
+        }
+
+        if ( $( '.mw-echo-notifications-badge' ).hasClass( 'mw-echo-unread-notifications' ) ) {
+                $( '#pt-notifications-personaltools a' ).addClass( 'pt-notifications-personaltools-unread' );
+        }
+    </script>
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
     <!--<script type="text/javascript">
@@ -616,9 +661,9 @@ class NeverlandTemplate extends BaseTemplate {
         case 'PERSONAL':
         if ( count( $this->data['personal_urls'] ) > 0 ) {
           ?>
-            <li class="list-header">
-              <?php $this->msg( 'personaltools' ) ?>
-            </li>
+<!--             <li class="list-header"> -->
+<!--               <?php $this->msg( 'personaltools' ) ?> -->
+<!--             </li> -->
 
             <?php foreach( $this->getPersonalTools() as $key => $item ) { ?>
               <?php echo $this->makeListItem( $key, $item ); ?>

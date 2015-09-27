@@ -1,4 +1,4 @@
 Neverland
 =========
 
-Default Skin for WikiFM.
+Default Skin for WikiToLearn

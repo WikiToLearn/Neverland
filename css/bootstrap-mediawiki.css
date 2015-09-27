@@ -1084,4 +1084,40 @@ textarea {
         font-size: 10pt;
 }
  
+/* Gli stili CSS inseriti qui si applicano a tutte le skin */
+ 
+/* Il codice ora ha la stessa grandezza del testo normale */
+div.mw-geshi div,
+div.mw-geshi div pre,
+span.mw-geshi,
+pre.source-css,
+pre.source-javascript {
+   font-family: Monaco,Menlo,Consolas,"Courier New",monospace !important;
+   font-size: 14px;
+}
+.contributionscores-title  {
+display:none;
+}
+span.mw-collapsible-toggle {
+float:right !important;
+}
+ 
+div.ace_editor {
+  line-height: 1em;
+}
+ 
+.page-Pagina_principale .btn-group,
+.page-Pagina_principale .nav, 
+.page-Pagina_principale #firstHeading,
+.page-Pagina_principale #contentSub,
+.page-Pagina_principale .revisionbadge {
+  display:none;
+}
+ 
+textarea {
+	font-family: monospace;
+        font-size: 10pt;
+}
+ 
+ 
 /* Vedi anche MediaWiki:Common-unused.css */

@@ -434,6 +434,14 @@ class NeverlandTemplate extends BaseTemplate {
         if ( $( '.mw-echo-notifications-badge' ).hasClass( 'mw-echo-unread-notifications' ) ) {
                 $( '#pt-notifications-personaltools a' ).addClass( 'pt-notifications-personaltools-unread' );
         }
+          
+        $( document ).ready(function() {
+
+        $('form[name=userlogin]').addClass("col-xs-12");
+        $('#userloginForm').addClass("row");
+        $('#userlogin2').addClass("col-xs-12");        
+        });
+        
     </script>    
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->

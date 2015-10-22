@@ -287,11 +287,11 @@ class NeverlandTemplate extends BaseTemplate {
           <?php endif; ?>
 
           <!-- page-actions -->
-          <?php //$this->renderNavigation( array( 'VIEWS', 'ACTIONS' ) ); ?>
+          <?php $this->renderNavigation( array( 'VIEWS', 'ACTIONS' ) ); ?>
           <!-- /page-actions -->
 
           <!-- top-navigation -->
-          <?php //$this->renderNavigation( 'NAMESPACES' ); ?>
+          <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
         <div id="content row">
@@ -439,7 +439,13 @@ class NeverlandTemplate extends BaseTemplate {
 
         $('form[name=userlogin]').addClass("col-xs-12");
         $('#userloginForm').addClass("row");
-        $('#userlogin2').addClass("col-xs-12");        
+        $('#userlogin2').addClass("col-xs-12"); 
+
+        if ($('body').hasClass('page-Pagina_principale')) {
+          $('.nav.nav-tabs').hide();
+          $('.btn-group.pull-right.page-actions').hide();
+          $('#firstHeading').hide();
+        };        
         });
         
     </script>    

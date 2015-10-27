@@ -183,7 +183,7 @@ class NeverlandTemplate extends BaseTemplate {
 <nav class="navbar navbar-default navbar-inverse navbar-static-top Neverland noprint">
   <div class="container">
       <div class="row">
-          <div class="col-lg-4">
+          <div class="col-sm-4">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -197,7 +197,7 @@ class NeverlandTemplate extends BaseTemplate {
                 </a>
               </div>
           </div>
-          <div class="col-lg-8">
+          <div class="col-sm-8">
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right" role="search">
@@ -252,7 +252,7 @@ class NeverlandTemplate extends BaseTemplate {
     <!-- content -->
     <div class="row">
         <!-- panel -->
-        <div id="p-side" class="col-lg-3 wikimenu noprint">
+        <div id="p-side" class="col-sm-3 wikimenu noprint">
 
           <!-- logo -->
             <a href="//www.wikitolearn.org">
@@ -272,7 +272,7 @@ class NeverlandTemplate extends BaseTemplate {
 
         </div>
 
-        <div class="col-lg-9">
+        <div class="col-sm-9">
         <section>
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>

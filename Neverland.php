@@ -183,7 +183,7 @@ class NeverlandTemplate extends BaseTemplate {
 <nav class="navbar navbar-default navbar-inverse navbar-static-top Neverland noprint">
   <div class="container">
       <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-6">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -197,7 +197,7 @@ class NeverlandTemplate extends BaseTemplate {
                 </a>
               </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-6">
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
                 <form class="navbar-form navbar-right" role="search">

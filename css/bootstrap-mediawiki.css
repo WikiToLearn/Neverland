@@ -654,9 +654,8 @@ table.vertical-centered td {
 }
 
 .wikimenu ul {
+  margin: 0 25px;
   font-size: 15px;
-  margin-left: -25px;
-  margin-right: 12px;
 }
 .wikimenu li {
   margin-left: 10px;
@@ -772,7 +771,6 @@ h5 [class*=" icon-"] {
   margin-top: 70px;
   padding: 30px 0;
   text-align: center;
-  margin-top:22%;
 }
 
 input.search {
@@ -1061,9 +1059,9 @@ h2.corsotitolo {
 
 /* ECHO */
 .mw-echo-overlay {
-/*  top: 2.1em !important;
+  top: 2.1em !important;
   left: -3em !important;
-*/}
+}
 
 /* Gli stili CSS inseriti qui si applicano a tutte le skin */
  
@@ -1108,7 +1106,14 @@ div.ace_editor {
   line-height: 1em;
 }
  
-
+.page-Pagina_principale .btn-group,
+.page-Pagina_principale .nav, 
+.page-Pagina_principale #firstHeading,
+.page-Pagina_principale #contentSub,
+.page-Pagina_principale .revisionbadge {
+  display:none;
+}
+ 
 textarea {
 	font-family: monospace;
         font-size: 10pt;

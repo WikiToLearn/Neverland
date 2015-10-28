@@ -47,7 +47,7 @@ class SkinNeverland extends SkinTemplate {
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
     $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
-    //$out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
   }
 }
@@ -179,80 +179,73 @@ class NeverlandTemplate extends BaseTemplate {
     $this->html( 'headelement' );
   ?>
 
-<!-- header -->
-<nav class="navbar navbar-default navbar-inverse navbar-static-top Neverland noprint">
-  <div class="container">
-      <div class="row">
-          <div class="col-lg-4">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999;    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:141%;">
-                    <?php echo $wgSitename; ?>
-                </a>
-              </div>
-          </div>
-          <div class="col-lg-8">
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-right" role="search">
-                  <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search" style="max-width: 178%;">
-                        </div>
-                    </div>
-                  </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <?php
-                                // generate user tools (and notifications item in user tools if needed)
-                                $personalToolsCount = 0;
-                                foreach ( $this->getPersonalTools() as $key => $tool ) {
-                                    $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
-                                    echo $this->makeListItem( $key, $tool );
-                                    if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
-                        ?>
-                                            <li id="pt-notifications-personaltools" class="header-dropdown-item">
-                        <?php
-                                                echo Linker::link(
-                                                    SpecialPage::getTitleFor( 'Notifications' ),
-                                                    $this->getMsg( 'notifications' )->plain(),
-                                                    Linker::tooltipAndAccesskeyAttribs( 'pt-notifications' )
-                                                )
-                        ?>
-                                            </li>
-                        <?php
-                                    } else {
-                                      //echo '<div><a href="javascript:void(0)" class="mw-echo-notifications-badge" style="color:rgba(0, 0, 0, 0);">0</a></div>';
-                                    }
-                                    $personalToolsCount++;
-                                }
-                        ?>
-                      </ul>
-                    </li>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-          </div>
-      </div>
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- /header -->
+  <!-- header -->
+  <div id="top-small" class="navbar navbar-inverse navbar-static-top Neverland noprint">
+    <div class="navbar-inner">
+      <div class="container">
 
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+
+        <!-- Be sure to leave the brand out there if you want it shown -->
+        <a href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="brand">
+          <?php echo $wgSitename; ?>
+        </a>
+
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        <div class="nav-collapse collapse">
+          <!-- .nav, .navbar-search, .navbar-form, etc -->
+            <div class="pull-right">
+                <div class="dropdown" style="float:left;" id="user-info">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width: 100px;">
+                        <?php echo $user->getName(); ?>
+                        <span style="float:right;" class="caret"></span>
+                    </button>
+<!-- 				<a class="header-button fade-trigger"></a> -->
+                    <ul class="header-menu fadable faded dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <?php
+                        // generate user tools (and notifications item in user tools if needed)
+                        $personalToolsCount = 0;
+                        foreach ( $this->getPersonalTools() as $key => $tool ) {
+                            $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
+                            echo $this->makeListItem( $key, $tool );
+                            if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
+                                    ?>
+                                    <li id="pt-notifications-personaltools" class="header-dropdown-item">
+                                    <?php
+                                        echo Linker::link(
+                                            SpecialPage::getTitleFor( 'Notifications' ),
+                                            $this->getMsg( 'notifications' )->plain(),
+                                            Linker::tooltipAndAccesskeyAttribs( 'pt-notifications' )
+                                        )
+                                    ?>
+                                </li>
+                            <?php
+                            }
+                            $personalToolsCount++;
+                        }
+                        ?>
+                    </ul>
+                    <div style="list-style:none;float:right;padding:10px;padding-left:15px;" id="echo"></div>
+                </div>
+                <?php $this->renderNavigation( 'SEARCH' ); ?>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- /header -->
+  
   <div id="top" class="container">
     <!-- content -->
     <div class="row">
         <!-- panel -->
-        <div id="p-side" class="col-lg-3 wikimenu noprint">
+        <div id="p-side" class="span3 wikimenu noprint">
 
           <!-- logo -->
             <a href="//www.wikitolearn.org">
@@ -272,7 +265,7 @@ class NeverlandTemplate extends BaseTemplate {
 
         </div>
 
-        <div class="col-lg-9">
+        <div class="span9 pull-right">
         <section>
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
@@ -294,8 +287,8 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-        <div id="content row">
-          <div class="revisionbadge col-xs-12" id="siteSub">
+        <div id="content">
+          <div class="revisionbadge" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
             
@@ -434,21 +427,7 @@ class NeverlandTemplate extends BaseTemplate {
         if ( $( '.mw-echo-notifications-badge' ).hasClass( 'mw-echo-unread-notifications' ) ) {
                 $( '#pt-notifications-personaltools a' ).addClass( 'pt-notifications-personaltools-unread' );
         }
-          
-        $( document ).ready(function() {
-
-        $('form[name=userlogin]').addClass("col-xs-12");
-        $('#userloginForm').addClass("row");
-        $('#userlogin2').addClass("col-xs-12"); 
-
-        if ($('body').hasClass('page-Pagina_principale')) {
-          $('.nav.nav-tabs').hide();
-          $('.btn-group.pull-right.page-actions').hide();
-          $('#firstHeading').hide();
-        };        
-        });
-        
-    </script>    
+    </script>
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
     <!--<script type="text/javascript">

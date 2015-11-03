@@ -711,7 +711,7 @@ table.vertical-centered td {
 [class^="icon-"],
 [class*=" icon-"] {
   margin-top: 2px !important;
-  background-image: url("../img/glyphicons-halflings-black.png");
+  /* background-image: url("../img/glyphicons-halflings-black.png"); */
 }
 
 h4 [class^="icon-"],

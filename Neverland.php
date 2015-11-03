@@ -245,6 +245,13 @@ class NeverlandTemplate extends BaseTemplate {
                       </ul>
                     </li>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
+                    <div class="col-xs-12 visible-xs">
+                      <ul class="wtl-menu-mobile list-group list-unstyled">
+                        <?php 
+                          $this->renderPortals( $this->data['sidebar'] );
+                        ?>
+                      </ul>
+                    </div>
                 </ul>
               </div><!-- /.navbar-collapse -->
           </div>

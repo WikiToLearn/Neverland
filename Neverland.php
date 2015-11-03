@@ -238,6 +238,11 @@ class NeverlandTemplate extends BaseTemplate {
                                 }
                         ?>
                       </ul>
+                      <ul class="wtl-menu-mobile dropdown-menu">
+                        <?php 
+                          $this->renderPortals( $this->data['sidebar'] );
+                        ?>
+                      </ul>
                     </li>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
                 </ul>
@@ -260,7 +265,7 @@ class NeverlandTemplate extends BaseTemplate {
             </a>
           <!-- /logo -->
 
-          <div class="">        
+          <div class="wtl-menu">        
             <ul>
               <?php
                 $this->renderNavigation( 'VARIANTS' );
@@ -420,7 +425,9 @@ class NeverlandTemplate extends BaseTemplate {
   </div>
   <!-- /footer -->
 
-
+            <!-- Divs to detect breakpoint using javascript -->
+            <div class="device-xs hidden-xs breakpoint-xs"></div>
+            <div class="device-sm hidden-sm breakpoint-sm"></div>
 
     <?php $this->printTrail(); ?>
   
@@ -434,6 +441,10 @@ class NeverlandTemplate extends BaseTemplate {
         if ( $( '.mw-echo-notifications-badge' ).hasClass( 'mw-echo-unread-notifications' ) ) {
                 $( '#pt-notifications-personaltools a' ).addClass( 'pt-notifications-personaltools-unread' );
         }
+
+        function isBreakpoint( alias ) {
+          return $('.device-' + alias).is(':visible');
+        }
           
         $( document ).ready(function() {
 
@@ -445,13 +456,22 @@ class NeverlandTemplate extends BaseTemplate {
           $('.nav.nav-tabs').hide();
           $('.btn-group.pull-right.page-actions').hide();
           $('#firstHeading').hide();
-        };        
+        };
+
+        if( $('.breakpoint-xs').is(':hidden') ) {
+          $('.wtl-menu').hide();
+        }
+        if( $('.breakpoint-sm').is(':hidden') ) {
+          $('.wtl-menu-mobile').hide();
+        }        
         });
+
+        
         
     </script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
-    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-floating"};
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};
     </script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>

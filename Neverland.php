@@ -238,11 +238,6 @@ class NeverlandTemplate extends BaseTemplate {
                                 }
                         ?>
                       </ul>
-                      <ul class="wtl-menu-mobile dropdown-menu">
-                        <?php 
-                          $this->renderPortals( $this->data['sidebar'] );
-                        ?>
-                      </ul>
                     </li>
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
                     <div class="col-xs-12 visible-xs">

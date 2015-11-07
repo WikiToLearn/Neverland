@@ -408,6 +408,7 @@ class NeverlandTemplate extends BaseTemplate {
     <!-- pagestats -->
     <div class="container">
       <div class="row text-left footer-wtl">
+        <div class="col-sm-1 hidden-xs"></div>
         <div class="col-sm-3 hidden-xs">
           <a href="wikitolearn.org?page=main_page">
             <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
@@ -447,7 +448,7 @@ class NeverlandTemplate extends BaseTemplate {
             <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
           </a>
         </div>
-        <div class="col-sm-3 col-xs-6">
+        <div class="col-sm-2 col-xs-6">
           <h3>
             Social
           </h3>
@@ -524,7 +525,7 @@ class NeverlandTemplate extends BaseTemplate {
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();
-        }        
+        }
         });
 
         

@@ -47,8 +47,9 @@ class SkinNeverland extends SkinTemplate {
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
     $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
-    //$out->addStyle( $this->stylename.'/css/bootstrap-responsive.min.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap-social.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/font-awesome-4.4.0/css/font-awesome.css', 'screen' );
   }
 }
 
@@ -405,25 +406,82 @@ class NeverlandTemplate extends BaseTemplate {
   <!-- footer -->
   <div class="footer noprint">
     <!-- pagestats -->
-    <?php
-      foreach( $this->getFooterLinks() as $category => $links ):
-        if ( $category == 'info' ):
-         foreach( $links as $link ): ?>
-          <p><?php $this->html( $link ) ?></p>
-        <?php endforeach; 
-        endif;
-      endforeach;
-    ?>
-    <!-- /pagestats -->
-    <?php
-      foreach( $this->getFooterLinks() as $category => $links ) {
+    <div class="container">
+      <div class="row text-left footer-wtl">
+        <div class="col-sm-3 hidden-xs">
+          <a href="wikitolearn.org?page=main_page">
+            <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
+          </a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <h3>
+            Contacts
+          </h3>
+          <ul class="list-unstyled">
+            <li class="">
+            Mail: <a href="mailto:info@wikitolearn.org">info@wikitlearn.org</a>
+            </li>
+            <li>
+              <p>
+                <a href="wikitloearn.org?page=Communication_channel">Communication channels</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <h3>
+            Learn More
+          </h3>
+          <ul class="list-unstyled">
+            <li>
+              <a href="wikitolearn.org?page=about_us">About us</a>
+            </li>
+            <li>
+              <a href="wikitolearn.org?page=Subscribe">Subscribe to our newsletter!</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
+        <div class="col-xs-6 visible-xs">
+          <a href="wikitolearn.org?page=main_page">
+            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
+          </a>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+          <h3>
+            Social
+          </h3>
+          <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/WikiToLearn">
+            <span class="fa fa-twitter"></span>
+          </a>
+          <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/WikiToLearn">
+            <span class="fa fa-facebook"></span>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <?php
+        foreach( $this->getFooterLinks() as $category => $links ):
+          if ( $category == 'info' ):
+           foreach( $links as $link ): ?>
+         <p><?php $this->html( $link ) ?></p>
+       <?php endforeach; 
+       endif;
+       endforeach;
+       ?>
+       <!-- /pagestats -->
+       <?php
+       foreach( $this->getFooterLinks() as $category => $links ) {
         if ( $category == 'legals' ) {
           foreach( $links as $link ) {
             $this->html( $link );
           }
         }
       }
-    ?>
+      ?>
+    </div>
+    </div>
   </div>
   <!-- /footer -->
 
@@ -462,6 +520,7 @@ class NeverlandTemplate extends BaseTemplate {
 
         if( $('.breakpoint-xs').is(':hidden') ) {
           $('.wtl-menu').hide();
+          $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();

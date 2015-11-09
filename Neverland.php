@@ -222,29 +222,13 @@ class NeverlandTemplate extends BaseTemplate {
                                     echo $this->makeListItem( $key, $tool );
                                     if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
                         ?>
-                                            <li id="pt-notifications-personaltools" class="header-dropdown-item">
                         <?php
-                        // generate user tools (and notifications item in user tools if needed)
-                        $personalToolsCount = 0;
-                        foreach ( $this->getPersonalTools() as $key => $tool ) {
-                            $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
-                            echo $this->makeListItem( $key, $tool );
-                            if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
-                                    ?>
-                                    <li id="pt-notifications-personaltools" class="header-dropdown-item">
-                                    <?php
                                         echo Linker::link(
                                             SpecialPage::getTitleFor( 'Notifications' ),
                                             $this->getMsg( 'notifications' )->plain(),
                                             Linker::tooltipAndAccesskeyAttribs( 'pt-notifications' )
                                         )
                                     ?>
-                                </li>
-                            <?php
-                            }
-                            $personalToolsCount++;
-                        }
-                        ?>
                                             </li>
                         <?php
                                     } else {
@@ -542,6 +526,33 @@ class NeverlandTemplate extends BaseTemplate {
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();
         }
+
+          $(document).on("DOMNodeInserted",".mw-echo-overlay",function(){
+          //$('.mw-echo-overlay').css("position", "absolute");
+          var p_offset = $('#pt-notifications').offset();
+          var m_offset = $('.mw-echo-notifications-badge').offset();
+          // alert(
+          //   p_offset.left + " " + p_offset.top + "\n" +
+          //   m_offset.left + " " + m_offset.top + "\n"
+          //   );
+          if (p_offset.top == 138) {
+             $('.mw-echo-overlay').css({
+              top: p_offset.top + 480
+            });
+            $('.mw-echo-overlay').css(
+            "margin-left", "-28%"
+            );
+          } else {
+            $('.mw-echo-overlay').css({
+              top: p_offset.top + 20
+            });
+            $('.mw-echo-overlay').css(
+            "margin-left", "-12%"
+            );
+          }          
+
+          });
+
         });
 
         

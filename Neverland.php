@@ -419,13 +419,14 @@ class NeverlandTemplate extends BaseTemplate {
             Contacts
           </h3>
           <ul class="list-unstyled">
-            <li class="">
+            <li>
             Mail: <a href="mailto:info@wikitolearn.org">info@wikitlearn.org</a>
             </li>
             <li>
-              <p>
-                <a href="wikitloearn.org?page=Communication_channel">Communication channels</a>
-              </p>
+                <a href="wikitolearn.org?page=mailing_list">Mailing list</a>
+            </li>
+            <li>
+                <a href="wikitloearn.org?page=communication_channel">Communication channels</a>
             </li>
           </ul>
         </div>
@@ -438,7 +439,7 @@ class NeverlandTemplate extends BaseTemplate {
               <a href="wikitolearn.org?page=about_us">About us</a>
             </li>
             <li>
-              <a href="wikitolearn.org?page=Subscribe">Subscribe to our newsletter!</a>
+              <a href="wikitolearn.org?page=subscribe">Subscribe to our newsletter!</a>
             </li>
           </ul>
         </div>

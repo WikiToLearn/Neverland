@@ -654,12 +654,14 @@ table.vertical-centered td {
 }
 
 .wikimenu ul {
-  margin: 0 25px;
   font-size: 15px;
+  margin-left: -25px;
+  margin-right: 12px;
 }
 .wikimenu li {
   margin-left: 10px;
   line-height: 1.5em;
+  margin-top: 22%;
 }
 .wikimenu img {
   display: block;

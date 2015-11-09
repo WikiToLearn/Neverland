@@ -270,11 +270,6 @@ class NeverlandTemplate extends BaseTemplate {
   </div><!-- /.container-fluid -->
 </nav>
 <!-- /header -->
-
-      </div>
-    </div>
-  </div>
-  <!-- /header -->
   
   <div id="top" class="container">
     <!-- content -->
@@ -322,8 +317,8 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-        <div id="content">
-          <div class="revisionbadge" id="siteSub">
+        <div id="content row">
+          <div class="revisionbadge col-xs-12" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
             

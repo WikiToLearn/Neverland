@@ -547,7 +547,7 @@ class NeverlandTemplate extends BaseTemplate {
               top: p_offset.top + 20
             });
             $('.mw-echo-overlay').css(
-            "margin-left", "-12%"
+            "margin-left", "-15%"
             );
           }          
 

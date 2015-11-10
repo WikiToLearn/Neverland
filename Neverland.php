@@ -580,7 +580,10 @@ class NeverlandTemplate extends BaseTemplate {
             $('.contributionscores.plainlinks').addClass('table-bordered');           
           };
 
-          //$('#t-info').after('<li><a href="www.kde.org">KDE home page</a></li>'); 
+          $('.divider').hide();
+          var active_breadcrumb = $('li.active');
+          $('ul.breadcrumb>li:empty').remove();
+
         });
 
         

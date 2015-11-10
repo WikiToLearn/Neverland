@@ -543,6 +543,8 @@ class NeverlandTemplate extends BaseTemplate {
         };
 
         if( $('.breakpoint-xs').is(':hidden') ) {
+          $('.header>th').css('font-size','small');
+          $('#header-title').css('font-size','117%');
           $('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
         }

@@ -66,7 +66,7 @@ class NeverlandTemplate extends BaseTemplate {
    */
   public function execute() {
     global $wgRequest, $wgOut, $wgCanonicalNamespace, $wgContLang, $wgSitename,
-         $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch;
+         $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch, $wiki_domain;
 
     $skin = $this->getSkin();
     $user = $skin->getUser();
@@ -193,7 +193,7 @@ class NeverlandTemplate extends BaseTemplate {
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999;    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:141%;">
+                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999;    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:135%;">
                     <?php echo $wgSitename; ?>
                 </a>
               </div>
@@ -245,6 +245,12 @@ class NeverlandTemplate extends BaseTemplate {
                         <?php 
                           $this->renderPortals( $this->data['sidebar'] );
                         ?>
+                        <li id="p-coll-print_export" class="list-header">
+                          Projects      
+                        </li>
+                        <li id="kde">
+                          <a title="Go to KDE home page" href="https://www.kde.org/">KDE Home Page</a>
+                        </li>
                       </ul>
                     </div>
                 </ul>
@@ -274,6 +280,12 @@ class NeverlandTemplate extends BaseTemplate {
                 $this->renderPortals( $this->data['sidebar'] );
 //                $this->renderNavigation( 'PERSONAL' );
               ?>
+              <li id="p-coll-print_export" class="list-header">
+                Projects      
+              </li>
+              <li id="kde">
+                <a title="Go to KDE home page" href="https://www.kde.org/">KDE Home Page</a>
+              </li>
             </ul>
           </div>
 
@@ -422,10 +434,10 @@ class NeverlandTemplate extends BaseTemplate {
             Mail: <a href="mailto:info@wikitolearn.org">info@wikitlearn.org</a>
             </li>
             <li>
-                <a href="wikitolearn.org?page=mailing_list">Mailing list</a>
+                <a href="//meta.<?php echo $wiki_domain ?>/mailing_list">Mailing list</a>
             </li>
             <li>
-                <a href="wikitloearn.org?page=communication_channel">Communication channels</a>
+                <a href="//meta.<?php echo $wiki_domain ?>/Communication_channels">Communication channels</a>
             </li>
           </ul>
         </div>
@@ -435,10 +447,21 @@ class NeverlandTemplate extends BaseTemplate {
           </h3>
           <ul class="list-unstyled">
             <li>
-              <a href="wikitolearn.org?page=about_us">About us</a>
+              <a href="//en.<?php echo $wiki_domain ?>/vision">WikiToLearn philosophy</a>
             </li>
             <li>
-              <a href="wikitolearn.org?page=subscribe">Subscribe to our newsletter!</a>
+              <li><h4>Hosted by:</h4></li>
+              <li>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <a href="https://www.garr.it">GARR</a>
+                  </div>
+                  <div class="col-xs-4">
+                    <a href="https://www.neodigit.net/">Neodigit</a>
+                  </div>
+                  <div class="col-xs-4"></div>
+                </div>
+              </li>
             </li>
           </ul>
         </div>
@@ -555,7 +578,9 @@ class NeverlandTemplate extends BaseTemplate {
           if ($('table').hasClass('wikitable')) {
             $('table').removeClass('wikitable');
             $('.contributionscores.plainlinks').addClass('table-bordered');           
-          };          
+          };
+
+          //$('#t-info').after('<li><a href="www.kde.org">KDE home page</a></li>'); 
         });
 
         
@@ -820,7 +845,7 @@ class NeverlandTemplate extends BaseTemplate {
                    class="search" autocomplete="off"
               <?php if( isset( $this->data['search'] ) ): ?>
                 value="<?php $this->text( 'search' ) ?>"
-              <?php endif; ?> />
+              <?php endif; ?> />http://www.garr.it/
 <!--               <button class="btn"><i class="icon-search"></i></button> -->
 <!--             </div> -->
 

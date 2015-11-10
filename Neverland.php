@@ -549,10 +549,13 @@ class NeverlandTemplate extends BaseTemplate {
             $('.mw-echo-overlay').css(
             "margin-left", "-15%"
             );
-          }          
-
+          }
           });
 
+          if ($('table').hasClass('wikitable')) {
+            $('table').removeClass('wikitable');
+            $('.contributionscores.plainlinks').addClass('table-bordered');           
+          };          
         });
 
         

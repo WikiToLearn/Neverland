@@ -453,13 +453,12 @@ class NeverlandTemplate extends BaseTemplate {
               <li><h4>Hosted by:</h4></li>
               <li>
                 <div class="row">
-                  <div class="col-xs-4">
+                  <div class="col-xs-6">
                     <a href="https://www.garr.it">GARR</a>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-xs-6">
                     <a href="https://www.neodigit.net/">Neodigit</a>
                   </div>
-                  <div class="col-xs-4"></div>
                 </div>
               </li>
             </li>
@@ -544,13 +543,17 @@ class NeverlandTemplate extends BaseTemplate {
 
         if( $('.breakpoint-xs').is(':hidden') ) {
           $('.header>th').css('font-size','small');
-          $('#header-title').css('font-size','117%');
+          $('#header-title').css('font-size','90%');
           $('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
+          $(".nav>li>a").css('padding','4px 6px');
+
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();
         }
+
+        $('#mw-createaccount-cta').removeAttr('id');
 
           $(document).on("DOMNodeInserted",".mw-echo-overlay",function(){
           //$('.mw-echo-overlay').css("position", "absolute");
@@ -560,13 +563,12 @@ class NeverlandTemplate extends BaseTemplate {
           //   p_offset.left + " " + p_offset.top + "\n" +
           //   m_offset.left + " " + m_offset.top + "\n"
           //   );
-          if (p_offset.top == 138) {
-             $('.mw-echo-overlay').css({
-              top: p_offset.top + 480
+          //alert(p_offset.top);
+          if (p_offset.top > 20) {
+            $('.mw-echo-overlay').css({
+              top: p_offset.top + 550,
+              'max-width': '90%'
             });
-            $('.mw-echo-overlay').css(
-            "margin-left", "-28%"
-            );
           } else {
             $('.mw-echo-overlay').css({
               top: p_offset.top + 20
@@ -586,6 +588,7 @@ class NeverlandTemplate extends BaseTemplate {
           var active_breadcrumb = $('li.active');
           $('ul.breadcrumb>li:empty').remove();
 
+          $('a.btn.btn-mini').css('padding','1%');
         });
 
         

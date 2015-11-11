@@ -11,7 +11,11 @@
 
 #mw-content-text {
    font-size: 13pt;
-   line-height: 1.1em;
+   line-height: 1.5em;
+}
+
+.list-unstyled li {
+  line-height: 1.1em;
 }
 
 h4, h5, h6 {

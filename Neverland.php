@@ -421,9 +421,9 @@ class NeverlandTemplate extends BaseTemplate {
       <div class="row text-left footer-wtl">
         <div class="col-sm-1 hidden-xs"></div>
         <div class="col-sm-3 hidden-xs">
-          <a href="wikitolearn.org?page=main_page">
-            <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
-          </a>
+<!--           <a href="wikitolearn.org?page=main_page"> -->
+            <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
+<!--           </a> -->
         </div>
         <div class="col-sm-3 col-xs-6">
           <h3>

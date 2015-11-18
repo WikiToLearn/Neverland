@@ -211,8 +211,8 @@ class NeverlandTemplate extends BaseTemplate {
                   </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span class="caret"></span></a>
+                    <li id="userlogin" class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span id="userlogin_caret" class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <?php
                                 // generate user tools (and notifications item in user tools if needed)
@@ -239,7 +239,7 @@ class NeverlandTemplate extends BaseTemplate {
                         ?>
                       </ul>
                     </li>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default; height: 0px;" id="echo" >0</div>
                     <div class="col-xs-12 visible-xs">
                       <ul class="wtl-menu-mobile list-group list-unstyled">
                         <?php 
@@ -546,7 +546,7 @@ class NeverlandTemplate extends BaseTemplate {
           $('#header-title').css('font-size','90%');
           $('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
-          $(".nav>li>a").css('padding','4px 6px');
+          //$(".nav>li>a").css('padding','4px 6px');
           $('#views').addClass('btn-group-justified');
 
         }

@@ -547,6 +547,7 @@ class NeverlandTemplate extends BaseTemplate {
           $('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
           $(".nav>li>a").css('padding','4px 6px');
+          $('#views').addClass('btn-group-justified');
 
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
@@ -774,25 +775,32 @@ class NeverlandTemplate extends BaseTemplate {
 
         case 'VIEWS':
         ?>
-          <div class="btn-group pull-right page-actions noprint"> <!-- Is closed later in the 'actions' section -->
+          <div id="views" class="btn-group btn-group-xs pull-right page-actions noprint" style="margin-bottom:10px; padding-top:0.3em;" role="group" aria-label="..."> <!-- Is closed later in the 'actions' section -->
         <?php
         
         if ( count( $this->data['view_urls'] ) > 0 ) {
           ?>
             <?php foreach ( $this->data['view_urls'] as $link ): ?>
-              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" class="btn btn-mini
-                <?php if ( stripos( $link['attributes'], 'selected' ) !== false ): ?>
-                  btn-primary
-                <?php endif ?>"
-                <?php echo $link['key'] ?>>
+              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" class="btn
+                <?php if ( stripos( $link['attributes'], 'selected' ) !== false ){ ?>
+                  btn-success
+                <?php }else{ ?>
+                  btn-default
+                <?php } ?>"
+                <?php echo $link['key'] ?> role="button" aria-label="...">
 
-                <?php if ( array_key_exists( 'text', $link ) ): ?>
-                  <i class="icon-<?php echo $link['id'] ?>
-                      <?php if ( stripos( $link['attributes'], 'selected' ) === false ): ?>
-                        icon-black
-                      <?php else: ?>
-                        icon-white
-                      <?php endif; ?>"></i>
+                <?php if ( array_key_exists( 'text', $link ) ): 
+                if ($link['id'] == 'ca-edit') {
+                  $fa_icon = "fa fa-edit";
+                }
+                if ($link['id'] == 'ca-view') {
+                  $fa_icon = "fa fa-pencil";
+                }
+                if ($link['id'] == 'ca-history') {
+                  $fa_icon = "fa fa-clock-o";
+                }
+                ?>
+                  <i class="<?php echo $fa_icon ?>"></i>
                   <?php
                     if ( strlen($link['text']) > 1 )
                       echo htmlspecialchars( $link['text'] )
@@ -807,17 +815,24 @@ class NeverlandTemplate extends BaseTemplate {
         case 'ACTIONS':
         if ( count( $this->data['action_urls'] ) > 0 ) {
           ?>
-            <a href="#" class="btn btn-mini dropdown-toggle" data-toggle="dropdown"
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               title="<?php $this->msg( 'actions' ) ?>">
-              <i class="icon-cog icon-black"></i>
-              <span class="caret"></span>
+              <i class="fa fa-cog"></i>
             </a>
 
             <ul class="dropdown-menu">
               <?php foreach ( $this->data['action_urls'] as $link ): ?>
                 <li <?php echo $link['attributes'] ?>>
                   <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
-                    <i class="icon-<?php echo $link['id'] ?> icon-black"></i>
+                    <?php 
+                      if ($link['id'] == 'ca-move') {
+                        $fa_icon = 'fa fa-share';
+                      }
+                      if ($link['id'] == 'ca-watch') {
+                        $fa_icon = 'fa fa-star';
+                      }
+                    ?>
+                    <i class="<?php echo $fa_icon ?> icon-black"></i>
                     <?php echo htmlspecialchars( $link['text'] ) ?>
                   </a>
                 </li>

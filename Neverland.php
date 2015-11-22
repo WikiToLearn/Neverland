@@ -193,7 +193,8 @@ class NeverlandTemplate extends BaseTemplate {
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999;    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:135%;">
+                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999; text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:135%; float:left;">
+                <img id="smalllogo" src="/skins/Neverland/images/logos/smallwhite.jpg" class="visible-xs" style="float:left; width: 20px !important; height:20px; margin-right: 10px; margin-left:-10px;" />
                     <?php echo $wgSitename; ?>
                 </a>
               </div>
@@ -269,7 +270,7 @@ class NeverlandTemplate extends BaseTemplate {
 
           <!-- logo -->
             <a href="//www.wikitolearn.org">
-              <img id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
+              <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
             </a>
           <!-- /logo -->
 

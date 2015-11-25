@@ -1115,9 +1115,10 @@ float:right !important;
 }
  
 div.ace_editor {
-  line-height: 1em;
+    font-family: monospace !important;
+    line-height: 1em;
 }
- 
+
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale .nav, 
 .page-Pagina_principale #firstHeading,
@@ -1127,9 +1128,15 @@ div.ace_editor {
 }
  
 textarea {
-	font-family: monospace;
-        font-size: 10pt;
+    font-family: monospace;
+    font-size: 10pt;
 }
- 
+
+.mw-code,
+#wpTextbox1 {
+    font-family: monospace !important;
+    font-size: 10pt;
+    line-height: 1.5em;
+}
  
 /* Vedi anche MediaWiki:Common-unused.css */

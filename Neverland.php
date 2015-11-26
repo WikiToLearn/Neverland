@@ -468,7 +468,7 @@ class NeverlandTemplate extends BaseTemplate {
         <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
         <div class="col-xs-6 visible-xs">
           <a href="wikitolearn.org?page=main_page">
-            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
+            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
           </a>
         </div>
         <div class="col-sm-2 col-xs-6">
@@ -801,6 +801,9 @@ class NeverlandTemplate extends BaseTemplate {
                 if ($link['id'] == 'ca-history') {
                   $fa_icon = "fa fa-clock-o";
                 }
+                if ($link['id'] == 'ca-addsection') {
+                  $fa_icon = "fa fa-plus";
+                }
                 ?>
                   <i class="<?php echo $fa_icon ?>"></i>
                   <?php
@@ -827,14 +830,28 @@ class NeverlandTemplate extends BaseTemplate {
                 <li <?php echo $link['attributes'] ?>>
                   <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
                     <?php 
+                      if ($link['id'] == 'ca-delete') {
+                        $fa_icon = 'fa fa-times';
+                        $hidden = "";
+                      }
+                      if ($link['id'] == 'ca-protect') {
+                        $fa_icon = 'fa fa-lock';
+                        $hidden = "";
+                      }
                       if ($link['id'] == 'ca-move') {
                         $fa_icon = 'fa fa-share';
+                        $hidden = "";
                       }
                       if ($link['id'] == 'ca-watch') {
                         $fa_icon = 'fa fa-star';
+                        $hidden = "style='visibility:hidden'";
+                      }
+                      if ($link['id'] == 'ca-unwatch') {
+                        $fa_icon = 'fa fa-star';
+                        $hidden = "style='visibility:hidden'";
                       }
                     ?>
-                    <i class="<?php echo $fa_icon ?> icon-black"></i>
+                    <i class="<?php echo $fa_icon ?> icon-black" <?php echo $hidden ?> ></i>
                     <?php echo htmlspecialchars( $link['text'] ) ?>
                   </a>
                 </li>

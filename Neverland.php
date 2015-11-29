@@ -202,15 +202,9 @@ class NeverlandTemplate extends BaseTemplate {
           <div class="col-sm-6">
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-right" role="search">
-                  <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search" style="max-width: 178%;">
-                        </div>
-                    </div>
-                  </div>
-                </form>
+
+                          <?php echo $this->renderNavigation( 'SEARCH' ) ?>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span class="caret"></span></a>
@@ -532,6 +526,8 @@ class NeverlandTemplate extends BaseTemplate {
           
         $( document ).ready(function() {
 
+        $('#searchform').removeClass('navbar-search').removeClass('pull-right').addClass('navbar-form').addClass('navbar-right');
+        $('#searchInput').addClass("form-control");
         $('form[name=userlogin]').addClass("col-xs-12");
         $('#userloginForm').addClass("row");
         $('#userlogin2').addClass("col-xs-12"); 
@@ -854,7 +850,7 @@ class NeverlandTemplate extends BaseTemplate {
                    class="search" autocomplete="off"
               <?php if( isset( $this->data['search'] ) ): ?>
                 value="<?php $this->text( 'search' ) ?>"
-              <?php endif; ?> />http://www.garr.it/
+              <?php endif; ?> />
 <!--               <button class="btn"><i class="icon-search"></i></button> -->
 <!--             </div> -->
 

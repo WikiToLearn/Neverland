@@ -578,10 +578,7 @@ class NeverlandTemplate extends BaseTemplate {
           }
           });
 
-          if ($('table').hasClass('wikitable')) {
-            $('table').removeClass('wikitable');
-            $('.contributionscores.plainlinks').addClass('table-bordered');           
-          };
+            $('.contributionscores.plainlinks').removeClass('wikitable').addClass('table-bordered');           
 
           $('.divider').hide();
           var active_breadcrumb = $('li.active');

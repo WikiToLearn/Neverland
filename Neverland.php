@@ -207,7 +207,7 @@ class NeverlandTemplate extends BaseTemplate {
 
                 <ul class="nav navbar-nav navbar-right">
                     <li id="userlogin" class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span id="userlogin_caret" class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="user-login" style="min-width:100px;"> <?php echo $user->getName(); ?> <span id="userlogin_caret" class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <?php
                                 // generate user tools (and notifications item in user tools if needed)

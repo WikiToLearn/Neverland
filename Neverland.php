@@ -207,7 +207,7 @@ class NeverlandTemplate extends BaseTemplate {
 
                 <ul class="nav navbar-nav navbar-right">
                     <li id="userlogin" class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span id="userlogin_caret" class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="user-login" style="min-width:100px;"> <?php echo $user->getName(); ?> <span id="userlogin_caret" class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <?php
                                 // generate user tools (and notifications item in user tools if needed)
@@ -263,7 +263,7 @@ class NeverlandTemplate extends BaseTemplate {
         <div id="p-side" class="col-sm-3 wikimenu noprint">
 
           <!-- logo -->
-            <a href="//www.wikitolearn.org">
+            <a href="//www.<?php echo $wiki_domain; ?>">
               <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
             </a>
           <!-- /logo -->
@@ -461,10 +461,10 @@ class NeverlandTemplate extends BaseTemplate {
         </div>
         <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
         <div class="col-xs-6 visible-xs">
-          <a href="wikitolearn.org?page=main_page">
-            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
-          </a>
-        </div>
+<!--           <a href="//www.<?php echo $wiki_domain; ?>">
+ -->            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
+<!--           </a>
+ -->        </div>
         <div class="col-sm-2 col-xs-6">
           <h3>
             Social
@@ -792,7 +792,7 @@ class NeverlandTemplate extends BaseTemplate {
                   $fa_icon = "fa fa-edit";
                 }
                 if ($link['id'] == 'ca-view') {
-                  $fa_icon = "fa fa-pencil";
+                  $fa_icon = "fa fa-eye";
                 }
                 if ($link['id'] == 'ca-history') {
                   $fa_icon = "fa fa-clock-o";

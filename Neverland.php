@@ -268,7 +268,7 @@ class NeverlandTemplate extends BaseTemplate {
             </a>
           <!-- /logo -->
 
-          <div class="wtl-menu">        
+          <div class="wtl-menu hidden-xs">        
             <ul>
               <?php
                 $this->renderNavigation( 'VARIANTS' );
@@ -542,7 +542,7 @@ class NeverlandTemplate extends BaseTemplate {
           $('.header>th').css('font-size','small');
           $('#header-title').css('font-size','0.8em');
           $('#header-title').css('padding-right','0px');
-          $('.wtl-menu').hide();
+          //$('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
           //$(".nav>li>a").css('padding','4px 6px');
           $('#views').addClass('btn-group-justified');

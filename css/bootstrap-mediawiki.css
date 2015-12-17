@@ -4,6 +4,29 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .header > th {
+    font-size: small;
+  }
+  #header-title {
+    font-size: 0.8em;
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 481px) {
+  #header-title {
+    font-size: 135%;
+  }
+}
+
+#header-title {
+  color: #999;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  float: left;
+}
+
 .mw-code,
 #wpTextbox1 {
     font-family: monospace !important;

@@ -193,7 +193,7 @@ class NeverlandTemplate extends BaseTemplate {
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999; text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:135%; float:left;">
+                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand">
                 <img id="smalllogo" src="/skins/Neverland/images/logos/smallcolored.png" class="visible-xs" style="float:left; width: 20px !important; height:20px; margin-right: 10px; margin-left:-10px;" />
                     <?php echo $wgSitename; ?>
                 </a>
@@ -542,14 +542,8 @@ class NeverlandTemplate extends BaseTemplate {
         };
 
         if( $('.breakpoint-xs').is(':hidden') ) {
-          $('.header>th').css('font-size','small');
-          $('#header-title').css('font-size','0.8em');
-          $('#header-title').css('padding-right','0px');
-          //$('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
-          //$(".nav>li>a").css('padding','4px 6px');
           $('#views').addClass('btn-group-justified');
-
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();

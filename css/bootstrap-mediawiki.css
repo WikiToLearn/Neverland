@@ -178,7 +178,7 @@ label {
   text-align: center;
 }
 h2 .mw-headline {
-  font-size: 25px;
+  font-size: 1.1em;
 }
 .mw-input,
 .mw-submit {
@@ -347,6 +347,15 @@ h4 .mw-headline,
 h5 .mw-headline,
 h6 .mw-headline {
   font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
+}
+h3 .mw-headline {
+  font-size: 1.1em;
+}
+h4 .mw-headline {
+  font-size: 1.3em;
+}
+h5 .mw-headline {
+  font-size: 1.4em;
 }
 .editsection {
   font-size: 14px !important;

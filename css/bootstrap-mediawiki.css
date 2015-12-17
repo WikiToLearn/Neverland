@@ -593,13 +593,7 @@ h2 .editsection {
 .mw-datatable tr:hover td {
   background: #fff;
 }
-.mw-content-ltr ol,
-.mw-content-ltr ul,
-.mw-content-rtl .mw-content-ltr ol,
-.mw-content-rtl .mw-content-ltr ul {
-  margin: 0.3em 0 0 3em;
-  list-style-position: inside;
-}
+
 #mw-landing .thumbnail {
   background: white;
   padding: 12px 12px 0 12px;

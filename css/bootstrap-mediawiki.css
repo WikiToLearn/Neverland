@@ -79,6 +79,15 @@ a {
   height: 24px;
 }
 
+table {
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: block;
+  width: 100% !important;
+  border-color: transparent !important;
+}
+
 table td:first-child {
   padding-left: 0;
   min-width: 48px;

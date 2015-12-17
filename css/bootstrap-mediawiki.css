@@ -79,6 +79,11 @@ a {
   height: 24px;
 }
 
+code {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
 table {
   overflow: auto;
   overflow-y: hidden;

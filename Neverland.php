@@ -313,9 +313,18 @@ class NeverlandTemplate extends BaseTemplate {
             <?php $this->html( 'subtitle' ) ?>
           </div>
             
+          <?php
+            $hide = '';
+            $title = $this->getSkin()->getTitle();
+            $strip_title = str_replace(' ', '_', $title);
+            if(strtoupper($strip_title) == "PAGINA_PRINCIPALE" || strtoupper($strip_title) == "MAIN_PAGE")
+             {
+                $hide = " class='hidden' ";
+             } 
+          ?>  
           <!-- firstHeading -->
           <header>
-            <h1 id="firstHeading">
+            <h1 id="firstHeading" <?php echo $hide; ?> >
               <?php print $bigTitle; ?>
               <?php /*$this->html( 'title' )*/ ?>
             </h1>

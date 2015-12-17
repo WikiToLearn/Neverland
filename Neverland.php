@@ -535,12 +535,6 @@ class NeverlandTemplate extends BaseTemplate {
         $('#userloginForm').addClass("row");
         $('#userlogin2').addClass("col-xs-12"); 
 
-        if ($('body').hasClass('page-Pagina_principale')) {
-          $('.nav.nav-tabs').hide();
-          $('.btn-group.pull-right.page-actions').hide();
-          $('#firstHeading').hide();
-        };
-
         if( $('.breakpoint-xs').is(':hidden') ) {
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
           $('#views').addClass('btn-group-justified');
@@ -743,6 +737,13 @@ class NeverlandTemplate extends BaseTemplate {
                 endforeach;
               ?>
             </ul>
+            <script type="text/javascript">
+            if ($('body').hasClass('page-Pagina_principale') || $('body').hasClass('page-Main_Page')) {
+                $('.nav.nav-tabs').hide();
+                $('.btn-group.pull-right.page-actions').hide();
+                $('#firstHeading').hide();
+              };
+            </script>
           <?php
         }
         break;

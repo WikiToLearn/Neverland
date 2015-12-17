@@ -475,6 +475,9 @@ class NeverlandTemplate extends BaseTemplate {
           <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/WikiToLearn">
             <span class="fa fa-facebook"></span>
           </a>
+          <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company/wikitolearn">
+            <span class="fa fa-linkedin"></span>
+          </a>
         </div>
       </div>
       <hr>

@@ -4,6 +4,12 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.mw-code,
+#wpTextbox1 {
+    font-family: monospace !important;
+    font-size: 10pt;
+    line-height: 1.7em;
+}
 .content {
     font-size: 13pt;
     line-height: 1.5em;
@@ -1104,11 +1110,6 @@ pre.source-javascript {
 div.ace_editor {
   line-height: 1em;
 }
-
-textarea {
-	font-family: monospace;
-        font-size: 10pt;
-}
  
 /* Gli stili CSS inseriti qui si applicano a tutte le skin */
  
@@ -1146,11 +1147,6 @@ textarea {
     font-size: 10pt;
 }
 
-.mw-code,
-#wpTextbox1 {
-    font-family: monospace !important;
-    font-size: 10pt;
-    line-height: 1.5em;
-}
+
  
 /* Vedi anche MediaWiki:Common-unused.css */

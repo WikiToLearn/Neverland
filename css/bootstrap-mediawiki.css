@@ -27,6 +27,11 @@
   float: left;
 }
 
+.kw0, .kw1, .kw2,
+.kw3, .kw4, .kw5 {
+  font-family: monospace;
+}
+
 .mw-code,
 #wpTextbox1 {
     font-family: monospace !important;

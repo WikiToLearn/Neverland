@@ -701,6 +701,13 @@ class NeverlandTemplate extends BaseTemplate {
    */
   private function renderNavigation( $elements ) {
     global $wgNeverlandUseSimpleSearch;
+    $hide = '';
+    $title = $this->getSkin()->getTitle();
+    $strip_title = str_replace(' ', '_', $title);
+    if(strtoupper($strip_title) == "PAGINA_PRINCIPALE" || strtoupper($strip_title) == "MAIN_PAGE")
+     {
+        $hide = "hidden";
+     }
 
     // If only one element was given, wrap it in an array, allowing more
     // flexible arguments
@@ -717,7 +724,7 @@ class NeverlandTemplate extends BaseTemplate {
         case 'NAMESPACES':
         if ( count( $this->data['namespace_urls'] ) > 0 ) {
           ?>
-            <ul class="nav nav-tabs noprint">
+            <ul class="nav nav-tabs noprint <?php echo $hide; ?>">
               <?php
                 foreach ( $this->data['namespace_urls'] as $link ):
                   if ( stripos( $link['attributes'], 'selected' ) === false ): ?>
@@ -737,13 +744,6 @@ class NeverlandTemplate extends BaseTemplate {
                 endforeach;
               ?>
             </ul>
-            <script type="text/javascript">
-            if ($('body').hasClass('page-Pagina_principale') || $('body').hasClass('page-Main_Page')) {
-                $('.nav.nav-tabs').hide();
-                $('.btn-group.pull-right.page-actions').hide();
-                $('#firstHeading').hide();
-              };
-            </script>
           <?php
         }
         break;
@@ -768,7 +768,7 @@ class NeverlandTemplate extends BaseTemplate {
 
         case 'VIEWS':
         ?>
-          <div id="views" class="btn-group btn-group-xs pull-right page-actions noprint" style="margin-bottom:10px; padding-top:0.3em;" role="group" aria-label="..."> <!-- Is closed later in the 'actions' section -->
+          <div id="views" class="btn-group btn-group-xs pull-right page-actions noprint <?php echo $hide; ?> " style="margin-bottom:10px; padding-top:0.3em;" role="group" aria-label="..."> <!-- Is closed later in the 'actions' section -->
         <?php
         
         if ( count( $this->data['view_urls'] ) > 0 ) {

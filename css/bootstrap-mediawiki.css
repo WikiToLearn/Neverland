@@ -8,6 +8,20 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
 
+.mw-pt-languages-label, .mw-pt-languages-list {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.mw-pt-languages-label {
+  width: 16%;
+}
+
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {

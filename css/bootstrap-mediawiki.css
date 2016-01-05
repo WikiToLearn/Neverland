@@ -22,6 +22,24 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   width: 16%;
 }
 
+#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-message .mw-echo-notifications-badge {
+  height: 1.35em!important;
+  margin-left: 0em!important;
+  margin-top: 0.4em!important;
+}
+
+.oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+  top: 1.5em!important;
+}
+#pt-notifications-alert, #pt-notifications-message   {
+  display: inline-block;
+}
+
+a[title='Speciale:Notifiche'] {
+  display: none;
+  width: 100%;
+}
+
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
@@ -32,11 +50,27 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
     font-size: 0.8em;
     padding-right: 0px;
   }
+
+  .oo-ui-clippableElement-clippable.oo-ui-popupWidget-body {
+    width: 100%!important;
+  }
+
+  .oo-ui-popupWidget-popup {
+    width: 100%;
+  }
 }
 
 @media (min-width: 481px) {
   #header-title {
     font-size: 135%;
+  }
+
+  #pt-notifications-alert, #pt-notifications-message   {
+    width: 48%;
+  }
+
+  #pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-message .mw-echo-notifications-badge {
+    width: 90%;
   }
 }
 
@@ -487,8 +521,8 @@ h2 .editsection {
   margin-top: 1em;
 }
 #pt-newmessages.active a {
-  color: #b94a48;
-}
+/*  color: #ffffff;
+*/}
 #mw-prefs-form td:first-child {
   padding: 8px;
 }

@@ -35,9 +35,8 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display: inline-block;
 }
 
-a[title='Speciale:Notifiche'] {
+a[title='Speciale:Notifiche'], a[title='Special:Notifications'] {
   display: none;
-  width: 100%;
 }
 
 

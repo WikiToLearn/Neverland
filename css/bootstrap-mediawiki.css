@@ -36,10 +36,6 @@ li#pt-notifications-alert > a, li#pt-notifications-message > a {
   margin-top: 0px!important;
 }
 
-#mw-content-text > div {
-  overflow-x: auto;
-}
-
 .oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
   top: 1.5em!important;
 }

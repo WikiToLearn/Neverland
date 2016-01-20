@@ -8,6 +8,10 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
 
+.vertical-spacing {
+  margin-bottom: 2em;
+}
+
 img#smallogo {
   float:left; width: 20px !important;
   height:20px;

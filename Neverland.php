@@ -238,13 +238,8 @@ class NeverlandTemplate extends BaseTemplate {
             <?php
               $this->renderPortals( $this->data['sidebar'] );
             ?>
-            <li id="p-coll-print_export" class="list-header">
-              Projects
-            </li>
-            <li id="kde">
-              <a title="Go to KDE home page" href="https://www.kde.org/">KDE Home Page</a>
-            </li>
           </ul>
+          <img src="skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-sidebar center-block">
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -269,14 +264,8 @@ class NeverlandTemplate extends BaseTemplate {
               <?php
                 $this->renderNavigation( 'VARIANTS' );
                 $this->renderPortals( $this->data['sidebar'] );
-//                $this->renderNavigation( 'PERSONAL' );
               ?>
-              <li id="p-coll-print_export" class="list-header">
-                Projects
-              </li>
-              <li id="kde">
-                <a title="Go to KDE home page" href="https://www.kde.org/">KDE Home Page</a>
-              </li>
+              <img src="skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-sidebar">
             </ul>
           </div>
 

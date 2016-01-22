@@ -77,12 +77,12 @@ ul#notifications-button-mobile {
     font-size: 135%;
   }
 
-  /*li#pt-notifications-alert, li#pt-notifications-message {
-    height: 25px!important;
-    top: 15px!important;
-  }*/
   ul#notifications-button-mobile {
     padding-top: 12px;
+  }
+
+  .list-header {
+    margin-left: -16px !important;
   }
 }
 
@@ -196,7 +196,6 @@ label {
 }
 .list-header {
   margin-top: 15px;
-  margin-left: -16px !important;
   margin-right: -12px;
   padding: 2px 8px;
   margin-bottom: 5px;

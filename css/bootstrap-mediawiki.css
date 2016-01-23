@@ -791,9 +791,9 @@ table.vertical-centered td {
   display: block;
   margin: 0 auto 20px;
 }
-img.kde-img-sidebar {
-  margin-top: 1em;
-  margin-bottom: 1em;
+img.kde-img-footer {
+  padding-top: 2em;
+  margin-bottom: -3em;
 }
 .image > img {
    max-width:100%;

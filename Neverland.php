@@ -239,7 +239,7 @@ class NeverlandTemplate extends BaseTemplate {
               $this->renderPortals( $this->data['sidebar'] );
             ?>
           </ul>
-           <img src="skins/Neverland/images/proudtobe-white.png" alt="Proud to be KDE project" class="img-responsive kde-img-sidebar center-block">
+<!--            <img src="skins/Neverland/images/proudtobe-white.png" alt="Proud to be KDE project" class="img-responsive kde-img-sidebar center-block"> -->
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -265,7 +265,6 @@ class NeverlandTemplate extends BaseTemplate {
                 $this->renderNavigation( 'VARIANTS' );
                 $this->renderPortals( $this->data['sidebar'] );
               ?>
-              <img src="skins/Neverland/images/proudtobe.png" alt="Proud to be a KDE project" class="img-responsive kde-img-sidebar" style="float: right;" >
             </ul>
           </div>
 
@@ -392,7 +391,7 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="e"></div>
           </div>
           
-          <img src="skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-footer center-block">
+          <img src="/skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-footer center-block">
 
         </section>
         </div>

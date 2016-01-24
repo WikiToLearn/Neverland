@@ -412,7 +412,7 @@ class NeverlandTemplate extends BaseTemplate {
         <div class="col-sm-1 hidden-xs"></div>
         <div class="col-sm-3 hidden-xs">
 <!--           <a href="wikitolearn.org?page=main_page"> -->
-            <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
+            <img class="img-responsive logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
 <!--           </a> -->
         </div>
         <div class="col-sm-3 col-xs-6">
@@ -457,7 +457,7 @@ class NeverlandTemplate extends BaseTemplate {
         <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
         <div class="col-xs-6 visible-xs">
 <!--           <a href="//www.<?php echo $wiki_domain; ?>">
- -->            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/white.png" alt="">
+ -->            <img class="img-responsive center-block logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
 <!--           </a>
  -->        </div>
         <div class="col-sm-2 col-xs-6">

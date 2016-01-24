@@ -69,6 +69,10 @@ ul#notifications-button-mobile {
   .oo-ui-popupWidget-popup {
     width: 100%;
   }
+  
+  .logo-footer {
+    margin-top: 1em;
+  }
 }
 
 /* Desktop and tablets */
@@ -83,6 +87,10 @@ ul#notifications-button-mobile {
 
   .list-header {
     margin-left: -16px !important;
+  }
+  
+  .logo-footer {
+    margin-top: 2em;
   }
 }
 

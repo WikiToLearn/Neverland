@@ -8,6 +8,10 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
 
+.math-wrapper {
+  overflow-x: auto;
+}
+
 .vertical-spacing {
   margin-bottom: 2em;
 }
@@ -69,7 +73,7 @@ ul#notifications-button-mobile {
   .oo-ui-popupWidget-popup {
     width: 100%;
   }
-  
+
   .logo-footer {
     margin-top: 1em;
   }
@@ -88,7 +92,7 @@ ul#notifications-button-mobile {
   .list-header {
     margin-left: -16px !important;
   }
-  
+
   .logo-footer {
     margin-top: 2em;
   }

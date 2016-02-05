@@ -10,6 +10,7 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
 
 .math-wrapper {
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .vertical-spacing {

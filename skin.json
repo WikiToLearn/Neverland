@@ -1,0 +1,31 @@
+{
+	"name": "Neverland",
+	"author": [
+		"..."
+	],
+	"url": "",
+	"descriptionmsg": "neverland-desc",
+	"namemsg": "skinname-neverland",
+	"license-name": "",
+	"type": "skin",
+	"ConfigRegistry": {
+		"neverland": "GlobalVarConfig::newInstance"
+	},
+	"ValidSkinNames": {
+		"neverland": "Neverland"
+	},
+	"MessagesDirs": {
+		"Vector": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"SkinNeverland": "Neverland.php",
+		"NeverlandTemplate": "Neverland.php"
+	},
+	"config": {
+		"NeverlandUseSimpleSearch": true,
+		"NeverlandUseIconWatch": true
+	},
+	"manifest_version": 1
+}

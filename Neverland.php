@@ -493,6 +493,7 @@ class NeverlandTemplate extends BaseTemplate {
 
     <?php $this->printTrail(); ?>
   
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         /* Fix for Echo in Refreshed */

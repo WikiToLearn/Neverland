@@ -868,7 +868,7 @@ h5 [class*=" icon-"] {
   margin-top: 6px;
 }
 
-navbar.navbar-default.navbar-inverse.Neverland.noprint {
+.navbar.navbar-default.navbar-inverse.Neverland.noprint {
   border-radius: 0;
   border: 0;
 }

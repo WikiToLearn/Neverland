@@ -868,6 +868,11 @@ h5 [class*=" icon-"] {
   margin-top: 6px;
 }
 
+navbar.navbar-default.navbar-inverse.Neverland.noprint {
+  border-radius: 0;
+  border: 0;
+}
+
 .navbar-static-top {
   margin-bottom: 15px;
 }

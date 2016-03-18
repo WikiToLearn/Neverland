@@ -426,6 +426,9 @@ class NeverlandTemplate extends BaseTemplate {
             <li>
                 <a href="//meta.<?php echo $wiki_domain ?>/Communication_channels">Communication channels</a>
             </li>
+            <li>
+                <a href="//meta.<?php echo $wiki_domain ?>/Frequently_Asked_Questions">F.A.Q.</a>
+            </li>
           </ul>
         </div>
         <div class="col-sm-3 col-xs-6">

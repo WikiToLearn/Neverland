@@ -17,6 +17,51 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   margin-bottom: 2em;
 }
 
+/*CSS for center, flushleft and flushright templates*/
+
+.template-center {
+  text-align: center;
+}
+
+.template-center table.wikitable {
+  display: table;
+  margin: 0 auto;
+}
+
+.template-center img {
+  margin: 0 auto;
+}
+
+.template-flushleft {
+  text-align: left;
+}
+
+.template-flushleft .math-wrapper {
+  display: inline-block;
+}
+
+.template-flushleft img {
+  margin: 0 0;
+}
+
+.template-flushright {
+  text-align: right;
+}
+
+.template-flushright .math-wrapper {
+  display: inline-block;
+}
+
+.template-flushright table.wikitable {
+  display: table;
+  margin: 0 0 auto auto;
+}
+
+.template-flushright img {
+  margin: 0 0 auto auto;
+}
+
+
 img#smallogo {
   float:left; width: 20px !important;
   height:20px;
@@ -1268,7 +1313,5 @@ textarea {
     font-family: monospace;
     font-size: 10pt;
 }
-
-
 
 /* Vedi anche MediaWiki:Common-unused.css */

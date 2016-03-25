@@ -1,4 +1,8 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro);
+@font-face {
+  font-family: Latin Modern Math;
+  src: url('latin-modern-fonts/latinmodern-math.otf');
+}
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -6,6 +10,10 @@ body {
 
 body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
+}
+
+math {
+    font-family: Latin Modern Math;
 }
 
 .math-wrapper {

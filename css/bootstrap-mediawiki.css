@@ -143,12 +143,12 @@ ul#notifications-button-mobile {
     padding-top: 12px;
   }
 
-  .list-header {
-    margin-left: -16px !important;
-  }
-
   .logo-footer {
     margin-top: 2em;
+  }
+
+  .wtl-menu.hidden-xs > ul > li.list-header {
+    margin-left: -10px;
   }
 }
 

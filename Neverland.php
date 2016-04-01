@@ -291,7 +291,7 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-        <div id="content row">
+        <div id="content">
           <div class="revisionbadge col-xs-12" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
@@ -390,17 +390,13 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="e"></div>
           </div>
           <a href="https://www.kde.org/"><img src="/skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-footer center-block"></a>
+
         </section>
         </div>
-
         <!-- /panel -->
       </div>
-
-
-
     <!-- /content -->
   </div>
-
   <!-- footer -->
   <div class="footer noprint">
     <!-- pagestats -->
@@ -425,9 +421,6 @@ class NeverlandTemplate extends BaseTemplate {
             </li>
             <li>
                 <a href="//meta.<?php echo $wiki_domain ?>/Communication_channels">Communication channels</a>
-            </li>
-            <li>
-                <a href="//meta.<?php echo $wiki_domain ?>/Frequently_Asked_Questions">F.A.Q.</a>
             </li>
           </ul>
         </div>
@@ -542,30 +535,6 @@ class NeverlandTemplate extends BaseTemplate {
 
         $('#mw-createaccount-cta').removeAttr('id');
 
-          // $(document).on("DOMNodeInserted",".mw-echo-overlay",function(){
-          // //$('.mw-echo-overlay').css("position", "absolute");
-          // var p_offset = $('#pt-notifications').offset();
-          // var m_offset = $('.mw-echo-notifications-badge').offset();
-          // // alert(
-          // //   p_offset.left + " " + p_offset.top + "\n" +
-          // //   m_offset.left + " " + m_offset.top + "\n"
-          // //   );
-          // //alert(p_offset.top);
-          // if (p_offset.top > 20) {
-          //   $('.mw-echo-overlay').css({
-          //     top: p_offset.top + 550,
-          //     'max-width': '90%'
-          //   });
-          // } else {
-          //   $('.mw-echo-overlay').css({
-          //     top: p_offset.top + 20
-          //   });
-          //   $('.mw-echo-overlay').css(
-          //   "margin-left", "-15%"
-          //   );
-          // }
-          // });
-
             $('.contributionscores.plainlinks').removeClass('wikitable').addClass('table-bordered');
 
           $('.divider').hide();
@@ -584,6 +553,30 @@ class NeverlandTemplate extends BaseTemplate {
     </script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    <script async>
+      mw.hook( 've.activationComplete' ).add( function() {
+        $('a.oo-ui-tool-link').css("padding","0px");
+      });
+      /* Il codice JavaScript inserito qui viene caricato da ciascuna pagina, per tutti gli utenti. */
+      mw.hook( 've.activationComplete' ).add( function() {
+              $('a.oo-ui-tool-link').css({
+               "height" : "3em",
+               "padding-left" : "2px",
+               "padding-right" : "2px"
+            });
+              $('.ve-test-toolbar-insert > .oo-ui-popupToolGroup-handle').css({
+              "height": "100%"
+            });
+            $(".oo-ui-processDialog-location").css({
+               "height" : "3em"
+            });
+      $(".oo-ui-iconElement-icon.oo-ui-icon-math-display-inline").css({
+               "position" : "static"
+            });
+      $(".oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-labelElement > .oo-ui-buttonElement-button, .oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-indicatorElement > .oo-ui-buttonElement-button").css({
+               "padding-left" : "1.6em"
+            });
+            });    </script>
     <!-- End Cookie Consent plugin -->
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->

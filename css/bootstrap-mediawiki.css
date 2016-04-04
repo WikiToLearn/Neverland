@@ -98,7 +98,7 @@ li#pt-notifications-alert > a, li#pt-notifications-message > a {
   margin-top: 0px!important;
 }
 
-.oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+.oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon.oo-ui-icon-next , .oo-ui-iconElement-icon.oo-ui-icon-advanced  {
   top: 1.5em!important;
 }
 
@@ -717,7 +717,6 @@ h2 .editsection {
 .lqt-talkpage-header {
   border: none !important;
   padding: 0 !important;
-  margin-top: -30px !important;
   padding-bottom: 20px !important;
 }
 .lqt_header_content {

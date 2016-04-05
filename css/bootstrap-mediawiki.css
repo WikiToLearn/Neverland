@@ -110,6 +110,10 @@ ul#notifications-button-mobile {
   padding-left: 10px;
 }
 
+.list-header{
+  margin-left:-16px!important;
+}
+
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
   .header > th {

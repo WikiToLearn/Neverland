@@ -66,7 +66,7 @@ class NeverlandTemplate extends BaseTemplate {
    */
   public function execute() {
     global $wgRequest, $wgOut, $wgCanonicalNamespace, $wgContLang, $wgSitename,
-         $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch;
+         $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch, $wiki_domain, $wgUser;
 
     $skin = $this->getSkin();
     $user = $skin->getUser();
@@ -82,10 +82,10 @@ class NeverlandTemplate extends BaseTemplate {
         unset( $nav['actions'][$mode] );
       }
     }
-    
+
     $bigTitle = "";
     $subpages = "";
-    
+
     if ( $wgOut->isArticle() ) { // && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); //->getPrefixedText();
         if ( preg_match( '/\//', $ptext ) ) {
@@ -124,23 +124,23 @@ class NeverlandTemplate extends BaseTemplate {
                     $display = '';
                 } else {
                         $display .= '/';
-                        
+
                 }
                 $growinglink .= '/';
-                
+
                 $subpages .= "</li>";
             }
             $subpages .= '</ul>';
         }
     }
-    
+
     if ($bigTitle == "") {
         $bigTitle = $wgOut->getTitle()->getText();
     }
-    
+
 
     $xmlID = '';
-    
+
     foreach ( $nav as $section => $links ) {
       foreach ( $links as $key => $link ) {
         if ( $section == 'views' && !( isset( $link['primary'] ) && $link['primary'] ) ) {
@@ -149,13 +149,13 @@ class NeverlandTemplate extends BaseTemplate {
 
         $xmlID = isset( $link['id'] ) ? $link['id'] : 'ca-' . $xmlID;
         $nav[$section][$key]['attributes'] = ' id="' . Sanitizer::escapeId( $xmlID ) . '"';
-        
+
         if ( $link['class'] ) {
           $nav[$section][$key]['attributes'] = $nav[$section][$key]['attributes'] .
             ' class="' . htmlspecialchars( $link['class'] ) . '"';
           $nav[$section][$key]['class'] = '';
         }
-        
+
         if ( isset( $link['tooltiponly'] ) && $link['tooltiponly'] ) {
           $nav[$section][$key]['key'] = Linker::tooltip( $xmlID );
         } else {
@@ -163,7 +163,7 @@ class NeverlandTemplate extends BaseTemplate {
         }
       }
     }
-    
+
     $this->data['namespace_urls'] = $nav['namespaces'];
     $this->data['view_urls'] = $nav['views'];
     $this->data['action_urls'] = $nav['actions'];
@@ -175,83 +175,73 @@ class NeverlandTemplate extends BaseTemplate {
       $this->data['namespace_urls'] = array_reverse( $this->data['namespace_urls'] );
       $this->data['personal_urls'] = array_reverse( $this->data['personal_urls'] );
     }
-    
+
     // Output HTML Page
     $this->html( 'headelement' );
   ?>
 
+<?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
 <!-- header -->
-<nav class="navbar navbar-default navbar-inverse navbar-static-top Neverland noprint">
+<nav class="navbar navbar-default navbar-inverse Neverland noprint">
   <div class="container">
-      <div class="row">
-          <div class="col-sm-6">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a id="header-title" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>" class="navbar-brand" style="color:#999;    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);font-size:141%;">
-                    <?php echo $wgSitename; ?>
-                </a>
-              </div>
-          </div>
-          <div class="col-sm-6">
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse row" id="bs-example-navbar-collapse-1">
-                <form class="navbar-form navbar-right" role="search">
-                  <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Search" style="max-width: 178%;">
-                        </div>
-                    </div>
-                  </div>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown col-xs-6 col-lg-10 col-md-10 col-sm-10">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $user->getName(); ?> <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <?php
-                                // generate user tools (and notifications item in user tools if needed)
-                                $personalToolsCount = 0;
-                                foreach ( $this->getPersonalTools() as $key => $tool ) {
-                                    $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
-                                    echo $this->makeListItem( $key, $tool );
-                                    if ( class_exists( 'EchoHooks' ) && $this->data['loggedin'] && $personalToolsCount == 2 ) { // if Echo is installed, user is logged in, and the first two tools have been generated (user and user talk)...
-                        ?>
-                                            <li id="pt-notifications-personaltools" class="header-dropdown-item">
-                        <?php
-                                                echo Linker::link(
-                                                    SpecialPage::getTitleFor( 'Notifications' ),
-                                                    $this->getMsg( 'notifications' )->plain(),
-                                                    Linker::tooltipAndAccesskeyAttribs( 'pt-notifications' )
-                                                )
-                        ?>
-                                            </li>
-                        <?php
-                                    } else {
-                                      //echo '<div><a href="javascript:void(0)" class="mw-echo-notifications-badge" style="color:rgba(0, 0, 0, 0);">0</a></div>';
-                                    }
-                                    $personalToolsCount++;
-                                }
-                        ?>
-                      </ul>
-                    </li>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" style="list-style:none;float:right;padding-top:15px;padding-left:8px;color:rgba(0, 0, 0, 0);cursor:default;" id="echo" >0</div>
-                    <div class="col-xs-12 visible-xs">
-                      <ul class="wtl-menu-mobile list-group list-unstyled">
-                        <?php 
-                          $this->renderPortals( $this->data['sidebar'] );
-                        ?>
-                      </ul>
-                    </div>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-          </div>
-      </div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a id="header-title" class="navbar-brand" href="<?php echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] ) ?>">
+        <img id="smalllogo" alt="Brand" src="/skins/Neverland/images/logos/smallcolored.png" class="visible-xs" style="float:left; width: 20px !important; height:20px; margin-right: 10px; margin-left:-10px;">
+        <?php echo $wgSitename; ?>
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $log_in; ?> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <?php
+                    // generate user tools (and notifications item in user tools if needed)
+                    $personalToolsCount = 0;
+                    $toolbar = $this->getPersonalTools();
+                    $alerts = $toolbar['notifications-alert'];
+                    $messages = $toolbar['notifications-message'];
+                    unset($toolbar['notifications-alert']);
+                    unset($toolbar['notifications-message']);
+                    unset($toolbar['newmessages']);
+                    foreach ( $toolbar as $key => $tool ) {
+                        $tool['class'] = 'header-dropdown-item'; // add the "header-dropdown-item" class to each li element
+                        echo $this->makeListItem( $key, $tool );
+                        $personalToolsCount++;
+                    }
+            ?>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <ul class="list-unstyled list-inline" id="notifications-button-mobile">
+            <?php
+              if (!$wgUser->isAnon()) {
+                echo $this->makeListItem('notifications-alert', $alerts);
+                if ($messages !== NULL) {
+                  echo $this->makeListItem('notifications-message', $messages);
+                }
+              }
+            ?>
+          </ul>
+        </li>
+        <?php echo $this->renderNavigation( 'SEARCH' ) ?>
+        <li class="visible-xs">
+          <ul class="wtl-menu-mobile list-group list-unstyled">
+            <?php
+              $this->renderPortals( $this->data['sidebar'] );
+            ?>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <!-- /header -->
@@ -263,17 +253,16 @@ class NeverlandTemplate extends BaseTemplate {
         <div id="p-side" class="col-sm-3 wikimenu noprint">
 
           <!-- logo -->
-            <a href="//www.wikitolearn.org">
-              <img id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
+            <a href="//www.<?php echo $wiki_domain; ?>">
+              <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
             </a>
           <!-- /logo -->
 
-          <div class="wtl-menu">        
+          <div class="wtl-menu hidden-xs">
             <ul>
               <?php
                 $this->renderNavigation( 'VARIANTS' );
                 $this->renderPortals( $this->data['sidebar'] );
-//                $this->renderNavigation( 'PERSONAL' );
               ?>
             </ul>
           </div>
@@ -302,24 +291,33 @@ class NeverlandTemplate extends BaseTemplate {
           <?php $this->renderNavigation( 'NAMESPACES' ); ?>
           <!-- /top-navigation -->
 
-        <div id="content row">
+        <div id="content">
           <div class="revisionbadge col-xs-12" id="siteSub">
             <?php $this->html( 'subtitle' ) ?>
           </div>
-            
+
+          <?php
+            $hide = '';
+            $title = $this->getSkin()->getTitle();
+            $strip_title = str_replace(' ', '_', $title);
+            if(strtoupper($strip_title) == "PAGINA_PRINCIPALE" || strtoupper($strip_title) == "MAIN_PAGE")
+             {
+                $hide = " class='hidden' ";
+             }
+          ?>
           <!-- firstHeading -->
           <header>
-            <h1 id="firstHeading">
+            <h1 id="firstHeading" <?php echo $hide; ?> >
               <?php print $bigTitle; ?>
               <?php /*$this->html( 'title' )*/ ?>
             </h1>
           </header>
-          
+
           <!-- /firstHeading -->
 
           <!-- bodyContent -->
           <article>
-          
+
             <?php if ( $this->data['undelete'] ): ?>
               <!-- undelete -->
               <div id="contentSub2"><?php $this->html( 'undelete' ) ?></div>
@@ -340,14 +338,14 @@ class NeverlandTemplate extends BaseTemplate {
               </div>
               <!-- /jumpto -->
             <?php endif; ?>
-            
+
           <div id="bodyContent">
-          
+
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>
             </div>
-            <!-- /subtitle -->  
+            <!-- /subtitle -->
 
             <!-- bodycontent -->
             <?php $this->html( 'bodycontent' ) ?>
@@ -378,9 +376,9 @@ class NeverlandTemplate extends BaseTemplate {
             <!-- debughtml -->
             <?php $this->html( 'debughtml' ); ?>
             <!-- /debughtml -->
-          
+
           </div>
-          
+
           </article>
         </div> <!--content-->
           <!-- /bodyContent -->
@@ -391,18 +389,14 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="d"></div>
             <div class="e"></div>
           </div>
-          
+          <a href="https://www.kde.org/"><img src="/skins/Neverland/images/proudtobe.png" alt="Proud to be KDE project" class="img-responsive kde-img-footer center-block"></a>
+
         </section>
         </div>
-
         <!-- /panel -->
       </div>
-
-
-
     <!-- /content -->
   </div>
-
   <!-- footer -->
   <div class="footer noprint">
     <!-- pagestats -->
@@ -410,9 +404,9 @@ class NeverlandTemplate extends BaseTemplate {
       <div class="row text-left footer-wtl">
         <div class="col-sm-1 hidden-xs"></div>
         <div class="col-sm-3 hidden-xs">
-          <a href="wikitolearn.org?page=main_page">
-            <img class="img-responsive" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
-          </a>
+<!--           <a href="wikitolearn.org?page=main_page"> -->
+            <img class="img-responsive logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
+<!--           </a> -->
         </div>
         <div class="col-sm-3 col-xs-6">
           <h3>
@@ -420,13 +414,13 @@ class NeverlandTemplate extends BaseTemplate {
           </h3>
           <ul class="list-unstyled">
             <li>
-            Mail: <a href="mailto:info@wikitolearn.org">info@wikitlearn.org</a>
+            For all contacts: <a href="mailto:info@wikitolearn.org">info@wikitolearn.org</a>
             </li>
             <li>
-                <a href="wikitolearn.org?page=mailing_list">Mailing list</a>
+                <a href="//meta.<?php echo $wiki_domain ?>/mailing_list">Mailing list</a>
             </li>
             <li>
-                <a href="wikitloearn.org?page=communication_channel">Communication channels</a>
+                <a href="//meta.<?php echo $wiki_domain ?>/Communication_channels">Communication channels</a>
             </li>
           </ul>
         </div>
@@ -436,19 +430,29 @@ class NeverlandTemplate extends BaseTemplate {
           </h3>
           <ul class="list-unstyled">
             <li>
-              <a href="wikitolearn.org?page=about_us">About us</a>
+              <a href="//en.<?php echo $wiki_domain ?>/vision">WikiToLearn philosophy</a>
             </li>
             <li>
-              <a href="wikitolearn.org?page=subscribe">Subscribe to our newsletter!</a>
+              <li><h4>Hosted by:</h4></li>
+              <li>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <a href="https://www.garr.it">GARR</a>
+                  </div>
+                  <div class="col-xs-6">
+                    <a href="https://www.neodigit.net/">Neodigit</a>
+                  </div>
+                </div>
+              </li>
             </li>
           </ul>
         </div>
         <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
         <div class="col-xs-6 visible-xs">
-          <a href="wikitolearn.org?page=main_page">
-            <img class="img-responsive center-block" style="max-width:88px;" src="/skins/Neverland/images/logos/en.png" alt="">
-          </a>
-        </div>
+<!--           <a href="//www.<?php echo $wiki_domain; ?>">
+ -->            <img class="img-responsive center-block logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
+<!--           </a>
+ -->        </div>
         <div class="col-sm-2 col-xs-6">
           <h3>
             Social
@@ -459,6 +463,9 @@ class NeverlandTemplate extends BaseTemplate {
           <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/WikiToLearn">
             <span class="fa fa-facebook"></span>
           </a>
+          <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company/wikitolearn">
+            <span class="fa fa-linkedin"></span>
+          </a>
         </div>
       </div>
       <hr>
@@ -468,7 +475,7 @@ class NeverlandTemplate extends BaseTemplate {
           if ( $category == 'info' ):
            foreach( $links as $link ): ?>
          <p><?php $this->html( $link ) ?></p>
-       <?php endforeach; 
+       <?php endforeach;
        endif;
        endforeach;
        ?>
@@ -492,8 +499,10 @@ class NeverlandTemplate extends BaseTemplate {
             <div class="device-sm hidden-sm breakpoint-sm"></div>
 
     <?php $this->printTrail(); ?>
-  
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+   <!-- Fix for mediawiki 1.26 -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         /* Fix for Echo in Refreshed */
@@ -508,30 +517,36 @@ class NeverlandTemplate extends BaseTemplate {
         function isBreakpoint( alias ) {
           return $('.device-' + alias).is(':visible');
         }
-          
+
         $( document ).ready(function() {
 
+        $('#searchform').removeClass('navbar-search').removeClass('pull-right').addClass('navbar-form').addClass('navbar-right');
+        $('#searchInput').addClass("form-control");
         $('form[name=userlogin]').addClass("col-xs-12");
         $('#userloginForm').addClass("row");
-        $('#userlogin2').addClass("col-xs-12"); 
-
-        if ($('body').hasClass('page-Pagina_principale')) {
-          $('.nav.nav-tabs').hide();
-          $('.btn-group.pull-right.page-actions').hide();
-          $('#firstHeading').hide();
-        };
+        $('#userlogin2').addClass("col-xs-12");
 
         if( $('.breakpoint-xs').is(':hidden') ) {
-          $('.wtl-menu').hide();
           $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
+          $('#views').addClass('btn-group-justified');
         }
         if( $('.breakpoint-sm').is(':hidden') ) {
           $('.wtl-menu-mobile').hide();
         }
+
+        $('#mw-createaccount-cta').removeAttr('id');
+
+            $('.contributionscores.plainlinks').removeClass('wikitable').addClass('table-bordered');
+
+          $('.divider').hide();
+          var active_breadcrumb = $('li.active');
+          $('ul.breadcrumb>li:empty').remove();
+
+          $('a.btn.btn-mini').css('padding','1%');
         });
 
-        
-        
+
+
     </script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
@@ -539,8 +554,31 @@ class NeverlandTemplate extends BaseTemplate {
     </script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    <script async>
+      mw.hook( 've.activationComplete' ).add( function() {
+        $('a.oo-ui-tool-link').css("padding","0px");
+      });
+      /* Il codice JavaScript inserito qui viene caricato da ciascuna pagina, per tutti gli utenti. */
+      mw.hook( 've.activationComplete' ).add( function() {
+              $('a.oo-ui-tool-link').css({
+               "height" : "3em",
+               "padding-left" : "2px",
+               "padding-right" : "2px"
+            });
+              $('.ve-test-toolbar-insert > .oo-ui-popupToolGroup-handle').css({
+              "height": "100%"
+            });
+            $(".oo-ui-processDialog-location").css({
+               "height" : "3em"
+            });
+      $(".oo-ui-iconElement-icon.oo-ui-icon-math-display-inline").css({
+               "position" : "static"
+            });
+      $(".oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-labelElement > .oo-ui-buttonElement-button, .oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-indicatorElement > .oo-ui-buttonElement-button").css({
+               "padding-left" : "1.6em"
+            });
+            });    </script>
     <!-- End Cookie Consent plugin -->
-
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
     <!--<script type="text/javascript">
@@ -627,7 +665,7 @@ class NeverlandTemplate extends BaseTemplate {
     if ( $msg === null ) {
       $msg = $name;
     }
-    
+
     ?>
       <li class="list-header" id='<?php echo Sanitizer::escapeId( "p-$name" ) ?>' <?php echo Linker::tooltip( 'p-' . $name ) ?>>
         <?php $msgObj = wfMessage( $msg ); echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $msg ); ?>
@@ -654,6 +692,13 @@ class NeverlandTemplate extends BaseTemplate {
    */
   private function renderNavigation( $elements ) {
     global $wgNeverlandUseSimpleSearch;
+    $hide = '';
+    $title = $this->getSkin()->getTitle();
+    $strip_title = str_replace(' ', '_', $title);
+    if(strtoupper($strip_title) == "PAGINA_PRINCIPALE" || strtoupper($strip_title) == "MAIN_PAGE")
+     {
+        $hide = "hidden";
+     }
 
     // If only one element was given, wrap it in an array, allowing more
     // flexible arguments
@@ -670,7 +715,7 @@ class NeverlandTemplate extends BaseTemplate {
         case 'NAMESPACES':
         if ( count( $this->data['namespace_urls'] ) > 0 ) {
           ?>
-            <ul class="nav nav-tabs noprint">
+            <ul class="nav nav-tabs noprint <?php echo $hide; ?>">
               <?php
                 foreach ( $this->data['namespace_urls'] as $link ):
                   if ( stripos( $link['attributes'], 'selected' ) === false ): ?>
@@ -693,14 +738,14 @@ class NeverlandTemplate extends BaseTemplate {
           <?php
         }
         break;
-        
+
         case 'VARIANTS':
         if ( count( $this->data['variant_urls'] ) > 0 ) {
           ?>
             <li class="list-header">
               <?php $this->msg( 'variants' ) ?>
             </li>
-            
+
             <?php foreach ( $this->data['variant_urls'] as $link ): ?>
               <li <?php echo $link['attributes'] ?>>
                 <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
@@ -714,25 +759,35 @@ class NeverlandTemplate extends BaseTemplate {
 
         case 'VIEWS':
         ?>
-          <div class="btn-group pull-right page-actions noprint"> <!-- Is closed later in the 'actions' section -->
+          <div id="views" class="btn-group btn-group-xs pull-right page-actions noprint <?php echo $hide; ?> " style="margin-bottom:10px; padding-top:0.3em;" role="group" aria-label="..."> <!-- Is closed later in the 'actions' section -->
         <?php
-        
+
         if ( count( $this->data['view_urls'] ) > 0 ) {
           ?>
             <?php foreach ( $this->data['view_urls'] as $link ): ?>
-              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" class="btn btn-mini
-                <?php if ( stripos( $link['attributes'], 'selected' ) !== false ): ?>
-                  btn-primary
-                <?php endif ?>"
-                <?php echo $link['key'] ?>>
+              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" class="btn
+                <?php if ( stripos( $link['attributes'], 'selected' ) !== false ){ ?>
+                  btn-success
+                <?php }else{ ?>
+                  btn-default
+                <?php } ?>"
+                <?php echo $link['key'] ?> role="button" aria-label="...">
 
-                <?php if ( array_key_exists( 'text', $link ) ): ?>
-                  <i class="icon-<?php echo $link['id'] ?>
-                      <?php if ( stripos( $link['attributes'], 'selected' ) === false ): ?>
-                        icon-black
-                      <?php else: ?>
-                        icon-white
-                      <?php endif; ?>"></i>
+                <?php if ( array_key_exists( 'text', $link ) ):
+                if ($link['id'] == 'ca-edit') {
+                  $fa_icon = "fa fa-edit";
+                }
+                if ($link['id'] == 'ca-view') {
+                  $fa_icon = "fa fa-eye";
+                }
+                if ($link['id'] == 'ca-history') {
+                  $fa_icon = "fa fa-clock-o";
+                }
+                if ($link['id'] == 'ca-addsection') {
+                  $fa_icon = "fa fa-plus";
+                }
+                ?>
+                  <i class="<?php echo $fa_icon ?>"></i>
                   <?php
                     if ( strlen($link['text']) > 1 )
                       echo htmlspecialchars( $link['text'] )
@@ -747,17 +802,38 @@ class NeverlandTemplate extends BaseTemplate {
         case 'ACTIONS':
         if ( count( $this->data['action_urls'] ) > 0 ) {
           ?>
-            <a href="#" class="btn btn-mini dropdown-toggle" data-toggle="dropdown"
+            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
               title="<?php $this->msg( 'actions' ) ?>">
-              <i class="icon-cog icon-black"></i>
-              <span class="caret"></span>
+              <i class="fa fa-cog"></i>
             </a>
 
             <ul class="dropdown-menu">
               <?php foreach ( $this->data['action_urls'] as $link ): ?>
                 <li <?php echo $link['attributes'] ?>>
                   <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
-                    <i class="icon-<?php echo $link['id'] ?> icon-black"></i>
+                    <?php
+                      if ($link['id'] == 'ca-delete') {
+                        $fa_icon = 'fa fa-times';
+                        $hidden = "";
+                      }
+                      if ($link['id'] == 'ca-protect') {
+                        $fa_icon = 'fa fa-lock';
+                        $hidden = "";
+                      }
+                      if ($link['id'] == 'ca-move') {
+                        $fa_icon = 'fa fa-share';
+                        $hidden = "";
+                      }
+                      if ($link['id'] == 'ca-watch') {
+                        $fa_icon = 'fa fa-star';
+                        $hidden = "style='visibility:hidden'";
+                      }
+                      if ($link['id'] == 'ca-unwatch') {
+                        $fa_icon = 'fa fa-star';
+                        $hidden = "style='visibility:hidden'";
+                      }
+                    ?>
+                    <i class="<?php echo $fa_icon ?> icon-black" <?php echo $hidden ?> ></i>
                     <?php echo htmlspecialchars( $link['text'] ) ?>
                   </a>
                 </li>
@@ -765,12 +841,12 @@ class NeverlandTemplate extends BaseTemplate {
             </ul>
           <?php
         }
-        
+
         ?>
           </div> <!-- Opened in the 'views' section -->
         <?php
         break;
-        
+
         case 'PERSONAL':
         if ( count( $this->data['personal_urls'] ) > 0 ) {
           ?>

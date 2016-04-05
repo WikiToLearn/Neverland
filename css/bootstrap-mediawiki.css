@@ -1,17 +1,192 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro);
+@font-face {
+  font-family: Latin Modern Math;
+  src: url('latin-modern-fonts/latinmodern-math.otf');
+}
 
-* {
+body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+body[class*="_it skin-Neverland action-view"]  #firstHeading {
+  display:none;
+}
+
+math {
+    font-family: Latin Modern Math;
+}
+
+.math-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.vertical-spacing {
+  margin-bottom: 2em;
+}
+
+/*CSS for center, flushleft and flushright templates*/
+
+.template-center {
+  text-align: center;
+}
+
+.template-center table.wikitable {
+  display: table;
+  margin: 0 auto;
+}
+
+.template-center img {
+  margin: 0 auto;
+}
+
+.template-flushleft {
+  text-align: left;
+}
+
+.template-flushleft .math-wrapper {
+  display: inline-block;
+}
+
+.template-flushleft img {
+  margin: 0 0;
+}
+
+.template-flushright {
+  text-align: right;
+}
+
+.template-flushright .math-wrapper {
+  display: inline-block;
+}
+
+.template-flushright table.wikitable {
+  display: table;
+  margin: 0 0 auto auto;
+}
+
+.template-flushright img {
+  margin: 0 0 auto auto;
+}
+
+
+img#smallogo {
+  float:left; width: 20px !important;
+  height:20px;
+  margin-right: 10px;
+  margin-left:-10px;
+}
+
+.mw-pt-languages-label, .mw-pt-languages-list {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.mw-pt-languages-label {
+  width: 16%;
+}
+
+li#pt-notifications-alert > a, li#pt-notifications-message > a {
+  height: 25px!important;
+  background-position: 3px 3px!important;
+  padding-top: 4px!important;
+  margin-top: 0px!important;
+}
+
+.oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon.oo-ui-icon-next , .oo-ui-iconElement-icon.oo-ui-icon-advanced  {
+  top: 1.5em!important;
+}
+
+.oo-ui-widget.oo-ui-widget-enabled.oo-ui-labelElement.oo-ui-popupWidget-anchored.oo-ui-popupWidget {
+  top: 30px;
+}
+
+ul#notifications-button-mobile {
+  padding-left: 10px;
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .header > th {
+    font-size: small;
+  }
+  #header-title {
+    font-size: 0.8em;
+    padding-right: 0px;
+  }
+
+  .oo-ui-clippableElement-clippable.oo-ui-popupWidget-body {
+    width: 100%!important;
+  }
+
+  .oo-ui-popupWidget-popup {
+    width: 100%;
+  }
+
+  .logo-footer {
+    margin-top: 1em;
+  }
+}
+
+/* Desktop and tablets */
+@media (min-width: 481px) {
+  #header-title {
+    font-size: 135%;
+  }
+
+  ul#notifications-button-mobile {
+    padding-top: 12px;
+  }
+
+  .logo-footer {
+    margin-top: 2em;
+  }
+
+  .wtl-menu.hidden-xs > ul > li.list-header {
+    margin-left: -10px;
+  }
+}
+
+#header-title {
+  color: #999;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  float: left;
+}
+
+.kw0, .kw1, .kw2,
+.kw3, .kw4, .kw5 {
+  font-family: monospace;
+}
+
+.mw-code,
+#wpTextbox1 {
+    font-family: monospace !important;
+    font-size: 10pt;
+    line-height: 1.7em;
+}
 .content {
     font-size: 13pt;
     line-height: 1.5em;
 }
 
+@media screen and (min-width: 768px) {
+  #userlogin {
+    padding-left: 0px;
+  }
+}
+
 #mw-content-text {
    font-size: 13pt;
    line-height: 1.5em;
+}
+
+.list-unstyled li {
+  line-height: 1.1em;
 }
 
 h4, h5, h6 {
@@ -33,6 +208,20 @@ a {
   margin-top: -10px;
   width: 100%;
   height: 24px;
+}
+
+code {
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+table {
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: block;
+  width: 100% !important;
+  border-color: transparent !important;
 }
 
 table td:first-child {
@@ -73,7 +262,6 @@ label {
 }
 .list-header {
   margin-top: 15px;
-  margin-left: -16px !important;
   margin-right: -12px;
   padding: 2px 8px;
   margin-bottom: 5px;
@@ -168,7 +356,7 @@ label {
   text-align: center;
 }
 h2 .mw-headline {
-  font-size: 25px;
+  font-size: 1.1em;
 }
 .mw-input,
 .mw-submit {
@@ -338,6 +526,15 @@ h5 .mw-headline,
 h6 .mw-headline {
   font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
 }
+h3 .mw-headline {
+  font-size: 1.1em;
+}
+h4 .mw-headline {
+  font-size: 1.3em;
+}
+h5 .mw-headline {
+  font-size: 1.4em;
+}
 .editsection {
   font-size: 14px !important;
   font-family: "Open Sans", Helvetica, Arial, sans-serif !important;
@@ -401,8 +598,8 @@ h2 .editsection {
   margin-top: 1em;
 }
 #pt-newmessages.active a {
-  color: #b94a48;
-}
+/*  color: #ffffff;
+*/}
 #mw-prefs-form td:first-child {
   padding: 8px;
 }
@@ -520,7 +717,6 @@ h2 .editsection {
 .lqt-talkpage-header {
   border: none !important;
   padding: 0 !important;
-  margin-top: -30px !important;
   padding-bottom: 20px !important;
 }
 .lqt_header_content {
@@ -568,13 +764,7 @@ h2 .editsection {
 .mw-datatable tr:hover td {
   background: #fff;
 }
-.mw-content-ltr ol,
-.mw-content-ltr ul,
-.mw-content-rtl .mw-content-ltr ol,
-.mw-content-rtl .mw-content-ltr ul {
-  margin: 0.3em 0 0 3em;
-  list-style-position: inside;
-}
+
 #mw-landing .thumbnail {
   background: white;
   padding: 12px 12px 0 12px;
@@ -666,6 +856,15 @@ table.vertical-centered td {
   display: block;
   margin: 0 auto 20px;
 }
+img.kde-img-footer {
+  padding-top: 2em;
+  margin-bottom: -3em;
+}
+.image > img {
+   max-width:100%;
+   height: auto;
+   display:block;
+}
 
 .minchiatina {
   width: 100%;
@@ -721,6 +920,11 @@ h5 [class*=" icon-"] {
   margin-top: 6px;
 }
 
+.navbar.navbar-default.navbar-inverse.Neverland.noprint {
+  border-radius: 0;
+  border: 0;
+}
+
 .navbar-static-top {
   margin-bottom: 15px;
 }
@@ -772,7 +976,6 @@ h5 [class*=" icon-"] {
   margin-top: 70px;
   padding: 30px 0;
   text-align: center;
-  margin-top:22%;
 }
 
 input.search {
@@ -1064,10 +1267,10 @@ h2.corsotitolo {
   margin-top: 30px;
 /*  top: 2.1em !important;
   left: -3em !important;
-*/}
+}
 
 /* Gli stili CSS inseriti qui si applicano a tutte le skin */
- 
+
 /* Il codice ora ha la stessa grandezza del testo normale */
 div.mw-geshi div,
 div.mw-geshi div pre,
@@ -1077,18 +1280,13 @@ pre.source-javascript {
    font-family: Monaco,Menlo,Consolas,"Courier New",monospace !important;
    font-size: 14px;
 }
- 
+
 div.ace_editor {
   line-height: 1em;
 }
 
-textarea {
-	font-family: monospace;
-        font-size: 10pt;
-}
- 
 /* Gli stili CSS inseriti qui si applicano a tutte le skin */
- 
+
 /* Il codice ora ha la stessa grandezza del testo normale */
 div.mw-geshi div,
 div.mw-geshi div pre,
@@ -1104,16 +1302,23 @@ display:none;
 span.mw-collapsible-toggle {
 float:right !important;
 }
- 
+
 div.ace_editor {
-  line-height: 1em;
+    font-family: monospace !important;
+    line-height: 1em;
 }
- 
+
+.page-Pagina_principale .btn-group,
+.page-Pagina_principale .nav,
+.page-Pagina_principale #firstHeading,
+.page-Pagina_principale #contentSub,
+.page-Pagina_principale .revisionbadge {
+  display:none;
+}
 
 textarea {
-	font-family: monospace;
-        font-size: 10pt;
+    font-family: monospace;
+    font-size: 10pt;
 }
- 
- 
+
 /* Vedi anche MediaWiki:Common-unused.css */

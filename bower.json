@@ -1,0 +1,22 @@
+{
+  "name": "neverland-wtl",
+  "description": "Theming for WikiToLearn, based on bootstrap",
+  "main": "",
+  "authors": [
+    "Ingo Malchow <ingomalchow@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/WikiToLearn/Neverland",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6"
+  }
+}

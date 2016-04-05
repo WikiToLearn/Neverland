@@ -1,0 +1,19 @@
+{
+    "root": {
+        "src": "./",
+        "dest": "./"
+    },
+    "tasks": {
+        "css": {
+            "src": "scss",
+            "dest": "css",
+            "autoprefixer": {
+                "browsers": ["last 3 version"]
+            },
+            "sass": {
+                "indentedSyntax": true
+            },
+            "extensions": ["sass", "scss", "css"]
+        }
+    }
+}

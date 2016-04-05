@@ -131,6 +131,11 @@ ul#notifications-button-mobile {
   .logo-footer {
     margin-top: 1em;
   }
+
+  ul.nav.nav-tabs.noprint {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 /* Desktop and tablets */

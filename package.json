@@ -1,0 +1,19 @@
+{
+  "name": "neverland-wtl",
+  "description": "Theming for WikiToLearn, based on bootstrap",
+  "version": "0.0.1",
+  "homepage": "http://wikitolearn.org",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-watch": "^4.3.5",
+    "minimist": "^1.2.0",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.0"
+  }
+}

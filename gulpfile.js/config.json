@@ -4,6 +4,11 @@
         "dest": "./"
     },
     "tasks": {
+        "browserSync": {
+            "proxy": "http://en.tuttorotto.biz/",
+            "port": 8080,
+            "open": true
+        },
         "css": {
             "src": "scss",
             "dest": "css",

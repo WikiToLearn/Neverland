@@ -2,6 +2,7 @@ var config       = require('../config');
 if(!config.tasks.css) return;
 
 var gulp         = require('gulp');
+var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var handleErrors = require('../lib/handleErrors');
 var autoprefixer = require('gulp-autoprefixer');
@@ -25,7 +26,9 @@ var cssTask = function () {
     .pipe(sass(taskConfig))
     .on('error', handleErrors)
     .pipe(autoprefixer(config.tasks.css.autoprefixer))
+    .pipe(rename("bootstrap.css"))
     .pipe(gulp.dest(paths.dest))
+    .pipe(browserSync.stream())
 };
 
 gulp.task('css', cssTask);

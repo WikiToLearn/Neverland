@@ -449,10 +449,10 @@ class NeverlandTemplate extends BaseTemplate {
         </div>
         <div class="col-xs-12 visible-xs" style="height: 20px;"></div>
         <div class="col-xs-6 visible-xs">
-<!--           <a href="//www.<?php echo $wiki_domain; ?>">
- -->            <img class="img-responsive center-block logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
-<!--           </a>
- -->        </div>
+          <a href="//www.<?php echo $wiki_domain; ?>">
+            <img class="img-responsive center-block logo-footer" src="/skins/Neverland/images/logos/smallcolored.png" alt="">
+          </a>
+        </div>
         <div class="col-sm-2 col-xs-6">
           <h3>
             Social

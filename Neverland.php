@@ -843,19 +843,6 @@ class NeverlandTemplate extends BaseTemplate {
 
         ?>
           </div> <!-- Opened in the 'views' section -->
-        <div class="visible-xs pull-right">
-          <!-- START: Feature for having a button to download PDFs on mobile devices -->
-          <?php
-            $title = $this->data['sidebar']['coll-print_export'][1]['text']
-           ?>
-            <a class="btn btn-default" href="<?php echo $this->data['sidebar']['coll-print_export'][1]['href'] ?>" aria-label="..." role="button" title="<?php echo $title; ?>">
-              <i class="fa fa-download"></i>
-              <?php
-               echo $title;
-              ?>
-            </a>
-          <!-- END -->
-        </div>
         <?php
         break;
 

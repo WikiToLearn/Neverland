@@ -1,0 +1,42 @@
+// Portrait phones and smaller
+@media (max-width: 480px) {
+  .header > th {
+    font-size: small;
+  }
+
+  #header-title {
+    font-size: .8em;
+    padding-right: 0;
+  }
+
+  .oo-ui-clippableElement-clippable.oo-ui-popupWidget-body {
+    width: 100% !important;
+  }
+
+  .oo-ui-popupWidget-popup {
+    width: 100%;
+  }
+
+  .logo-footer {
+    margin-top: 1em;
+  }
+}
+
+// Desktop and tablets
+@media (min-width: 481px) {
+  #header-title {
+    font-size: 135%;
+  }
+
+  #notifications-button-mobile {
+    padding-top: 12px;
+  }
+
+  .logo-footer {
+    margin-top: 2em;
+  }
+
+  .wtl-menu.hidden-xs > ul > .list-header {
+    margin-left: -10px;
+  }
+}

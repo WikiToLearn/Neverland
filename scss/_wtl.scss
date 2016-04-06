@@ -4,7 +4,7 @@
 
 // modularized approach
 @import 'modules/type';
-
+@import 'modules/responsive';
 // to be modularized
 
 .math-wrapper {
@@ -69,7 +69,7 @@ img#smallogo {
 }
 
 
-.mw-pt-languages-list {
+%language-box {
   background-color: #d9edf7;
   border: 1px solid transparent;
   border-color: #bce8f1;
@@ -79,8 +79,11 @@ img#smallogo {
   padding: 15px;
 }
 
-.mw-pt-languages-label {
-  width: 16%;
+.mw-pt-languages-list {
+  @extend %language-box;
+}
 
-  @extend .mw-pt-languages-list;
+.mw-pt-languages-label {
+  @extend %language-box;
+  width: 16%;
 }

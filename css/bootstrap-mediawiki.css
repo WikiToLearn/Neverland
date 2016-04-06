@@ -1,95 +1,13 @@
-@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro);
-@font-face {
-  font-family: Latin Modern Math;
-  src: url('latin-modern-fonts/latinmodern-math.otf');
-}
-
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-}
 
 body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
 
-math {
-    font-family: Latin Modern Math;
-}
 
-.math-wrapper {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-.vertical-spacing {
-  margin-bottom: 2em;
-}
 
 /*CSS for center, flushleft and flushright templates*/
 
-.template-center {
-  text-align: center;
-}
 
-.template-center table.wikitable {
-  display: table;
-  margin: 0 auto;
-}
-
-.template-center img {
-  margin: 0 auto;
-}
-
-.template-flushleft {
-  text-align: left;
-}
-
-.template-flushleft .math-wrapper {
-  display: inline-block;
-}
-
-.template-flushleft img {
-  margin: 0 0;
-}
-
-.template-flushright {
-  text-align: right;
-}
-
-.template-flushright .math-wrapper {
-  display: inline-block;
-}
-
-.template-flushright table.wikitable {
-  display: table;
-  margin: 0 0 auto auto;
-}
-
-.template-flushright img {
-  margin: 0 0 auto auto;
-}
-
-
-img#smallogo {
-  float:left; width: 20px !important;
-  height:20px;
-  margin-right: 10px;
-  margin-left:-10px;
-}
-
-.mw-pt-languages-label, .mw-pt-languages-list {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-
-.mw-pt-languages-label {
-  width: 16%;
-}
 
 li#pt-notifications-alert > a, li#pt-notifications-message > a {
   height: 25px!important;

@@ -19,41 +19,41 @@
 .template {
   &-center {
     text-align: center;
-    
-    table.wikitable {
+
+    .wikitable {
       display: table;
       margin: 0 auto;
     }
-    
+
     img {
       margin: 0 auto;
     }
   }
-  
+
   &-flushleft {
     text-align: left;
-    
+
     .math-wrapper {
       display: inline-block;
     }
-    
+
     img {
-      margin: 0 0;
+      margin: 0;
     }
   }
-  
+
   &-flushright {
     text-align: right;
-    
+
     .math-wrapper {
       display: inline-block;
     }
-    
-    table.wikitable {
+
+    .wikitable {
       display: table;
       margin: 0 0 auto auto;
     }
-    
+
     img {
       margin: 0 0 auto auto;
     }
@@ -61,25 +61,26 @@
 }
 
 img#smallogo {
-  float:left; width: 20px !important;
-  height:20px;
+  float: left;
+  width: 20px !important;
+  height: 20px;
   margin-right: 10px;
-  margin-left:-10px;
+  margin-left: -10px;
 }
 
-  
+
 .mw-pt-languages-list {
-  padding: 15px;
-  margin-bottom: 20px;
+  background-color: #d9edf7;
   border: 1px solid transparent;
+  border-color: #bce8f1;
   border-radius: 4px;
   color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  margin-bottom: 20px;
+  padding: 15px;
 }
 
 .mw-pt-languages-label {
   width: 16%;
-  
+
   @extend .mw-pt-languages-list;
 }

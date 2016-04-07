@@ -4,6 +4,7 @@
 
 // modularized approach
 @import 'modules/type';
+@import 'modules/tables';
 @import 'modules/responsive';
 // to be modularized
 
@@ -60,7 +61,7 @@
   }
 }
 
-img#smallogo {
+#smallogo {
   float: left;
   width: 20px !important;
   height: 20px;

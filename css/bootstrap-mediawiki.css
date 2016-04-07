@@ -32,80 +32,12 @@ ul#notifications-button-mobile {
   margin-left:-16px!important;
 }
 
-/* Portrait phones and smaller */
-@media (max-width: 480px) {
-  .header > th {
-    font-size: small;
-  }
-  #header-title {
-    font-size: 0.8em;
-    padding-right: 0px;
-  }
-
-  .oo-ui-clippableElement-clippable.oo-ui-popupWidget-body {
-    width: 100%!important;
-  }
-
-  .oo-ui-popupWidget-popup {
-    width: 100%;
-  }
-
-  .logo-footer {
-    margin-top: 1em;
-  }
-}
-
-/* Desktop and tablets */
-@media (min-width: 481px) {
-  #header-title {
-    font-size: 135%;
-  }
-
-  ul#notifications-button-mobile {
-    padding-top: 12px;
-  }
-
-  .logo-footer {
-    margin-top: 2em;
-  }
-
-  .wtl-menu.hidden-xs > ul > li.list-header {
-    margin-left: -10px;
-  }
-}
-
 #header-title {
   color: #999;
   text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
   float: left;
 }
 
-.kw0, .kw1, .kw2,
-.kw3, .kw4, .kw5 {
-  font-family: monospace;
-}
-
-.mw-code,
-#wpTextbox1 {
-    font-family: monospace !important;
-    font-size: 10pt;
-    line-height: 1.7em;
-}
-.content {
-    font-size: 13pt;
-    line-height: 1.5em;
-}
-
-@media screen and (min-width: 768px) {
-  #userlogin {
-    padding-left: 0px;
-  }
-}
-
-#mw-content-text {
-   font-size: 13pt;
-   line-height: 1.5em;
-}
 
 .list-unstyled li {
   line-height: 1.1em;
@@ -132,43 +64,9 @@ a {
   height: 24px;
 }
 
-code {
-  word-wrap: break-word;
-  white-space: normal;
-}
 
-table {
-  overflow: auto;
-  overflow-y: hidden;
-  overflow-x: auto;
-  display: block;
-  width: 100% !important;
-  border-color: transparent !important;
-}
 
-table td:first-child {
-  padding-left: 0;
-  min-width: 48px;
-}
-table td:last-child {
-  padding-right: 0;
-}
-table.wikitable {
-  margin: 0;
-  width: 100%;
-  background: transparent;
-}
-table.wikitable tr {
-  border-color: inherit;
-}
-table[border=1] {
-  border: 1px solid #808080;
-  border-color: rgba(128, 128, 128, 0.6);
-}
-table.tablecenter {
-  margin-left:auto;
-  margin-right:auto;
-}
+
 tt {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }

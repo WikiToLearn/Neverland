@@ -10,3 +10,34 @@ body {
 math {
   font-family: Latin Modern Math;
 }
+
+.content {
+  font-size: 13pt;
+  line-height: 1.5em;
+}
+
+.kw0,
+.kw1,
+.kw2,
+.kw3,
+.kw4,
+.kw5 {
+  font-family: monospace;
+}
+
+.mw-code,
+#wpTextbox1 {
+  font-family: monospace !important;
+  font-size: 10pt;
+  line-height: 1.7em;
+}
+
+#mw-content-text {
+  font-size: 13pt;
+  line-height: 1.5em;
+}
+
+code {
+  white-space: normal;
+  word-wrap: break-word;
+}

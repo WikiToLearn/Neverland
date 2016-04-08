@@ -1,0 +1,88 @@
+.icon-ca-view {
+  background-position: -48px -48px;
+}
+
+.icon-ca-edit {
+  background-position: 0 -72px;
+}
+
+.icon-ca-ve-edit {
+  background-position: 0 -72px;
+}
+
+.icon-ca-history {
+  background-position: -48px -24px;
+}
+
+.icon-ca-addsection {
+  background-position: -408px -96px;
+}
+
+.icon-ca-delete {
+  background-position: -312px 0;
+}
+
+.icon-ca-move {
+  background-position: -336px -96px;
+}
+
+.icon-ca-protect, .icon-ca-unprotect {
+  background-position: -287px -24px;
+}
+
+.icon-ca-watch {
+  background-position: -120px 0;
+}
+
+.icon-ca-viewsource {
+  background-position: -264px -24px;
+}
+
+.icon-ca-lstats {
+  background-position: -264px 0;
+}
+
+.icon-ca-mstats {
+  background-position: -240px -120px;
+}
+
+.icon-ca-export {
+  background-position: -336px -96px;
+}
+
+.icon-ca-supportedlanguages {
+  background-position: -240px -120px;
+}
+
+.icon-ca-translationstats {
+  background-position: -384px -144px;
+}
+
+.icon-privacy {
+  background-position: -48px -48px;
+}
+
+.icon-disclaimer {
+  background-position: 0 -120px;
+}
+
+.icon-about {
+  background-position: -120px -96px;
+}
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+  margin-top: 2px !important;
+}
+
+h4 [class^="icon-"],
+h4 [class*=" icon-"],
+h5 [class^="icon-"],
+h5 [class*=" icon-"] {
+  margin-top: 6px;
+}
+
+.icon-white {
+  background-image: url("../img/glyphicons-halflings-white.png");
+}

@@ -1,0 +1,43 @@
+.template {
+  &-center {
+    text-align: center;
+
+    .wikitable {
+      display: table;
+      margin: 0 auto;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  &-flushleft {
+    text-align: left;
+
+    .math-wrapper {
+      display: inline-block;
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+
+  &-flushright {
+    text-align: right;
+
+    .math-wrapper {
+      display: inline-block;
+    }
+
+    .wikitable {
+      display: table;
+      margin: 0 0 auto auto;
+    }
+
+    img {
+      margin: 0 0 auto auto;
+    }
+  }
+}

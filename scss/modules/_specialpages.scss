@@ -1,0 +1,125 @@
+.mw-recentchanges-table input[type=submit],
+#mw-history-search input[type=submit] {
+  float: right;
+}
+
+ul.special,
+#mw-whatlinkshere-list,
+.mw-warning-with-logexcerpt, .rbroundbox {
+  padding: 8px 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 0px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #edf4f7;
+  border: 1px solid #bce8f1 !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.special {
+  margin-bottom: 20px;
+}
+
+.mw-warning-with-logexcerpt,
+.rbroundbox {
+  padding: 8px !important;
+}
+
+#mw-history-search legend {
+  display:none;
+}
+
+#mw-history-search input,
+#mw-history-search select {
+  margin-right: 10px;
+}
+
+#mw-history-search input[type=checkbox] {
+  margin-right: 3px;
+}
+
+#mw-history-search input[type=submit] {
+  margin-right: 0;
+}
+
+#mw-history-searchform {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#pagehistory {
+  margin-top: 10px;
+}
+
+#wikiPreview {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dadada;
+}
+
+.previewnote hr {
+  display: none;
+}
+
+.previewnote h2 {
+  margin-top: 20px;
+  line-height: 1.2em;
+  font-size: 1.5em;
+}
+
+.previewnote p {
+  padding: 8px;
+  text-indent: 0;
+  margin-bottom: 1.6em;
+  margin-left: 0px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #f2dede;
+  border: 1px solid #eed3d7;
+  border-radius: 4px;
+  color: #b94a48;
+}
+
+.mw-specialpages-table {
+  margin-top: 1em;
+}
+
+.mw-pt-languages table {
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+}
+
+.mw-pt-languages-label,
+.mw-pt-languages-list {
+  padding: 8px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 5px !important;
+}
+
+#mw-landing .thumbnail {
+  background: white;
+  padding: 12px 12px 0 12px;
+}
+#mw-landing h1 {
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+#identity_remember {
+  margin-right: 0.4em;
+}
+#userlogin h2,
+#userloginForm h2 {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  border: 0;
+  font-size: 1.7em;
+}
+
+.mw-subject-editor {
+  font-size: 0.55em !important;
+
+  input[type=button] {
+    margin-top: -8px;
+  }
+}

@@ -1,10 +1,10 @@
 #p-search {
   margin-right: 20px;
   margin-top: 10px;
-}
 
-#p-search form {
-  margin: 0;
+  form {
+    margin: 0;
+  }
 }
 
 #contentSub {
@@ -20,42 +20,48 @@
   margin-right: 30px !important;
 }
 
-.thumb .thumbinner, .center .floatnone img {
+.thumb .thumbinner,
+.center .floatnone img {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin: 0 auto 10px;
   padding: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
 }
 
-.tleft .thumbinner, .floatleft a {
+.tleft .thumbinner,
+.floatleft a {
   margin-right: 8px !important;
 }
-.tright .thumbinner, .floatright a {
+
+.tright .thumbinner,
+.floatright a {
   margin-left: 8px !important;
 }
 
 .image > img {
-   max-width:100%;
-   height: auto;
-   display:block;
-}
-
-.manualtoc ol {
-  counter-reset: item;
-}
-
-.manualtoc li {
   display: block;
+  height: auto;
+  max-width: 100%;
+}
 
-  &:before {
-    content: counters(item, ".") " ";
-    counter-increment: item;
+.manualtoc {
+  ol {
+    counter-reset: item;
+  }
+
+  li {
+    display: block;
+
+    &::before {
+      content: counters(item, '.') ' ';
+      counter-increment: item;
+    }
   }
 }
 
 .mw-sp-translate-table > tbody > tr > td:last-child {
-	word-break: break-word;
+  word-break: break-word;
 }
 
 #firstHeading .languageselector {

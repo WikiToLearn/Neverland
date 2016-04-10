@@ -207,8 +207,8 @@ class NeverlandTemplate extends BaseTemplate {
                     // generate user tools (and notifications item in user tools if needed)
                     $personalToolsCount = 0;
                     $toolbar = $this->getPersonalTools();
-                    $alerts = $toolbar['notifications-alert'];
-                    $messages = $toolbar['notifications-message'];
+                    $alerts = (isset($toolbar['notifications-alert'])) ? $toolbar['notifications-alert'] : null ;
+                    $messages = (isset($toolbar['notifications-message'])) ? $toolbar['notifications-message'] : null ;
                     unset($toolbar['notifications-alert']);
                     unset($toolbar['notifications-message']);
                     unset($toolbar['newmessages']);

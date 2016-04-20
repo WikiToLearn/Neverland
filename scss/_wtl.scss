@@ -1,0 +1,85 @@
+// this is the place for custom wtl modifications
+
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+// modularized approach
+@import 'modules/type';
+
+// to be modularized
+
+.math-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.vertical-spacing {
+  margin-bottom: 2em;
+}
+
+.template {
+  &-center {
+    text-align: center;
+    
+    table.wikitable {
+      display: table;
+      margin: 0 auto;
+    }
+    
+    img {
+      margin: 0 auto;
+    }
+  }
+  
+  &-flushleft {
+    text-align: left;
+    
+    .math-wrapper {
+      display: inline-block;
+    }
+    
+    img {
+      margin: 0 0;
+    }
+  }
+  
+  &-flushright {
+    text-align: right;
+    
+    .math-wrapper {
+      display: inline-block;
+    }
+    
+    table.wikitable {
+      display: table;
+      margin: 0 0 auto auto;
+    }
+    
+    img {
+      margin: 0 0 auto auto;
+    }
+  }
+}
+
+img#smallogo {
+  float:left; width: 20px !important;
+  height:20px;
+  margin-right: 10px;
+  margin-left:-10px;
+}
+
+  
+.mw-pt-languages-list {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.mw-pt-languages-label {
+  width: 16%;
+  
+  @extend .mw-pt-languages-list;
+}

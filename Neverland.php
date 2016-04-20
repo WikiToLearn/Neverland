@@ -46,7 +46,7 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
-    $out->addStyle( $this->stylename.'/css/bootstrap.min.css', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-social.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/font-awesome-4.4.0/css/font-awesome.css', 'screen' );
@@ -503,8 +503,7 @@ class NeverlandTemplate extends BaseTemplate {
 
     <?php $this->printTrail(); ?>
 
-   <!-- Fix for mediawiki 1.26 -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         /* Fix for Echo in Refreshed */

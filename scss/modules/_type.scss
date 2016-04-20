@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Latin Modern Math;
+  src: url('latin-modern-fonts/latinmodern-math.otf');
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+} 
+
+math {
+  font-family: Latin Modern Math;
+}

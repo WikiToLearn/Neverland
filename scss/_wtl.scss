@@ -19,41 +19,41 @@
 .template {
   &-center {
     text-align: center;
-    
+
     table.wikitable {
       display: table;
       margin: 0 auto;
     }
-    
+
     img {
       margin: 0 auto;
     }
   }
-  
+
   &-flushleft {
     text-align: left;
-    
+
     .math-wrapper {
       display: inline-block;
     }
-    
+
     img {
       margin: 0 0;
     }
   }
-  
+
   &-flushright {
     text-align: right;
-    
+
     .math-wrapper {
       display: inline-block;
     }
-    
+
     table.wikitable {
       display: table;
       margin: 0 0 auto auto;
     }
-    
+
     img {
       margin: 0 0 auto auto;
     }
@@ -67,7 +67,7 @@ img#smallogo {
   margin-left:-10px;
 }
 
-  
+
 .mw-pt-languages-list {
   padding: 15px;
   margin-bottom: 20px;
@@ -80,6 +80,12 @@ img#smallogo {
 
 .mw-pt-languages-label {
   width: 16%;
-  
+
   @extend .mw-pt-languages-list;
+}
+
+.revisionbadge {
+  margin-top: -10px;
+  width: 100%;
+  height: 100%;
 }

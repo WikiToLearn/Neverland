@@ -3,12 +3,6 @@ body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
 
-
-
-/*CSS for center, flushleft and flushright templates*/
-
-
-
 li#pt-notifications-alert > a, li#pt-notifications-message > a {
   height: 25px!important;
   background-position: 3px 3px!important;
@@ -129,12 +123,6 @@ a {
 
 .subpages {
   display: none;
-}
-
-.revisionbadge {
-  margin-top: -10px;
-  width: 100%;
-  height: 24px;
 }
 
 code {

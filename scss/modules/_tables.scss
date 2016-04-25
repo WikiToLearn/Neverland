@@ -1,0 +1,63 @@
+table {
+  border-color: transparent !important;
+  width: 100% !important;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: block;
+
+  td:first-child {
+    min-width: 48px;
+    padding-left: 0;
+  }
+
+  td:last-child {
+    padding-right: 0;
+  }
+
+  &.wikitable {
+    background: transparent;
+    margin: 0;
+    width: 100%;
+
+    tr {
+      border-color: inherit;
+    }
+  }
+
+  &[border="1"] {
+    border: 1px solid #808080;
+    border-color: rgba(128, 128, 128, 0.6);
+  }
+
+  &.tablecenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.vertical-centered td {
+    padding: 8px;
+  }
+
+  #mw-content-text & {
+    width: auto !important;
+  }
+}
+
+.mw-datatable {
+  margin-bottom: 10px;
+}
+
+.mw-datatable th {
+  background: #f3f3f3;
+}
+
+.mw-datatable th,
+.mw-datatable td {
+  padding: 5px !important;
+  border: 1px solid #ccc;
+}
+
+.mw-datatable tr:hover td {
+  background: #fff;
+}

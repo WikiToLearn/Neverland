@@ -1,0 +1,101 @@
+textarea {
+  font-family: monospace;
+  font-size: 10pt;
+  width: 99%;
+}
+
+form input,
+form select {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+label {
+  display: inline;
+}
+
+select {
+  background: #fff;
+}
+
+#mw-content-text form {
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  min-height: 20px;
+  padding: 10px;
+  padding-bottom: 7px;
+}
+
+#mw-content-text form table {
+  width: 100% !important;
+}
+
+#mw-prefs-form td:first-child {
+  padding: 8px;
+}
+
+#mw-prefs-form td:nth-child(2) {
+  vertical-align: top;
+  padding-left: 15px;
+  padding-top: 8px;
+}
+
+#mw-prefs-form .htmlform-tip {
+  padding-bottom: 10px;
+  font-style: italic;
+  color: #666;
+}
+
+#mw-prefs-form .mainLegend {
+  display: none;
+}
+
+#mw-prefs-form fieldset {
+  margin-bottom: 15px;
+}
+
+#mw-prefs-form legend {
+  font-size: 1.1em;
+  border-bottom: 1px solid #dadada;
+}
+
+.mw-prefs-buttons input[type=submit],
+.mw-prefs-buttons input[type=button] {
+  margin-right: 10px;
+}
+
+.mw-htmlform-field-HTMLRadioField input[type=radio],
+.mw-htmlform-field-HTMLCheckField input[type=checkbox] {
+  margin-left: 0;
+}
+
+#provider_form_identity {
+  table {
+    margin-bottom: 8px;
+  }
+
+  input[type=submit] {
+    margin-top: 8px;
+  }
+}
+
+.mw-input,
+.mw-submit {
+  padding-bottom: 10px;
+  padding-top: 0;
+  padding-left: 10px;
+}
+.editOptions {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #dadada;
+}
+
+.rcoptions form {
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}

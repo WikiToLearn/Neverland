@@ -1,0 +1,56 @@
+.navbar.navbar-default.navbar-inverse.Neverland.noprint {
+  border: 0;
+  border-radius: 0;
+}
+
+.navbar-static-top {
+  margin-bottom: 15px;
+}
+
+.navbar-static-top .nav > li > a > [class^="icon-"],
+.nav-tabs > li > a > [class^="icon-"],
+.nav-pills > li > a > [class^="icon-"],
+.nav-panel > li > a > [class^="icon-"],
+.nav-list > li > a > [class^="icon-"],
+.navbar-static-top .nav > li > a > [class*=" icon-"],
+.nav-tabs > li > a > [class*=" icon-"],
+.nav-pills > li > a > [class*=" icon-"],
+.nav-panel > li > a > [class*=" icon-"],
+.nav-list > li > a > [class*=" icon-"] {
+  background-image: url('../img/glyphicons-halflings-blue.png');
+}
+
+.nav-tabs > .active > a [class^="icon-"],
+.nav-pills > .active > a [class^="icon-"],
+.nav-list > .active > a [class^="icon-"],
+.navbar-inverse .nav > .active > a [class^="icon-"],
+.dropdown-menu > li > a:hover [class^="icon-"],
+.dropdown-menu > li > a:focus [class^="icon-"],
+.dropdown-submenu:hover > a [class^="icon-"],
+.dropdown-menu > .active > a [class^="icon-"],
+.nav-tabs > .active > a [class*=" icon-"],
+.nav-pills > .active > a [class*=" icon-"],
+.nav-list > .active > a [class*=" icon-"],
+.navbar-inverse .nav > .active > a [class*=" icon-"],
+.dropdown-menu > li > a:hover [class*=" icon-"],
+.dropdown-menu > li > a:focus [class*=" icon-"],
+.dropdown-submenu:hover > a [class*=" icon-"],
+.dropdown-menu > .active > a [class*=" icon-"] {
+  background-image: url('../img/glyphicons-halflings-white.png');
+}
+
+input.search {
+  padding-right: 14px;
+  padding-right: 4px \9;
+  padding-left: 14px;
+  padding-left: 4px \9;
+  margin-bottom: 0;
+}
+
+.navbar-search .search {
+  padding: 4px 14px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1;
+}

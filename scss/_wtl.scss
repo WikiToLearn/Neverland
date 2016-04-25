@@ -4,8 +4,35 @@
 
 // modularized approach
 @import 'modules/type';
+@import 'modules/tables';
+@import 'modules/forms';
+@import 'modules/icons';
+@import 'modules/buttons';
+@import 'modules/sidebar';
+@import 'modules/navbar';
+@import 'modules/templates';
+@import 'modules/notifications';
+@import 'modules/page-actions';
+@import 'modules/suggestions';
+@import 'modules/articles';
+@import 'modules/specialpages';
+@import 'modules/footer';
 
+@import 'modules/helpers';
+@import 'modules/responsive';
 // to be modularized
+
+body[class*="_it skin-Neverland action-view"]  #firstHeading {
+  display:none;
+}
+
+.oo-ui-buttonElement-framed.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon.oo-ui-icon-next , .oo-ui-iconElement-icon.oo-ui-icon-advanced  {
+  top: 1.5em!important;
+}
+
+.oo-ui-widget.oo-ui-widget-enabled.oo-ui-labelElement.oo-ui-popupWidget-anchored.oo-ui-popupWidget {
+  top: 30px;
+}
 
 .math-wrapper {
   overflow-x: auto;
@@ -16,76 +43,46 @@
   margin-bottom: 2em;
 }
 
-.template {
-  &-center {
-    text-align: center;
-
-    table.wikitable {
-      display: table;
-      margin: 0 auto;
-    }
-
-    img {
-      margin: 0 auto;
-    }
-  }
-
-  &-flushleft {
-    text-align: left;
-
-    .math-wrapper {
-      display: inline-block;
-    }
-
-    img {
-      margin: 0 0;
-    }
-  }
-
-  &-flushright {
-    text-align: right;
-
-    .math-wrapper {
-      display: inline-block;
-    }
-
-    table.wikitable {
-      display: table;
-      margin: 0 0 auto auto;
-    }
-
-    img {
-      margin: 0 0 auto auto;
-    }
-  }
-}
-
-img#smallogo {
-  float:left; width: 20px !important;
-  height:20px;
+#smallogo {
+  float: left;
+  width: 20px !important;
+  height: 20px;
   margin-right: 10px;
-  margin-left:-10px;
+  margin-left: -10px;
 }
 
 
-.mw-pt-languages-list {
-  padding: 15px;
-  margin-bottom: 20px;
+%language-box {
+  background-color: #d9edf7;
   border: 1px solid transparent;
+  border-color: #bce8f1;
   border-radius: 4px;
   color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.mw-pt-languages-list {
+  @extend %language-box;
 }
 
 .mw-pt-languages-label {
+  @extend %language-box;
   width: 16%;
-
-  @extend .mw-pt-languages-list;
 }
 
-.revisionbadge {
-  margin-top: -10px;
-  width: 100%;
-  height: 100%;
+#toolbar {
+  margin-bottom: 10px;
+}
+
+#toolbar img {
+  margin-right: 3px;
+}
+
+.rcoptions {
+  line-height: 1.8em;
+}
+
+.rcoptions hr {
+  display: none;
 }

@@ -1,0 +1,148 @@
+.page-Pagina_principale .btn-group,
+.page-Pagina_principale .nav,
+.page-Pagina_principale #firstHeading,
+.page-Pagina_principale #contentSub,
+.page-Pagina_principale .revisionbadge {
+  display:none;
+}
+
+.center .thumbinner,
+.tablecenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center .floatnone {
+    text-align: center;
+}
+
+.align-justified {
+  text-align: justify;
+}
+
+.new {
+  color: #c60018;
+}
+
+.mw-geshi {
+  background-color: #F5F5F5;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: .30000000000000004em;
+}
+
+.subpages {
+  display: none;
+}
+
+.revisionbadge {
+  margin-top: -10px;
+  width: 100%;
+  height: 24px;
+}
+
+.printfooter {
+  display: none;
+}
+.no-margin {
+  margin: 0;
+}
+
+.diff {
+  margin-top: 15px;
+  border: 1px solid #d3d7cf !important;
+  -webkit-box-shadow: 0 1px 1px #ffffff;
+  -moz-box-shadow: 0 1px 1px #ffffff;
+  box-shadow: 0 1px 1px #ffffff;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px !important;
+  width: 100% !important;
+}
+
+.diff,
+.diff-otitle,
+.diff-ntitle {
+  background: #fdfdfd !important;
+}
+
+.diffchange {
+  font-weight: normal;
+  font-size: 1.1em;
+  color: #ba0000;
+}
+
+.diff-marker {
+  padding-right: 3px !important;
+}
+
+.diff-deletedline {
+  padding: 5px !important;
+  background: #fdffde !important;
+}
+
+.diff-addedline {
+  padding: 5px !important;
+  background: #dfffde !important;
+}
+.diff-lineno {
+  padding-bottom: 5px !important;
+}
+
+.menuchoice,
+.keycap {
+  font-weight: bold;
+  line-height: 14px;
+  vertical-align: baseline;
+  white-space: pre-wrap;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  padding: 1px 4px 2px;
+  border-radius: 3px;
+}
+
+
+.label-lightgray,
+.menuchoice,
+.keycap {
+  color: #000000;
+  background-color: #e1e1e1;
+  text-shadow: none;
+}
+
+.label-lightgray:hover {
+  color: #333333;
+}
+
+.editCheckboxes {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.btn-mini {
+  padding: 2px 6px;
+  font-size: 12px;
+  line-height: -2.4em;
+}
+
+.thumbcaption {
+  min-height: 22px;
+  text-align: center;
+}
+
+.mw-echo-overlay {
+  margin-top: 30px;
+}
+
+.thread-collapse-control {
+  float: left;
+  padding-top: 3px;
+  padding-right: 10px;
+}
+
+.list-unstyled li {
+  line-height: 1.1em;
+}

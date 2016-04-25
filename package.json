@@ -3,6 +3,11 @@
   "description": "Theming for WikiToLearn, based on bootstrap",
   "version": "0.0.1",
   "homepage": "http://wikitolearn.org",
+  "scripts": {
+    "watch": "gulp watch",
+    "css": "gulp css",
+    "minify": "gulp css --minify"
+  },
   "dependencies": {
     "bower": "^1.7.7",
     "browser-sync": "^2.11.2",

@@ -1,0 +1,37 @@
+/* MENU SUGGERIMENTI BARRA DI RICERCA */
+.suggestions {
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+}
+
+.suggestions .suggestions-result,
+.suggestions .suggestions-special {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: #333333;
+  white-space: nowrap;
+}
+
+.suggestions .suggestions-result:hover,
+.suggestions .suggestions-result:focus,
+.suggestions .suggestions-result-current,
+.suggestions .suggestions-special:hover,
+.suggestions .suggestions-special:focus,
+.suggestions .suggestions-special-current {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #0081c2;
+  background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}

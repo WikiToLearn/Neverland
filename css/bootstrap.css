@@ -5916,7 +5916,6 @@ table {
   overflow-x: auto;
   display: block; }
   table td:first-child {
-    min-width: 48px;
     padding-left: 0; }
   table td:last-child {
     padding-right: 0; }

@@ -803,11 +803,9 @@ class NeverlandTemplate extends BaseTemplate {
                       }
                       if ($link['id'] == 'ca-watch') {
                         $fa_icon = 'fa fa-star';
-                        $hidden = "style='visibility:hidden'";
                       }
                       if ($link['id'] == 'ca-unwatch') {
                         $fa_icon = 'fa fa-star';
-                        $hidden = "style='visibility:hidden'";
                       }
                     ?>
                     <i class="<?php echo $fa_icon ?> icon-black" <?php echo $hidden ?> ></i>

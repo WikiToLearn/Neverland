@@ -207,8 +207,8 @@ class NeverlandTemplate extends BaseTemplate {
                     // generate user tools (and notifications item in user tools if needed)
                     $personalToolsCount = 0;
                     $toolbar = $this->getPersonalTools();
-                    $alerts = $toolbar['notifications-alert'];
-                    $messages = $toolbar['notifications-message'];
+                    $alerts = (isset($toolbar['notifications-alert'])) ? $toolbar['notifications-alert'] : null ;
+                    $messages = (isset($toolbar['notifications-message'])) ? $toolbar['notifications-message'] : null ;
                     unset($toolbar['notifications-alert']);
                     unset($toolbar['notifications-message']);
                     unset($toolbar['newmessages']);
@@ -422,6 +422,9 @@ class NeverlandTemplate extends BaseTemplate {
             <li>
                 <a href="//meta.<?php echo $wiki_domain ?>/Communication_channels">Communication channels</a>
             </li>
+            <li>
+                <a href="//meta.<?php echo $wiki_domain ?>/Frequently_Asked_Questions">F.A.Q.</a>
+            </li>
           </ul>
         </div>
         <div class="col-sm-3 col-xs-6">
@@ -552,30 +555,6 @@ class NeverlandTemplate extends BaseTemplate {
     </script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
-    <script async>
-      mw.hook( 've.activationComplete' ).add( function() {
-        $('a.oo-ui-tool-link').css("padding","0px");
-      });
-      /* Il codice JavaScript inserito qui viene caricato da ciascuna pagina, per tutti gli utenti. */
-      mw.hook( 've.activationComplete' ).add( function() {
-              $('a.oo-ui-tool-link').css({
-               "height" : "3em",
-               "padding-left" : "2px",
-               "padding-right" : "2px"
-            });
-              $('.ve-test-toolbar-insert > .oo-ui-popupToolGroup-handle').css({
-              "height": "100%"
-            });
-            $(".oo-ui-processDialog-location").css({
-               "height" : "3em"
-            });
-      $(".oo-ui-iconElement-icon.oo-ui-icon-math-display-inline").css({
-               "position" : "static"
-            });
-      $(".oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-labelElement > .oo-ui-buttonElement-button, .oo-ui-buttonElement-framed.oo-ui-iconElement.oo-ui-indicatorElement > .oo-ui-buttonElement-button").css({
-               "padding-left" : "1.6em"
-            });
-            });    </script>
     <!-- End Cookie Consent plugin -->
     <!--<script type="text/javascript" src="//cdn.kde.org/js/bootstrap-neverland.js"></script>
     <script type="text/javascript" src="//cdn.kde.org/nav/global-nav.js"></script>-->
@@ -824,11 +803,9 @@ class NeverlandTemplate extends BaseTemplate {
                       }
                       if ($link['id'] == 'ca-watch') {
                         $fa_icon = 'fa fa-star';
-                        $hidden = "style='visibility:hidden'";
                       }
                       if ($link['id'] == 'ca-unwatch') {
                         $fa_icon = 'fa fa-star';
-                        $hidden = "style='visibility:hidden'";
                       }
                     ?>
                     <i class="<?php echo $fa_icon ?> icon-black" <?php echo $hidden ?> ></i>

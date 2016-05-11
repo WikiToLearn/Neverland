@@ -1,0 +1,16 @@
+.reader {
+  height: 0;
+  position: relative;
+  opacity: 0;
+  transition: all ease .5s;
+  
+  &.active {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    transition: all ease .5s;
+    opacity: 1;
+  }
+}

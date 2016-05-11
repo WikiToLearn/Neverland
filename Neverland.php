@@ -181,6 +181,9 @@ class NeverlandTemplate extends BaseTemplate {
   ?>
 
 <?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
+<div class="reader">
+  <div class="container"></div>
+</div>
 <!-- header -->
 <nav class="navbar navbar-default navbar-inverse Neverland noprint">
   <div class="container">
@@ -270,7 +273,7 @@ class NeverlandTemplate extends BaseTemplate {
         </div>
 
         <div class="col-sm-9">
-        <section>
+        <section id="main">
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
           </div>
@@ -340,7 +343,7 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-
+            <a class="toggle_reader" href="#">toggle</a>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>
@@ -546,7 +549,21 @@ class NeverlandTemplate extends BaseTemplate {
           $('a.btn.btn-mini').css('padding','1%');
         });
 
-
+        // Reader mode
+        $(function() {
+          $( ".toggle_reader" ).each(function() {
+            $(this).click(function() {
+              console.log("toggle reader...");
+              $( ".reader" ).toggleClass( "active" );
+              if(!$.trim($(".reader .container").html())) {
+                console.log("reader is empty, cloning...");
+                $( "#content" ).appendTo(".reader .container");
+              } else {
+                $( "#content" ).appendTo("#main");
+              }
+            });
+          });
+        });
 
     </script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->

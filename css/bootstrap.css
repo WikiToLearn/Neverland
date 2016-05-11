@@ -6635,6 +6635,20 @@ ul.special,
   padding-top: 2em;
   margin-bottom: -3em; }
 
+.reader {
+  height: 0;
+  position: relative;
+  opacity: 0;
+  transition: all ease .5s; }
+  .reader.active {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    transition: all ease .5s;
+    opacity: 1; }
+
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale #firstHeading,
 .page-Pagina_principale #contentSub,

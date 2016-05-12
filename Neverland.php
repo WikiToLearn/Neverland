@@ -558,36 +558,38 @@ class NeverlandTemplate extends BaseTemplate {
           $('a.btn.btn-mini').css('padding','1%');
         });
 
-        // borrowed from http://stackoverflow.com/questions/7179535/set-window-to-fullscreen-real-fullscreen-f11-functionality-by-javascript
-        function toggleFullScreen(elem) {
-          if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
-            if (elem.requestFullScreen) {
-              elem.requestFullScreen();
-            } else if (elem.mozRequestFullScreen) {
-              elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullScreen) {
-              elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-            } else if (elem.msRequestFullscreen) {
-              elem.msRequestFullscreen();
+        // borrowed from https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+        function toggleFullScreen() {
+          if (!document.fullscreenElement &&    // alternative standard method
+              !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+            if (document.documentElement.requestFullscreen) {
+              document.documentElement.requestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+              document.documentElement.msRequestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+              document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+              document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
             }
           } else {
-            if (document.cancelFullScreen) {
-              document.cancelFullScreen();
-            } else if (document.mozCancelFullScreen) {
-              document.mozCancelFullScreen();
-            } else if (document.webkitCancelFullScreen) {
-              document.webkitCancelFullScreen();
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
             } else if (document.msExitFullscreen) {
               document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
             }
           }
         }
+
         // Reader mode
         $(function() {
           $( ".reader .fullscreen").click(function() {
-            toggleFullScreen(document.body);
+            toggleFullScreen();
           });
-          
+
           $( ".toggle_reader" ).each(function() {
             $(this).click(function() {
               $( ".reader" ).toggleClass( "active" );

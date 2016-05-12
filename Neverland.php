@@ -349,7 +349,9 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-            <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
+            <?php if ( $wgOut->isArticle() ) : ?>
+              <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
+            <?php endif; ?>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>

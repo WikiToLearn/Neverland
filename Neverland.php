@@ -181,7 +181,7 @@ class NeverlandTemplate extends BaseTemplate {
   ?>
 
 <?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
-<div class="reader">
+<div class="reader hidden-xs">
   <a class="reader_logo href="//www.<?php echo $wiki_domain; ?>">
     <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
   </a>
@@ -349,7 +349,7 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-            <a class="toggle_reader" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
+            <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>
@@ -577,12 +577,12 @@ class NeverlandTemplate extends BaseTemplate {
               }
               var offset = $( ".reader .container" ).offset();
               $( ".reader .reader_logo img" ).css({
-                "max-width": offset.left + "px"
+                "max-width": (offset.left - 10) + "px"
               });
               $(window).on('resize', function(){
                 var offset = $( ".reader .container" ).offset();
                 $( ".reader .reader_logo img" ).css({
-                  "max-width": offset.left + "px"
+                  "max-width": (offset.left - 10) + "px"
                 });
               });
             });

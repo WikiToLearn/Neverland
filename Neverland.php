@@ -187,8 +187,8 @@ class NeverlandTemplate extends BaseTemplate {
   </a>
   <div class="container"></div>
   <div class="reader-nav">
-    <button type="button" class="btn btn-default btn-lg btn-danger toggle_reader" href="#" title="Toggle Reader Mode"><i class="fa fa-times" aria-hidden="true"></i></button>
-    <button type="button" class="btn btn-default btn-lg fullscreen" title="Toggle Fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default btn-lg btn-block btn-danger toggle_reader" href="#" title="Toggle Reader Mode"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default btn-lg btn-block fullscreen" title="Toggle Fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
   </div>
 </div>
 <!-- header -->

@@ -6646,9 +6646,10 @@ ul.special,
   .reader .reader-nav {
     display: none;
     font-size: 4rem;
+    max-width: 50px;
     position: fixed;
-    top: 1rem;
-    right: 1rem; }
+    right: 1rem;
+    top: 1rem; }
   .reader .reader_logo {
     position: absolute;
     margin-left: -300px;

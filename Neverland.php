@@ -322,7 +322,7 @@ class NeverlandTemplate extends BaseTemplate {
               <?php /*$this->html( 'title' )*/ ?>
             </h1>
             <?php if ( $wgOut->isArticle() ) : ?>
-              <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
+              <button type="button" class="btn btn-default toggle_reader hidden-xs" href="#" title="Toggle Reader Mode"><i class="fa fa-book" aria-hidden="true"></i></a>
             <?php endif; ?>
           </header>
 

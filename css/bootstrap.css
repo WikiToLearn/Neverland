@@ -6643,7 +6643,7 @@ ul.special,
   color: #fff; }
   .reader #bodyContent .toggle_reader {
     display: none; }
-  .reader .toggle_reader {
+  .reader .reader-nav {
     display: none;
     font-size: 4rem;
     position: fixed;
@@ -6665,11 +6665,25 @@ ul.special,
     color: #333; }
     .reader.active .reader_logo {
       margin-left: 1rem; }
-    .reader.active .toggle_reader {
+    .reader.active .reader-nav {
       display: block; }
+      .reader.active .reader-nav button {
+        float: right; }
 
 .toggle_reader {
   float: right; }
+
+*:-ms-fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
 
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale #firstHeading,

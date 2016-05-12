@@ -188,6 +188,7 @@ class NeverlandTemplate extends BaseTemplate {
   <div class="container"></div>
   <div class="reader-nav">
     <button class="toggle_reader" href="#"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <button class="fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
   </div>
 </div>
 <!-- header -->
@@ -557,8 +558,36 @@ class NeverlandTemplate extends BaseTemplate {
           $('a.btn.btn-mini').css('padding','1%');
         });
 
+        // borrowed from http://stackoverflow.com/questions/7179535/set-window-to-fullscreen-real-fullscreen-f11-functionality-by-javascript
+        function toggleFullScreen(elem) {
+          if ((document.fullScreenElement !== undefined && document.fullScreenElement === null) || (document.msFullscreenElement !== undefined && document.msFullscreenElement === null) || (document.mozFullScreen !== undefined && !document.mozFullScreen) || (document.webkitIsFullScreen !== undefined && !document.webkitIsFullScreen)) {
+            if (elem.requestFullScreen) {
+              elem.requestFullScreen();
+            } else if (elem.mozRequestFullScreen) {
+              elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullScreen) {
+              elem.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+            } else if (elem.msRequestFullscreen) {
+              elem.msRequestFullscreen();
+            }
+          } else {
+            if (document.cancelFullScreen) {
+              document.cancelFullScreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+              document.webkitCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            }
+          }
+        }
         // Reader mode
         $(function() {
+          $( ".reader .fullscreen").click(function() {
+            toggleFullScreen(document.body);
+          });
+          
           $( ".toggle_reader" ).each(function() {
             $(this).click(function() {
               $( ".reader" ).toggleClass( "active" );

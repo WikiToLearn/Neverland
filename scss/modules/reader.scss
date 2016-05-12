@@ -5,7 +5,7 @@
   transition: all ease .5s;
   color: #fff;
 
-  #bodyContent .toggle_reader {
+  header .toggle_reader {
     display: none;
   }
 
@@ -48,8 +48,14 @@
   }
 }
 
-.toggle_reader {
-  float: right;
+#content > header {
+  position: relative;
+
+  .toggle_reader {
+    position: absolute;
+    top: 20px;
+    right: 0;
+  }
 }
 
 *:fullscreen

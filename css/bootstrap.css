@@ -6641,7 +6641,7 @@ ul.special,
   opacity: 0;
   transition: all ease .5s;
   color: #fff; }
-  .reader #bodyContent .toggle_reader {
+  .reader header .toggle_reader {
     display: none; }
   .reader .reader-nav {
     display: none;
@@ -6670,8 +6670,12 @@ ul.special,
       .reader.active .reader-nav button {
         float: right; }
 
-.toggle_reader {
-  float: right; }
+#content > header {
+  position: relative; }
+  #content > header .toggle_reader {
+    position: absolute;
+    top: 20px;
+    right: 0; }
 
 *:-ms-fullscreen
 *:-ms-fullscreen,

@@ -321,6 +321,9 @@ class NeverlandTemplate extends BaseTemplate {
               <?php print $bigTitle; ?>
               <?php /*$this->html( 'title' )*/ ?>
             </h1>
+            <?php if ( $wgOut->isArticle() ) : ?>
+              <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
+            <?php endif; ?>
           </header>
 
           <!-- /firstHeading -->
@@ -350,9 +353,6 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-            <?php if ( $wgOut->isArticle() ) : ?>
-              <a class="toggle_reader hidden-xs" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
-            <?php endif; ?>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>

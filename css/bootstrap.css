@@ -6639,7 +6639,21 @@ ul.special,
   height: 0;
   position: relative;
   opacity: 0;
-  transition: all ease .5s; }
+  transition: all ease .5s;
+  color: #fff; }
+  .reader #bodyContent .toggle_reader {
+    display: none; }
+  .reader .toggle_reader {
+    display: none;
+    font-size: 4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem; }
+  .reader .reader_logo {
+    position: absolute;
+    margin-left: -300px;
+    height: 0;
+    transition: all ease .5s; }
   .reader.active {
     background-color: #fff;
     height: 100%;
@@ -6647,7 +6661,15 @@ ul.special,
     z-index: 1000;
     position: absolute;
     transition: all ease .5s;
-    opacity: 1; }
+    opacity: 1;
+    color: #333; }
+    .reader.active .reader_logo {
+      margin-left: 1rem; }
+    .reader.active .toggle_reader {
+      display: block; }
+
+.toggle_reader {
+  float: right; }
 
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale #firstHeading,

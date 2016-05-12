@@ -3,7 +3,27 @@
   position: relative;
   opacity: 0;
   transition: all ease .5s;
-  
+  color: #fff;
+
+  #bodyContent .toggle_reader {
+    display: none;
+  }
+
+  .toggle_reader {
+    display: none;
+    font-size: 4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .reader_logo {
+    position: absolute;
+    margin-left: -300px;
+    height: 0;
+    transition: all ease .5s;
+  }
+
   &.active {
     background-color: #fff;
     height: 100%;
@@ -12,5 +32,18 @@
     position: absolute;
     transition: all ease .5s;
     opacity: 1;
+    color: #333;
+
+    .reader_logo {
+      margin-left: 1rem;
+    }
+
+    .toggle_reader {
+      display: block;
+    }
   }
+}
+
+.toggle_reader {
+  float: right;
 }

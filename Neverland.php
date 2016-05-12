@@ -182,7 +182,13 @@ class NeverlandTemplate extends BaseTemplate {
 
 <?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
 <div class="reader">
+  <a class="reader_logo href="//www.<?php echo $wiki_domain; ?>">
+    <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
+  </a>
   <div class="container"></div>
+  <div class="reader-nav">
+    <button class="toggle_reader" href="#"><i class="fa fa-times" aria-hidden="true"></i></button>
+  </div>
 </div>
 <!-- header -->
 <nav class="navbar navbar-default navbar-inverse Neverland noprint">
@@ -343,7 +349,7 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-            <a class="toggle_reader" href="#">toggle</a>
+            <a class="toggle_reader" href="#"><i class="fa fa-book" aria-hidden="true"></i> Toggle Readmode</a>
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>
@@ -553,14 +559,32 @@ class NeverlandTemplate extends BaseTemplate {
         $(function() {
           $( ".toggle_reader" ).each(function() {
             $(this).click(function() {
-              console.log("toggle reader...");
               $( ".reader" ).toggleClass( "active" );
+              if ($( ".reader").hasClass("active")) {
+                $( ".reader" ).css({
+                  height: $( document ).height() + "px"
+                });
+              } else {
+                $( ".reader" ).css({
+                  height : 0
+                });
+              }
               if(!$.trim($(".reader .container").html())) {
                 console.log("reader is empty, cloning...");
                 $( "#content" ).appendTo(".reader .container");
               } else {
                 $( "#content" ).appendTo("#main");
               }
+              var offset = $( ".reader .container" ).offset();
+              $( ".reader .reader_logo img" ).css({
+                "max-width": offset.left + "px"
+              });
+              $(window).on('resize', function(){
+                var offset = $( ".reader .container" ).offset();
+                $( ".reader .reader_logo img" ).css({
+                  "max-width": offset.left + "px"
+                });
+              });
             });
           });
         });

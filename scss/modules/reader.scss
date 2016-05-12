@@ -2,7 +2,7 @@
   height: 0;
   position: relative;
   opacity: 0;
-  transition: all ease .5s;
+  transition: all ease .3s;
   color: #fff;
 
   header .toggle_reader {
@@ -30,7 +30,7 @@
     width: 100%;
     z-index: 1000;
     position: absolute;
-    transition: all ease .5s;
+    transition: all ease .3s;
     opacity: 1;
     color: #333;
 

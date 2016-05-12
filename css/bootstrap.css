@@ -6639,7 +6639,7 @@ ul.special,
   height: 0;
   position: relative;
   opacity: 0;
-  transition: all ease .5s;
+  transition: all ease .3s;
   color: #fff; }
   .reader header .toggle_reader {
     display: none; }
@@ -6660,7 +6660,7 @@ ul.special,
     width: 100%;
     z-index: 1000;
     position: absolute;
-    transition: all ease .5s;
+    transition: all ease .3s;
     opacity: 1;
     color: #333; }
     .reader.active .reader_logo {

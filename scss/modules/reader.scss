@@ -49,6 +49,26 @@
   }
 }
 
+.readermode {
+  margin: 0em 7em 0em 7em;
+  padding-bottom: 7em;
+}
+
+.reader.active {
+  background-color: darken(white, 10%);
+}
+
+.container.container-reader {
+  background-color: white;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.3), 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
+.heading-reader {
+  padding: 1em 0em 1em 0em;
+}
+
 #content > header {
   position: relative;
 

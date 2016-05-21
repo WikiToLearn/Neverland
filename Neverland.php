@@ -182,9 +182,6 @@ class NeverlandTemplate extends BaseTemplate {
 
 <?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
 <div class="reader hidden-xs">
-  <a class="reader_logo href="//www.<?php echo $wiki_domain; ?>">
-    <img class="hidden-xs" id="wfm-logo" src="<?php echo $wgLogo; ?>" alt="WikiToLearn Logo" />
-  </a>
   <div class="container"></div>
   <div class="reader-nav">
     <button type="button" class="btn btn-default btn-lg btn-block btn-danger toggle_reader" href="#" title="Toggle Reader Mode"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -602,6 +599,9 @@ class NeverlandTemplate extends BaseTemplate {
                   height : 0
                 });
               }
+              $('#firstHeading').toggleClass("heading-reader");
+              $('#bodyContent').toggleClass("readermode");
+              $('.container').toggleClass('container-reader')
               if(!$.trim($(".reader .container").html())) {
                 console.log("reader is empty, cloning...");
                 $( "#content" ).appendTo(".reader .container");

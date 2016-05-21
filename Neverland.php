@@ -601,7 +601,7 @@ class NeverlandTemplate extends BaseTemplate {
               }
               $('#firstHeading').toggleClass("heading-reader");
               $('#bodyContent').toggleClass("readermode");
-              $('.container').toggleClass('container-reader')
+              $('.reader > .container').toggleClass('container-reader')
               if(!$.trim($(".reader .container").html())) {
                 console.log("reader is empty, cloning...");
                 $( "#content" ).appendTo(".reader .container");

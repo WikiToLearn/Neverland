@@ -606,7 +606,7 @@ class NeverlandTemplate extends BaseTemplate {
                 console.log("reader is empty, cloning...");
                 $( "#content" ).appendTo(".reader .container");
               } else {
-                $( "#content" ).appendTo("#main");
+                $(".nav.nav-tabs.noprint").after($( "#content" ));
               }
               var offset = $( ".reader .container" ).offset();
               $( ".reader .reader_logo img" ).css({

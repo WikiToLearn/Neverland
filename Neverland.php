@@ -809,7 +809,7 @@ class NeverlandTemplate extends BaseTemplate {
                         $fa_icon = 'fa fa-star';
                       }
                     ?>
-                    <i class="<?php echo $fa_icon ?> icon-black" <?php echo $hidden ?> ></i>
+                    <i class="<?php echo $fa_icon ?> icon-black"></i>
                     <?php echo htmlspecialchars( $link['text'] ) ?>
                   </a>
                 </li>

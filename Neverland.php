@@ -181,6 +181,13 @@ class NeverlandTemplate extends BaseTemplate {
   ?>
 
 <?php $log_in = ($wgUser->isAnon()) ? "Login" : $user->getName() ; ?>
+<div class="reader hidden-xs">
+  <div class="container"></div>
+  <div class="reader-nav">
+    <button type="button" class="btn btn-default btn-lg btn-block btn-danger toggle_reader" href="#" title="Toggle Reader Mode"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default btn-lg btn-block fullscreen" title="Toggle Fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+  </div>
+</div>
 <!-- header -->
 <nav class="navbar navbar-default navbar-inverse Neverland noprint">
   <div class="container">
@@ -270,7 +277,7 @@ class NeverlandTemplate extends BaseTemplate {
         </div>
 
         <div class="col-sm-9">
-        <section>
+        <section id="main">
           <div id="mw-js-message" class="alert alert-info" style="display:none;"
             <?php $this->html( 'userlangattributes' ) ?>>
           </div>
@@ -311,6 +318,9 @@ class NeverlandTemplate extends BaseTemplate {
               <?php print $bigTitle; ?>
               <?php /*$this->html( 'title' )*/ ?>
             </h1>
+            <?php if ( $wgOut->isArticle() ) : ?>
+              <button type="button" class="btn btn-default toggle_reader hidden-xs" href="#" title="Toggle Reader Mode"><i class="fa fa-book" aria-hidden="true"></i></a>
+            <?php endif; ?>
           </header>
 
           <!-- /firstHeading -->
@@ -340,7 +350,6 @@ class NeverlandTemplate extends BaseTemplate {
             <?php endif; ?>
 
           <div id="bodyContent">
-
             <!-- subtitle -->
             <div id="contentSub"<?php $this->html( 'userlangattributes' ) ?>>
               <?php print $subpages; ?>
@@ -546,7 +555,72 @@ class NeverlandTemplate extends BaseTemplate {
           $('a.btn.btn-mini').css('padding','1%');
         });
 
+        // borrowed from https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
+        function toggleFullScreen() {
+          if (!document.fullscreenElement &&    // alternative standard method
+              !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+            if (document.documentElement.requestFullscreen) {
+              document.documentElement.requestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+              document.documentElement.msRequestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) {
+              document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+              document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+          } else {
+            if (document.exitFullscreen) {
+              document.exitFullscreen();
+            } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+            }
+          }
+        }
 
+        // Reader mode
+        $(function() {
+          $( ".reader .fullscreen").click(function() {
+            toggleFullScreen();
+          });
+
+          $( ".toggle_reader" ).each(function() {
+            $(this).click(function() {
+              $( ".reader" ).toggleClass( "active" );
+              if ($( ".reader").hasClass("active")) {
+                $( ".reader" ).css({
+                  height: $( document ).height() + "px"
+                });
+              } else {
+                $( ".reader" ).css({
+                  height : 0
+                });
+              }
+              $('#firstHeading').toggleClass("heading-reader");
+              $('#bodyContent').toggleClass("readermode");
+              $('.reader > .container').toggleClass('container-reader')
+              if(!$.trim($(".reader .container").html())) {
+                console.log("reader is empty, cloning...");
+                $( "#content" ).appendTo(".reader .container");
+              } else {
+                $(".nav.nav-tabs.noprint").after($( "#content" ));
+              }
+              var offset = $( ".reader .container" ).offset();
+              $( ".reader .reader_logo img" ).css({
+                "max-width": (offset.left - 10) + "px"
+              });
+              $(window).on('resize', function(){
+                var offset = $( ".reader .container" ).offset();
+                $( ".reader .reader_logo img" ).css({
+                  "max-width": (offset.left - 10) + "px"
+                });
+              });
+            });
+          });
+        });
 
     </script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->

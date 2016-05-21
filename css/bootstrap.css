@@ -6354,6 +6354,9 @@ input.search {
   font-weight: normal;
   line-height: 1; }
 
+.oo-ui-popupWidget-popup {
+  z-index: 999; }
+
 .template-center {
   text-align: center; }
   .template-center .wikitable {
@@ -6634,6 +6637,77 @@ ul.special,
 .kde-img-footer {
   padding-top: 2em;
   margin-bottom: -3em; }
+
+.reader {
+  height: 0;
+  position: relative;
+  opacity: 0;
+  transition: all ease .3s;
+  color: #fff; }
+  .reader header .toggle_reader {
+    display: none; }
+  .reader .reader-nav {
+    display: none;
+    font-size: 4rem;
+    max-width: 50px;
+    position: fixed;
+    right: 1rem;
+    top: 1rem; }
+  .reader .reader_logo {
+    position: absolute;
+    margin-left: -300px;
+    height: 0;
+    transition: all ease .5s; }
+  .reader.active {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    transition: all ease .3s;
+    opacity: 1;
+    color: #333; }
+    .reader.active .reader_logo {
+      margin-left: 1rem; }
+    .reader.active .reader-nav {
+      display: block; }
+      .reader.active .reader-nav button {
+        float: right; }
+
+.readermode {
+  margin: 0em 7em 0em 7em;
+  padding-bottom: 7em; }
+
+.reader.active {
+  background-color: #e6e6e6; }
+
+.container.container-reader {
+  background-color: white;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  box-shadow: 0px 7px 21px -6px #777; }
+
+.heading-reader {
+  padding: 1em 0em 1em 0em; }
+
+#content > header {
+  position: relative; }
+  #content > header .toggle_reader {
+    position: absolute;
+    top: 20px;
+    right: 0; }
+
+*:-ms-fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
+
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+  overflow: auto !important; }
 
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale #firstHeading,

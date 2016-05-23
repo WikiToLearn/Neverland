@@ -305,10 +305,12 @@ class NeverlandTemplate extends BaseTemplate {
 
           <?php
             $hide = '';
+            $reader = true;
             $title = $this->getSkin()->getTitle();
             $strip_title = str_replace(' ', '_', $title);
             if(strtoupper($strip_title) == "PAGINA_PRINCIPALE" || strtoupper($strip_title) == "MAIN_PAGE")
              {
+                $reader = false;
                 $hide = " class='hidden' ";
              }
           ?>
@@ -318,7 +320,7 @@ class NeverlandTemplate extends BaseTemplate {
               <?php print $bigTitle; ?>
               <?php /*$this->html( 'title' )*/ ?>
             </h1>
-            <?php if ( $wgOut->isArticle() ) : ?>
+            <?php if ( $wgOut->isArticle() && $reader === true ) : ?>
               <button type="button" class="btn btn-default toggle_reader hidden-xs" href="#" title="Toggle Reader Mode"><i class="fa fa-book" aria-hidden="true"></i></a>
             <?php endif; ?>
           </header>

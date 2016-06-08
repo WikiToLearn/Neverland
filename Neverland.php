@@ -828,6 +828,7 @@ class NeverlandTemplate extends BaseTemplate {
                 <?php echo $link['key'] ?> role="button" aria-label="...">
 
                 <?php if ( array_key_exists( 'text', $link ) ):
+                $fa_icon = "";
                 if ($link['id'] == 'ca-edit') {
                   $fa_icon = "fa fa-edit";
                 }
@@ -866,6 +867,7 @@ class NeverlandTemplate extends BaseTemplate {
                 <li <?php echo $link['attributes'] ?>>
                   <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" <?php echo $link['key'] ?>>
                     <?php
+                      $fa_icon = "";
                       if ($link['id'] == 'ca-delete') {
                         $fa_icon = 'fa fa-times';
                         $hidden = "";

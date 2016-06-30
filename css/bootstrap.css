@@ -6709,6 +6709,15 @@ ul.special,
 *:-moz-full-screen {
   overflow: auto !important; }
 
+.ve-init-target * {
+  box-sizing: content-box; }
+
+.oo-ui-window-frame * {
+  box-sizing: content-box; }
+
+.oo-ui-labelElement-label {
+  margin-right: 0.7em !important; }
+
 .page-Pagina_principale .btn-group,
 .page-Pagina_principale #firstHeading,
 .page-Pagina_principale #contentSub,

@@ -46,7 +46,7 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
-    $out->addStyle( $this->stylename.'/css/bootstrap.css?v=1.0.1', 'screen' );
+    $out->addStyle( $this->stylename.'/css/bootstrap.css?v=1.0.2', 'screen' );
     $out->addStyle( $this->stylename.'/css/bootstrap-social.css', 'screen' );
     //$out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
     $out->addStyle( $this->stylename.'/css/font-awesome-4.4.0/css/font-awesome.css', 'screen' );

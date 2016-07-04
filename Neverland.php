@@ -313,6 +313,10 @@ class NeverlandTemplate extends BaseTemplate {
                 $reader = false;
                 $hide = " class='hidden' ";
              }
+             if ($wgRequest->getText( 'action' ) == 'edit' || $wgRequest->getText( 'veaction' ) == 'edit') {
+               $reader = false;
+               $hide   = " class = 'hidden' ";
+             }
           ?>
           <!-- firstHeading -->
           <header>

@@ -85,6 +85,11 @@ class NeverlandTemplate extends BaseTemplate {
 
     $bigTitle = "";
     $subpages = "";
+    $pageTitle = $wgOut->getTitle();
+    if ($pageTitle->getNamespace() === 2) {
+      $defaultNameSpace = NS_USER;
+    }
+    $defaultNamespace = ( $pageTitle->getNamespace() === 2 ) ? 2 : 0;
 
     if ( $wgOut->isArticle() ) { // && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); //->getPrefixedText();
@@ -101,14 +106,12 @@ class NeverlandTemplate extends BaseTemplate {
                 $subpages .= "<li>";
                 $growinglink .= $link;
                 $display .= $link;
-                $linkObj = Title::newFromText( $growinglink );
-
+                $linkObj = Title::newFromText( $growinglink, $defaultNamespace );
                 if ( is_object( $linkObj ) && $linkObj->isKnown() ) {
                     $getlink = Linker::linkKnown(
                             $linkObj,
                             htmlspecialchars( $display )
                     );
-
                     $c++;
 
                     if ( $c < count($links) ) {

@@ -145,3 +145,8 @@
 .list-unstyled li {
   line-height: 1.1em;
 }
+
+::selection {
+ background: #67b03f;
+ color:white;
+}

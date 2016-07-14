@@ -9,3 +9,35 @@
   padding-top: 4px !important;
   margin-top: 0px !important;
 }
+
+#pt-notifications-message .mw-echo-notifications-badge {
+  border-radius: 0.2em;
+  background-color: #d2d2d2;
+  font-size: 1.125em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: -0.2em;
+  display: inline-block;
+  padding: 0.12em 0.37em 0.12em 1.47em;
+  height: 1.05em;
+  background-size: 1.1em;
+  background-repeat: no-repeat;
+}
+
+#pt-notifications-alert .mw-echo-notifications-badge, #pt-notifications-message .mw-echo-notifications-badge {
+    border-radius: 0.2em;
+    background-color: #d2d2d2;
+    font-size: 1.125em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: -0.2em;
+    display: inline-block;
+    padding: 0.12em 0.37em 0.12em 1.47em;
+    height: 1.05em;
+    background-size: 1.1em;
+    background-repeat: no-repeat;
+}

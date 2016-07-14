@@ -4,3 +4,10 @@
 .oo-ui-window-frame * {
   box-sizing: content-box;
 }
+
+.oo-ui-toolbar-bar {
+  .oo-ui-popupToolGroup.oo-ui-labelElement.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle .oo-ui-labelElement-label {
+    margin-right: 1.2em !important;
+    margin-left: 0.4em !important;
+  }
+}

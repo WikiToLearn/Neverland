@@ -35,8 +35,7 @@ class SkinNeverland extends SkinTemplate {
     // Append CSS which includes IE only behavior fixes for hover support -
     // this is better than including this in a CSS fille since it doesn't
     // wait for the CSS file to load before fetching the HTC file.
-    $min = $this->getRequest()->getFuzzyBool( 'debug' ) ? '' : '.min';
-    $out->addModuleScripts( 'skins.neverland' );
+    $out->addModules( 'skin.neverland.js' );
     $out->addMeta( "viewport", "width=device-width, initial-scale=1.0" );
   }
 
@@ -46,10 +45,7 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
-    $out->addStyle( $this->stylename.'/css/bootstrap.css?v=1.0.4', 'screen' );
-    $out->addStyle( $this->stylename.'/css/bootstrap-social.css', 'screen' );
-    //$out->addStyle( $this->stylename.'/css/bootstrap-mediawiki.css', 'screen' );
-    $out->addStyle( $this->stylename.'/css/font-awesome-4.4.0/css/font-awesome.css', 'screen' );
+    $out->addModuleStyles( array( 'skin.neverland' ) );
   }
 }
 
@@ -74,7 +70,7 @@ class NeverlandTemplate extends BaseTemplate {
     $nav = $this->data['content_navigation'];
 
     if ( $wgNeverlandUseIconWatch ) {
-      $mode = $this->getSkin()->getTitle()->userIsWatching() ? 'unwatch' : 'watch';
+      //$mode = $this->getSkin()->getTitle()->userIsWatching() ? 'unwatch' : 'watch';
       if ( isset( $nav['actions'][$mode] ) ) {
         $nav['views'][$mode] = $nav['actions'][$mode];
         $nav['views'][$mode]['class'] = rtrim( 'icon ' . $nav['views'][$mode]['class'], ' ' );
@@ -521,118 +517,6 @@ class NeverlandTemplate extends BaseTemplate {
 
     <?php $this->printTrail(); ?>
 
-    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/jquery.ba-throttle-debounce.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo $wgStylePath; ?>/Neverland/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        /* Fix for Echo in Refreshed */
-        if ( document.getElementById( 'echo' ) ) {
-                $( '#pt-notifications' ).prependTo( '#echo' );
-        }
-
-        if ( $( '.mw-echo-notifications-badge' ).hasClass( 'mw-echo-unread-notifications' ) ) {
-                $( '#pt-notifications-personaltools a' ).addClass( 'pt-notifications-personaltools-unread' );
-        }
-
-        function isBreakpoint( alias ) {
-          return $('.device-' + alias).is(':visible');
-        }
-
-        $( document ).ready(function() {
-
-        $('#searchform').removeClass('navbar-search').removeClass('pull-right').addClass('navbar-form').addClass('navbar-right');
-        $('#searchInput').addClass("form-control");
-        $('form[name=userlogin]').addClass("col-xs-12");
-        $('#userloginForm').addClass("row");
-        $('#userlogin2').addClass("col-xs-12");
-
-        if( $('.breakpoint-xs').is(':hidden') ) {
-          $('.footer-wtl').addClass(" text-center ").removeClass(" text-left ");
-          $('#views').addClass('btn-group-justified');
-        }
-        if( $('.breakpoint-sm').is(':hidden') ) {
-          $('.wtl-menu-mobile').hide();
-        }
-
-        $('#mw-createaccount-cta').removeAttr('id');
-
-            $('.contributionscores.plainlinks').removeClass('wikitable').addClass('table-bordered');
-
-          $('.divider').hide();
-          var active_breadcrumb = $('li.active');
-          $('ul.breadcrumb>li:empty').remove();
-
-          $('a.btn.btn-mini').css('padding','1%');
-        });
-
-        // borrowed from https://developer.mozilla.org/en-US/docs/Web/API/Fullscreen_API
-        function toggleFullScreen() {
-          if (!document.fullscreenElement &&    // alternative standard method
-              !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
-            if (document.documentElement.requestFullscreen) {
-              document.documentElement.requestFullscreen();
-            } else if (document.documentElement.msRequestFullscreen) {
-              document.documentElement.msRequestFullscreen();
-            } else if (document.documentElement.mozRequestFullScreen) {
-              document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullscreen) {
-              document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-            }
-          } else {
-            if (document.exitFullscreen) {
-              document.exitFullscreen();
-            } else if (document.msExitFullscreen) {
-              document.msExitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-              document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen();
-            }
-          }
-        }
-
-        // Reader mode
-        $(function() {
-          $( ".reader .fullscreen").click(function() {
-            toggleFullScreen();
-          });
-
-          $( ".toggle_reader" ).each(function() {
-            $(this).click(function() {
-              $( ".reader" ).toggleClass( "active" );
-              if ($( ".reader").hasClass("active")) {
-                $( ".reader" ).css({
-                  height: $( document ).height() + "px"
-                });
-              } else {
-                $( ".reader" ).css({
-                  height : 0
-                });
-              }
-              $('#firstHeading').toggleClass("heading-reader");
-              $('#bodyContent').toggleClass("readermode");
-              $('.reader > .container').toggleClass('container-reader')
-              if(!$.trim($(".reader .container").html())) {
-                console.log("reader is empty, cloning...");
-                $( "#content" ).appendTo(".reader .container");
-              } else {
-                $(".nav.nav-tabs.noprint").after($( "#content" ));
-              }
-              var offset = $( ".reader .container" ).offset();
-              $( ".reader .reader_logo img" ).css({
-                "max-width": (offset.left - 10) + "px"
-              });
-              $(window).on('resize', function(){
-                var offset = $( ".reader .container" ).offset();
-                $( ".reader .reader_logo img" ).css({
-                  "max-width": (offset.left - 10) + "px"
-                });
-              });
-            });
-          });
-        });
-
-    </script>
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
     window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":null,"theme":"dark-bottom"};

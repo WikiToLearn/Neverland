@@ -1,6 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Ingo Malchow",
+			"Gianluca Rigoletti"
+		]
 	},
 	"skinname-neverland": "Neverland",
 	"neverland-desc": "Modern version of MonoBook with fresh look and many usability improvements"

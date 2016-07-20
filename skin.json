@@ -1,16 +1,14 @@
 {
 	"name": "Neverland",
 	"author": [
-		"..."
+		"Ingo Malchow",
+		"Gianluca Rigoletti"
 	],
-	"url": "",
+	"url": "https://github.com/WikiToLearn/Neverland",
 	"descriptionmsg": "neverland-desc",
 	"namemsg": "skinname-neverland",
-	"license-name": "",
+	"license-name": "MIT",
 	"type": "skin",
-	"ConfigRegistry": {
-		"neverland": "GlobalVarConfig::newInstance"
-	},
 	"ValidSkinNames": {
 		"neverland": "Neverland"
 	},
@@ -20,8 +18,36 @@
 		]
 	},
 	"AutoloadClasses": {
-		"SkinNeverland": "Neverland.php",
-		"NeverlandTemplate": "Neverland.php"
+		"SkinNeverland": "Neverland.php"
+	},
+	"ResourceModules": {
+		"skin.neverland": {
+			"styles": {
+					"css/bootstrap.css": { "media": "screen" },
+					"css/bootstrap-social.css": { "media": "screen" },
+					"css/font-awesome-4.4.0/css/font-awesome.css": { "media": "screen" }
+			}
+		},
+		"skin.neverland.js": {
+			"scripts": [
+				"js/neverland.js"
+			],
+			"position": "bottom",
+			"dependencies": [
+				"skin.bootstrap.js",
+				"jquery.throttle-debounce"
+			]
+		},
+		"skin.bootstrap.js": {
+			"scripts": [
+				"js/bootstrap.min.js"
+			],
+			"position": "bottom"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "Neverland"
 	},
 	"config": {
 		"NeverlandUseSimpleSearch": true,

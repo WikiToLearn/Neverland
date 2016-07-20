@@ -5,7 +5,7 @@
     },
     "tasks": {
         "browserSync": {
-            "proxy": "http://en.tuttorotto.biz/",
+            "proxy": "http://it.tuttorotto.biz/",
             "port": 8080,
             "open": true
         },

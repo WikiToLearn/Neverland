@@ -45,6 +45,7 @@ class SkinNeverland extends SkinTemplate {
    */
   function setupSkinUserCss( OutputPage $out ){
     parent::setupSkinUserCss( $out );
+    $out->addStyle( '//fonts.googleapis.com/css?family=Source+Sans+Pro' );
     $out->addModuleStyles( array( 'skin.neverland' ) );
   }
 }

@@ -22,6 +22,7 @@
 	},
 	"ResourceModules": {
 		"skin.neverland": {
+			"position": "top",
 			"styles": {
 					"css/bootstrap.css": { "media": "screen" },
 					"css/bootstrap-social.css": { "media": "screen" },

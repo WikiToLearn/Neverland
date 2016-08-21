@@ -83,10 +83,17 @@ class NeverlandTemplate extends BaseTemplate {
     $bigTitle = "";
     $subpages = "";
     $pageTitle = $wgOut->getTitle();
-    if ($pageTitle->getNamespace() === 2) {
-      $defaultNameSpace = NS_USER;
+    switch ($pageTitle->getNamespace()) {
+      case NS_USER:
+        $defaultNamespace = NS_USER;
+        break;
+      case NS_COURSE:
+        $defaultNamespace = NS_COURSE;
+        break;
+      default:
+        $defaultNamespace = NS_MAIN;
+        break;
     }
-    $defaultNamespace = ( $pageTitle->getNamespace() === 2 ) ? 2 : 0;
 
     if ( $wgOut->isArticle() ) { // && MWNamespace::hasSubpages( $wgOut->getTitle()->getNamespace() ) ) {
         $ptext = $wgOut->getTitle()->getText(); //->getPrefixedText();

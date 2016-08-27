@@ -171,6 +171,21 @@ class NeverlandTemplate extends BaseTemplate {
       }
     }
 
+    /*
+    When user is editing with VE the button doesn't get actived because
+    the code used to make it selected is rendered via javascript and
+    not in PHP. This prevents Neverland.php to recognize the right 
+    attribute to give to the element and it ends with a select attribute
+    on the 'view' button.
+    References: ve.init.mw.DesktopArticleTarget.sj:1107
+    */
+    if ($wgRequest->getText('veaction') == 'edit') {
+      //die(var_dump($wgOut->getRequest()));
+      //die(var_dump($this->data['view_urls']['ve-edit']['attributes']));
+      $this->data['view_urls']['ve-edit']['attributes'] .= 'class="selected"';
+      $this->data['view_urls']['view']['attributes'] = 'id="ca-view"';
+    }
+
     $this->data['namespace_urls'] = $nav['namespaces'];
     $this->data['view_urls'] = $nav['views'];
     $this->data['action_urls'] = $nav['actions'];
@@ -718,14 +733,14 @@ class NeverlandTemplate extends BaseTemplate {
         if ( count( $this->data['view_urls'] ) > 0 ) {
           ?>
             <?php foreach ( $this->data['view_urls'] as $link ): ?>
-              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" class="btn
+              <a href="<?php echo htmlspecialchars( $link['href'] ) ?>" id="<?php echo $link['id'] ?>" 
+              class="btn
                 <?php if ( stripos( $link['attributes'], 'selected' ) !== false ){ ?>
                   btn-success
                 <?php }else{ ?>
                   btn-default
                 <?php } ?>"
                 <?php echo $link['key'] ?> role="button" aria-label="...">
-
                 <?php if ( array_key_exists( 'text', $link ) ):
                 $fa_icon = "";
                 if ($link['id'] == 'ca-edit') {

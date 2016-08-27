@@ -5784,6 +5784,9 @@ blockquote {
   font-size: 13pt;
   line-height: 1.5em; }
 
+div.oo-ui-toolbar-bar {
+  font-size: 14px; }
+
 .kw0,
 .kw1,
 .kw2,
@@ -6744,9 +6747,6 @@ ul.special,
 
 .oo-ui-window-frame * {
   box-sizing: content-box; }
-
-div.oo-ui-toolbar-bar {
-  font-size: 14px; }
 
 .oo-ui-toolbar-bar .oo-ui-popupToolGroup.oo-ui-labelElement.oo-ui-indicatorElement .oo-ui-popupToolGroup-handle .oo-ui-labelElement-label {
   margin-right: 1.2em !important;

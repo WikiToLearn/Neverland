@@ -12,6 +12,20 @@ function isBreakpoint( alias ) {
 }
 
 $( document ).ready(function() {
+  /*
+  When user is editing with VE the button doesn't get actived because
+  the code used to make it selected is rendered via javascript and
+  not in PHP. This prevents Neverland.php to recognize the right 
+  attribute to give to the element and it ends with a select attribute
+  on the 'view' button.
+  References: ve.init.mw.DesktopArticleTarget.sj:1107
+  */
+  mw.hook('ve.activate').add(function () {
+    if ($('#ca-ve-edit').hasClass('selected')) {
+      $('#ca-ve-edit').removeClass('selected').addClass('btn-success');
+      $('#ca-view').removeClass('btn-success').addClass('btn-default');
+    }
+  });
 
 $('#searchform').removeClass('navbar-search').removeClass('pull-right').addClass('navbar-form').addClass('navbar-right');
 $('#searchInput').addClass("form-control");

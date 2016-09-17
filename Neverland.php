@@ -66,12 +66,13 @@ class NeverlandTemplate extends BaseTemplate {
          $wgLogo, $wgStylePath, $wgNeverlandUseIconWatch, $wiki_domain, $wgUser;
 
     $skin = $this->getSkin();
+    $title = $skin->getTitle();
     $user = $skin->getUser();
     // Build additional attributes for navigation urls
     $nav = $this->data['content_navigation'];
 
     if ( $wgNeverlandUseIconWatch ) {
-      //$mode = $this->getSkin()->getTitle()->userIsWatching() ? 'unwatch' : 'watch';
+      $mode = $user->isWatched( $title ) ? 'unwatch' : 'watch';
       if ( isset( $nav['actions'][$mode] ) ) {
         $nav['views'][$mode] = $nav['actions'][$mode];
         $nav['views'][$mode]['class'] = rtrim( 'icon ' . $nav['views'][$mode]['class'], ' ' );

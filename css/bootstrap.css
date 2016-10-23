@@ -6385,6 +6385,28 @@ input.search {
   .template-flushright img {
     margin: 0 0 auto auto; }
 
+.environmentcontent {
+  padding-left: 0.5rem;
+  border-left: 1px solid #eee; }
+  .environmentcontent p:last-of-type {
+    margin-bottom: 0; }
+  .environmentcontent .beginenvironment {
+    margin-top: 0.5rem; }
+  .environmentcontent .endenvironment {
+    margin-bottom: 0.5rem; }
+
+.endenvironment {
+  margin-bottom: 1rem; }
+
+html .show-only-in-ve, html .show-only-in-ve-block {
+  display: none; }
+
+html.ve-active .show-only-in-ve-block {
+  display: block; }
+
+html.ve-active .show-only-in-ve {
+  display: inline-block; }
+
 #notifications-button-mobile {
   padding-left: 10px; }
 

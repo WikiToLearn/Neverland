@@ -41,3 +41,39 @@
     }
   }
 }
+
+.environmentcontent{
+    padding-left: 0.5rem;
+    border-left: 1px solid #eee;
+
+    p:last-of-type{
+        margin-bottom: 0;
+    }
+
+    .beginenvironment{
+        margin-top: 0.5rem;
+    }
+    .endenvironment{
+        margin-bottom: 0.5rem;
+    }
+}
+
+.endenvironment{
+    margin-bottom: 1rem;
+}
+
+html{
+    .show-only-in-ve, .show-only-in-ve-block{
+        display: none;
+    }
+
+    &.ve-active{
+        .show-only-in-ve-block{
+            display: block;
+        }
+        .show-only-in-ve{
+            display: inline-block;
+        }
+    }
+    
+}

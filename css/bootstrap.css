@@ -6407,6 +6407,54 @@ html.ve-active .show-only-in-ve-block {
 html.ve-active .show-only-in-ve {
   display: inline-block; }
 
+.infobox {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #00613a;
+  border-left: 3px solid #00613a;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  background-color: #fafafa; }
+  .infobox i {
+    color: #00613a;
+    margin-right: 1rem; }
+  .infobox a {
+    color: #00613a;
+    font-weight: bold; }
+
+.warningbox {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid #ffbc31;
+  border-left: 3px solid #ffbc31;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  background-color: #fafafa; }
+  .warningbox i {
+    color: #ffbc31;
+    margin-right: 1rem; }
+  .warningbox a {
+    color: #ffbc31;
+    font-weight: bold; }
+
+.template.center {
+  text-align: center; }
+
+.template.book {
+  display: inline-block; }
+  .template.book .book__image {
+    display: inline-block;
+    margin-right: 0.5rem; }
+  .template.book .book__details {
+    display: inline-block; }
+
+.forcebreak {
+  display: block;
+  clear: both;
+  content: " "; }
+
 #notifications-button-mobile {
   padding-left: 10px; }
 

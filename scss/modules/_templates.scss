@@ -77,3 +77,71 @@ html{
     }
     
 }
+
+
+.infobox{
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    
+    border: 1px solid #00613a;
+    border-left: 3px solid #00613a;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    background-color: #fafafa;
+
+    i{
+        color: #00613a;
+        margin-right: 1rem;
+    }
+
+    a{
+        color: #00613a;
+        font-weight: bold;
+    }
+}
+
+.warningbox{
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    
+    border: 1px solid #ffbc31;
+    border-left: 3px solid #ffbc31;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+    background-color: #fafafa;
+
+    i{
+        color: #ffbc31;
+        margin-right: 1rem;
+    }
+
+    a{
+        color: #ffbc31;
+        font-weight: bold;
+    }
+}
+
+.template{
+  &.center{
+    text-align: center;
+  }
+
+  &.book{
+    display: inline-block;
+    .book__image{
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+    .book__details{
+      display: inline-block;
+    }
+  }
+}
+
+.forcebreak{
+    display: block;
+    clear: both;
+    content: " ";
+}

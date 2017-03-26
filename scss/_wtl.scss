@@ -24,6 +24,16 @@
 @import 'modules/responsive';
 // to be modularized
 
+::-moz-selection {
+  background: #67b03f;
+  color:white;
+}
+
+::selection {
+  background: #67b03f;
+  color:white;
+}
+
 body[class*="_it skin-Neverland action-view"]  #firstHeading {
   display:none;
 }
